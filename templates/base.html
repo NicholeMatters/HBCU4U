@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uptact</title>
+  <link rel="stylesheet" href="https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.6/dist/shoelace/shoelace.css">
+<script type="module" src="https://unpkg.com/@shoelace-style/shoelace@2.0.0-beta.6/dist/shoelace/shoelace.esm.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/tachyons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'icofont/icofont.min.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
+  <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body class="sans-serif pv3 ph2 bg-light-red">
+  <div class="mw9 center">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
+

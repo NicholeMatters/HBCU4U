@@ -8,6 +8,7 @@ authors = ["repl.it user <replituser@example.com>"]
 python = "^3.8"
 Django = "^3.0.8"
 django-registration-redux = "^2.8"
+django-debug-toolbar = "^2.2"
 
 [tool.poetry.dev-dependencies]
 
