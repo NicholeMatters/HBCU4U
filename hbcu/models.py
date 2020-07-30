@@ -1,4 +1,6 @@
 from django.db import models
+#imports the states codes to avoid human error typos
+# from localflavor.us.models import USStateField
 
 # Create your models here.
 class College(models.Model):
@@ -13,3 +15,21 @@ class College(models.Model):
 
     def __str__(self):
       return f"{self.name} located in {self.city}, {self.state}"
+
+#Creates a user and creates a profile in admin
+class User(models.Model):
+    username = models.CharField(max_length=255)
+    firstname = models.CharField(max_length=255)
+    lastname = models.CharField(max_length=255)
+    email = models.TextField(null=True, blank=True)
+    city = models.CharField(max_length=255, null=True, blank=True)
+#imports the states codes to avoid human error typos
+    state = models.TextField(null=True, blank=True)
+
+
+    class Meta:
+      order_with_respect_to = 'lastname'
+
+    def __str__(self):
+      return f"{self.firstname} {self.lastname}, {self.email}"
+
