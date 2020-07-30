@@ -4,6 +4,7 @@ import os
 import sys
 
 
+
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     try:
@@ -20,9 +21,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-import csv
 
-with open('schools.csv','r') as csvfile:
-    reader= csv.reader(csvfile)
-    for row in reader:
-        print(row)

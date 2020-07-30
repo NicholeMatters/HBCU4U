@@ -21,6 +21,8 @@ from hbcu import views as hbcu_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hbcu_views.index, name='index'),
+    # path('hbcu/filter', hbcu_views.filter, name='filter'),
+    # path('hbcu/<int:pk>/hbcu_detail/', hbcu_views.hbcu_detail, name='hbcu_detail'),
 
 ]
 

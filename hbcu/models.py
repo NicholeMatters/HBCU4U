@@ -6,6 +6,7 @@ class College(models.Model):
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=255)
     logo = models.TextField(null=True, blank=True)
+    url = models.TextField(null=True, blank=True)
     
     class Meta:
       order_with_respect_to = 'name'
