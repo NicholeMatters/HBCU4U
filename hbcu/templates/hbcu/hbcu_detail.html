@@ -1,0 +1,17 @@
+
+
+{% extends 'base.html' %} 
+{% block content %}
+
+<button><a class="add" href="{% url 'index' %}">Home</a></button>
+
+      <div class="detail_page"> "{{ college.name }}" </div>
+      <img class="image" src="{{ college.url }}" >
+      <div class="artist_date"> Located in: {{ college.city }},{{ college.state }}
+
+
+
+{% endblock %}
+
+
+{% endblock %}

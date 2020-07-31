@@ -1,0 +1,219 @@
+.main {
+  display: flex;
+  text-align: center;
+  flex-flow: space-around;
+}
+
+section {
+  width: 30%;
+  font-size: 30px;
+}
+
+.mapicon {
+  position: fixed; 
+  bottom: 10px; 
+  right: 15px;
+}
+
+.first-letter {
+  font-size: 45px;
+  line-height: 70px;
+}
+
+.floater {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  /* background: red; */
+  height: 100px;
+  /* background-color: red; */
+  position: relative;
+  animation-name: Morehouse;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  
+  
+}
+
+@keyframes Morehouse {
+  /* moves right */
+  0%   { left:0px; top:0px;} 
+  25%  {left:200px; top:0px;};
+  50%  {background-color:rgb(208, 209, 216); left:200px; top:200px;};
+  /* moves left */
+  75%  {background-color:rgb(49, 46, 228); left:0px; top:200px;}
+  100% {background-color:rgb(226, 220, 220); left:0px; top:0px;}
+  width: 75%;
+}
+
+
+floater2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  height: 100px;
+  background-color: white;
+  position: sticky;
+  animation-name: Spelman;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+
+
+@keyframes Spelman {
+  /* moves right */
+  0%   {background-color:rgb(247, 235, 235); left:0px; top:0px;} 
+  25%  {background-color:rgb(126, 89, 211); left:200px; top:0px;};
+  50%  {background-color:blue; left:200px; top:200px;};
+  /* moves left */
+  75%  {background-color:rgb(225, 233, 225); left:0px; top:200px;}
+  100% {background-color:rgb(164, 202, 214); left:0px; top:0px;}
+}
+
+body {
+  background: rgb(143, 119, 99);
+  animation: pulse 5s infinite;
+}
+
+/* @keyframes pulse {
+  0% {
+    background-color: rgb(64, 67, 70);
+  }
+  100% {
+    background-color: rgb(211, 181, 9);
+  }
+} */
+
+h1 {
+  text-align: center;
+  color: black;
+  text-shadow: 3px 3px 5px white;
+}
+
+body {
+  background: rgb(247, 145, 12);
+}
+
+.select_filter {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+  color: black;
+}
+
+
+
+/* IMAGES on HOMEPAGE */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  width: 60%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color:white;
+  padding: 2px 16px;
+  color: rgb(228, 17, 17);
+  border-radius: 50%;
+  font-stretch: semi-expanded;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+/* Fainting Slideshow */
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}

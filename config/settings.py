@@ -25,8 +25,10 @@ SECRET_KEY = '#g)++o&u02*ujlrq=2!o)!cnwi+j@=+359=e%#@+1c1p32zlv1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ["hbcu4u--gabejunior1196.repl.co", "hbcu4u.gabejunior1196.repl.co", 'hbcu4u--nicholematters.repl.co', 'hbcu4u.nicholematters.repl.co', 'hbcu4u--hexagonstem.repl.co', 'hbcu4u.hexagonstem.repl.co'
 ]
+
 
 
 # Application definition
@@ -38,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    'hbcu',
+    'users',
 ]
 
 MIDDLEWARE = [
