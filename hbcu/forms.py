@@ -1,12 +1,18 @@
 from django import forms
-from .models import Contact,
+from .models import User
 
 
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ["username", "email"]
+        fields = [
+          "firstname", 
+          "lastname",
+          "email", 
+          "city",
+          "state",
+          ]
 
-class UserProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
+# class UserProfileForm(forms.ModelForm):
+#     class Meta:
+#         model = UserProfile
