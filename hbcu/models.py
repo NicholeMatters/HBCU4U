@@ -61,11 +61,23 @@ class Order(models.Model):
             ('Delivered', 'Delivered'),
             )
 
-    User = models.ForeignKey(User, null=True, on_delete= models.SET_NULL)
+    user = models.ForeignKey(User, null=True, on_delete= models.SET_NULL)
     product = models.ForeignKey(Product, null=True, on_delete= models.SET_NULL)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     status = models.CharField(max_length=200, null=True, choices= STATUS)
     # tags = models.ManyToManyField(Tag)
 
+class Major(models.Model):
+    username = models.CharField(max_length=255, null=True)
+    firstname = models.CharField(max_length=255, null=True)
+    lastname = models.CharField(max_length=255, null=True)
+    email = models.TextField(null=True, blank=True)
+    city = models.CharField(max_length=255, null=True, blank=True)
+#imports the states codes to avoid human error typos
+    state = models.TextField(null=True, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+    class Meta:
+      order_with_respect_to = 'lastname'
 
-this is a change
+    def __str__(self):
+      return f"{self.firstname} {self.lastname}, {self.email}"

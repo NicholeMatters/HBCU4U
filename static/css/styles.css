@@ -217,3 +217,42 @@ a {
   right: 10px;
   bottom: 10px;
 }
+
+/* js-customer-database-NicholeMatters-1 added from styles.css
+
+/* width: 250px;
+  height: 250px; */
+  //background-color: red;
+
+p{
+  display:flex;
+  flex-flow: row wrap; 
+  background-color: white;
+  text-align: center;
+}
+
+.display{
+  display:flex;
+  flex-flow: row wrap;
+  color:blueviolet;
+  font-size: 36px;
+  background-color: white;
+  text-align: center;
+}
+
+#customer-list{
+  display:flex;
+  flex-flow: row wrap; 
+  align-content: space-around;
+  width: 2000px;
+  border: black 2px dotted;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+//height: 250px;
+//position: absolute;
+
+
+
+
