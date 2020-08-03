@@ -1,9 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
+
+<title> Discover HBCUs </title>
+
+{% block content %}
 
 
 <h1> Header  </h1>
 
-<section >
+          {% for hbcu in hbcus %}
+          <div class="flex">
+          
+          <h2> "{{ hbcu.name }}" </h2>
+          <img src="{{ hbcu.logo }}" height='200' width='250'>
+          <h4>Located in: {{ hbcu.city }}
+          <p> {{ hbcu.state }}</p>
+        
+
+        <!-- hbcu detail page
+          <p><button class="button2"><a class="ablumsstuff" href="{% url 'hbcu_detail' pk=hbcu.pk %}">Album Details</a></button> -->
+
+        <!-- hbcu hyperlink
+          <button class="button2"><a class="ablumsstuff"
+           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a></button> -->
+
+          </h4>
+          
+          </div>
+
+          <br>
+          {% endfor %}
+
+
+<a href="{% url 'index' %}">Home</a>
+
+<!-- <section >
 Floaters
 
 <div><img src="https://bloximages.newyork1.vip.townnews.com/cbs46.com/content/tncms/assets/v3/editorial/6/b8/6b8caa83-d497-52c0-b873-3365497f76fc/5b74cd3e80dbd.image.jpg?resize=400%2C225" alt="Morehouse College"  name="Morehouse" style="width=50px;height=50px" class="floater"></div>
@@ -12,7 +43,7 @@ Floaters
 
 <p><img src="https://media-exp1.licdn.com/dms/image/C510BAQHNlWd3qb46KQ/company-logo_200_200/0?e=2159024400&v=beta&t=fDrTLKsLpEksXgCScawhpJ8lSq6d4ImXXo1PuUE9qpQ" alt="Clark Atlanta University"  name="Clark Atlanta University" class="floater"></p>
 
-</section>
+</section> -->
 
   
 <!-- MAJORS -->
@@ -40,3 +71,6 @@ Floaters
 </select></center>
 
 
+
+
+{% endblock %}

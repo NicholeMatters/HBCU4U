@@ -1,27 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
 
+<title>HBCU 4 U</title>
+
+{% block content %}
 
 <!-- <script src="{% static 'js/schools.js' %}" type="module"></script>
 <script src="{% static 'js/main.js' %}" type='module' defer></script> -->
 
 <h1> Discover the HBCU 4 U</h1>
-
-
-
-
-<!-- Added the next three lines -->
-<h1> Customer Database </h1>
-
-<section id="customer">
-	<!-- took off list and class="tc "center pl0 ml0 mw6 ba b--light-silver br2 -->
-	<div id="customer-list">
-	</div>
-	<img></img>
-  </section>
-
-
+<a class="filter" href="{% url 'filter' %}">List Colleges</a>
 
 <a href="hbcu/templates/hbcu/hbcugrads.html">|  HBCU Graduates</a>
 
@@ -36,6 +24,9 @@
 
 </section>
 <br>
+
+
+
 <!-- Container for the image gallery -->
 
 
