@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import College, User
 from .forms import UserForm
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
@@ -19,16 +20,10 @@ def filter(request):
 #   school = get_object_or_404(College, pk=pk)
 #   return render(request, "hbcu/hbcu_detail.html", {'hbcu':school})
 
-# def add_user(request):
-#     if request.method == "POST":
-#         uform = UserForm(data = request.POST)
-#         # pform = UserProfileForm(data = request.POST)
-#         if uform.is_valid():
-#         # and pform.is_valid():
-#             user = uform.save()
-#             # profile = pform.save(commit = False)
-#             profile.user = user
-#             profile.save()
+
+@login_required
+def home(request):
+    return render(request, 'index.html')
 
 def signup(request):
     if request.method == 'POST':
