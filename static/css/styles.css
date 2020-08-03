@@ -260,6 +260,11 @@ p{
 a {
   font-size:14px;
 }
+a.add {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
 .everything {
   display: flex;
   flex-wrap: wrap; 
@@ -284,6 +289,7 @@ a {
 }
 img.list {
   border-radius: 75%;
+  background: white;
 }
 h2 {
   text-align: center;
@@ -312,4 +318,15 @@ h4 {
   font-family:Goudy Old Style;
   border-radius: 75%;
 
+}
+/* Detail Page  */
+.detail {
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  border: 2px solid rgb(128, 124, 106);
+  width: 90%;
+  height: 90%;
 }

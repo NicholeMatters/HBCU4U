@@ -4,16 +4,21 @@
 <title> HBCU Details </title>
 
 {% block content %}
-<a href="{% url 'index' %}">Home</a>
-<a class="filter" href="{% url 'filter' %}">List Colleges</a>
-<a href="{% url 'map' %}">US Map</a>
+<style>
+  body {background-color: darkred;}
+</style>
+<a class="add" href="{% url 'index' %}">Home</a>
+<a class="add" href="{% url 'filter' %}">List Colleges</a>
+<a class="add" href="{% url 'map' %}">US Map</a>
+<a class="add" href="{% url 'index' %}">Home</a>
 
-<button><a class="add" href="{% url 'index' %}">Home</a></button>
+  <div class="detail">
+      <img class="image" src="{{ colleges.campus_image }}" height='300' width='300'>
 
-      <div class="detail_page"> "{{ college.name }}" </div>
-      <img class="image" src="{{ college.url }}" >
-      <div class="artist_date"> Located in: {{ college.city }},{{ college.state }}
-
+      <div class="detail_page"> "{{ colleges.name }}" </div>
+      <img class="detail_logo" src="{{ colleges.logo }}" height='150' width='150'>
+      <div class="artist_date"> Located in: {{ colleges.city }},{{ colleges.state }}
+  </div>
 
 
 {% endblock %}
