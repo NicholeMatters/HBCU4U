@@ -8,7 +8,7 @@ def index(request):
   return render(request, 'hbcu/index.html', context={'hbcu':all_colleges})
 
 def listColleges(request):
-  colleges = College.objects.all()
+  colleges = College.objects.all().order_by('name')
   return render(request, 'hbcu/filter.html', context={'hbcu':colleges})
 
 # def hbcu_detail(request, pk):

@@ -8,15 +8,14 @@
 
 <h1> Header  </h1>
 
-          {% for hbcu in hbcus %}
+          {% for college in colleges %}
           <div class="flex">
           
-          <h2> "{{ hbcu.name }}" </h2>
-          <img src="{{ hbcu.logo }}" height='200' width='250'>
-          <h4>Located in: {{ hbcu.city }}
-          <p> {{ hbcu.state }}</p>
+          <h2> "{{ college.name }}" </h2>
+          <img src="{{ college.logo }}" height='200' width='250'>
+          <h4>Located in: {{ college.city }}
+          <p> {{ college.state }}</p>
         
-
         <!-- hbcu detail page
           <p><button class="button2"><a class="ablumsstuff" href="{% url 'hbcu_detail' pk=hbcu.pk %}">Album Details</a></button> -->
 

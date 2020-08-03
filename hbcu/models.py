@@ -1,14 +1,22 @@
 from django.db import models
+from django.core.validators import validate_comma_separated_integer_list
 #imports the states codes to avoid human error typos
 # from localflavor.us.models import USStateField
 
 # Create your models here.
 class College(models.Model):
-    name = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
-    state = models.CharField(max_length=255)
-    logo = models.TextField(null=True, blank=True)
-    url = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=255, default='')
+    url = models.URLField(null=True, blank=True, default='')
+    major = models.CharField(validators=[validate_comma_separated_integer_list], max_length=1000, default='')
+    degree = models.CharField(max_length=255, default='')
+    city = models.CharField(max_length=255, default='')
+    state = models.CharField(max_length=255, default='')
+    technology = models.CharField(max_length=500, default='')
+    financial_aid = models.CharField(max_length=255, default='')
+    logo = models.ImageField(max_length=255, null=True, blank=True, default='')
+    campus_image = models.ImageField(max_length=255, null=True, blank=True, default='')
+    virtual_tour = models.CharField(max_length=255, default='')
+    
     
     class Meta:
       order_with_respect_to = 'name'
