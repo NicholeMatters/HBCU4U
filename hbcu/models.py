@@ -1,21 +1,20 @@
 from django.db import models
-from django.core.validators import validate_comma_separated_integer_list
 #imports the states codes to avoid human error typos
 # from localflavor.us.models import USStateField
 
 # Create your models here.
 class College(models.Model):
-    name = models.CharField(max_length=255, default='')
+    name = models.CharField(max_length=3000, default='')
     url = models.URLField(null=True, blank=True, default='')
-    major = models.CharField(validators=[validate_comma_separated_integer_list], max_length=1000, default='')
-    degree = models.CharField(max_length=255, default='')
-    city = models.CharField(max_length=255, default='')
-    state = models.CharField(max_length=255, default='')
+    major = models.CharField( max_length=3000, default='')
+    degree = models.CharField(max_length=3000, default='')
+    city = models.CharField(max_length=3000, default='')
+    state = models.CharField(max_length=3000, default='')
     technology = models.CharField(max_length=500, default='')
-    financial_aid = models.CharField(max_length=255, default='')
-    logo = models.ImageField(max_length=255, null=True, blank=True, default='')
-    campus_image = models.ImageField(max_length=255, null=True, blank=True, default='')
-    virtual_tour = models.CharField(max_length=255, default='')
+    financial_aid = models.CharField(max_length=3000, default='')
+    logo = models.ImageField(max_length=3000, null=True, blank=True, default='')
+    campus_image = models.ImageField(max_length=3000, null=True, blank=True, default='')
+    virtual_tour = models.CharField(max_length=3000, default='')
     
     
     class Meta:
@@ -26,11 +25,11 @@ class College(models.Model):
 
 #Creates a user and creates a profile in admin
 class User(models.Model):
-    username = models.CharField(max_length=255, null=True)
-    firstname = models.CharField(max_length=255, null=True)
-    lastname = models.CharField(max_length=255, null=True)
+    username = models.CharField(max_length=3000, null=True)
+    firstname = models.CharField(max_length=3000, null=True)
+    lastname = models.CharField(max_length=3000, null=True)
     email = models.TextField(null=True, blank=True)
-    city = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=3000, null=True, blank=True)
 #imports the states codes to avoid human error typos
     state = models.TextField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
@@ -76,11 +75,11 @@ class Order(models.Model):
     # tags = models.ManyToManyField(Tag)
 
 class Major(models.Model):
-    username = models.CharField(max_length=255, null=True)
-    firstname = models.CharField(max_length=255, null=True)
-    lastname = models.CharField(max_length=255, null=True)
+    username = models.CharField(max_length=3000, null=True)
+    firstname = models.CharField(max_length=3000, null=True)
+    lastname = models.CharField(max_length=3000, null=True)
     email = models.TextField(null=True, blank=True)
-    city = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=3000, null=True, blank=True)
 #imports the states codes to avoid human error typos
     state = models.TextField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
