@@ -25,7 +25,10 @@ urlpatterns = [
     path('', hbcu_views.index, name='index'),
     # path('hbcu/filter', hbcu_views.filter, name='filter'),
     # path('hbcu/<int:pk>/hbcu_detail/', hbcu_views.hbcu_detail, name='hbcu_detail'),
-
+    url(r'^$', hbcu_views.home, name='home'),
+    # url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    # url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
+    url(r'^signup/$', hbcu_views.signup, name='signup'),
 ]
 
 if settings.DEBUG:
@@ -35,9 +38,6 @@ if settings.DEBUG:
 
         # For django versions before 2.0:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
-        url(r'^$', hbcu_views.home, name='home'),
-        url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
-        url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
-        url(r'^signup/$', hbcu_views.signup, name='signup'),
+        
     ] + urlpatterns
 
