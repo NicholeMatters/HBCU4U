@@ -18,6 +18,8 @@ from django.conf import settings
 from django.urls import include, path
 from hbcu import views as hbcu_views
 
+from django.conf.urls import url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hbcu_views.index, name='index'),
