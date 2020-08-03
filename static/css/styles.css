@@ -5,7 +5,6 @@
 }
 
 
-
 section {
   width: 30%;
   font-size: 30px;
@@ -252,9 +251,65 @@ p{
   background-color: lightgrey;
 }
 
-//height: 250px;
-//position: absolute;
 
+/* List of Colleges Page */
+.subtitle {
+  font-size:20px;
+  color: white;
+}
+a {
+  font-size:14px;
+}
+.everything {
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  border: 2px solid rgb(128, 124, 106);
+  width: 300px;
+  /* height: 100px; */
+  border-radius: 75%;
+  background:rgb(218, 6, 6);
+  text-align: justify;
+  text-justify: inter-word;
+  box-shadow: 0 0 5px 5px #141414;
+}
+img.list {
+  border-radius: 75%;
+}
+h2 {
+  text-align: center;
+  color: rgb(27, 31, 28);
+  background: white;
+  border-radius: 10%;
+  font-size: 30px;
+  /* width: 400px; */
+  word-spacing: 5px;
+  font-family: "Architects Daughter";
+  text-shadow: 2px 1px #3a6e46;
+  
+}
 
+h4 {
+  text-align: center;
+  color:  rgb(134, 121, 134);
+  /* background: rgb(236, 146, 113); */
+  /* border-radius: 5%; */
+  font-size: 18px;
+  /* width: 350px;
+  height: 125px; */
+  align-items: center;
+  word-spacing: 5px;
+  line-height: .75;
+  font-family:Goudy Old Style;
+  border-radius: 75%;
 
-
+}

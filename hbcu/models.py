@@ -12,8 +12,8 @@ class College(models.Model):
     state = models.CharField(max_length=3000, default='')
     technology = models.CharField(max_length=500, default='')
     financial_aid = models.CharField(max_length=3000, default='')
-    logo = models.ImageField(max_length=3000, null=True, blank=True, default='')
-    campus_image = models.ImageField(max_length=3000, null=True, blank=True, default='')
+    logo = models.TextField(null=True, blank=True)
+    campus_image = models.TextField(null=True, blank=True)
     virtual_tour = models.CharField(max_length=3000, default='')
     
     

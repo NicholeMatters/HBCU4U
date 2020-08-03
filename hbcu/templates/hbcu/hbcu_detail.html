@@ -1,5 +1,12 @@
 {% extends 'base.html' %} 
+{% load static %}
+
+<title> HBCU Details </title>
+
 {% block content %}
+<a href="{% url 'index' %}">Home</a>
+<a class="filter" href="{% url 'filter' %}">List Colleges</a>
+<a href="{% url 'map' %}">US Map</a>
 
 <button><a class="add" href="{% url 'index' %}">Home</a></button>
 
@@ -12,4 +19,4 @@
 {% endblock %}
 
 
-{% endblock %}
+

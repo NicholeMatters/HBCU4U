@@ -4,35 +4,35 @@
 <title> Discover HBCUs </title>
 
 {% block content %}
+<style>
+  body {background-color: darkgrey;}
+</style>
 
+<h1> List of Historically Black Colleges and Universities  </h1>
+<a class="filter" href="{% url 'index' %}">Home</a>
+<a class="filter" href="{% url 'map' %}">US Map</a>
 
-<h1> Header  </h1>
-
+<div class="everything">
           {% for college in colleges %}
           <div class="flex">
           
+          <img class="list" src="{{ college.logo }}" height='150' width='150'>
           <h2> "{{ college.name }}" </h2>
-          <img src="{{ college.logo }}" height='200' width='250'>
-          <h4>Located in: {{ college.city }}
-          <p> {{ college.state }}</p>
-        
-        <!-- hbcu detail page
-          <p><button class="button2"><a class="ablumsstuff" href="{% url 'hbcu_detail' pk=hbcu.pk %}">Album Details</a></button> -->
-
-        <!-- hbcu hyperlink
-          <button class="button2"><a class="ablumsstuff"
-           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a></button> -->
-
-          </h4>
+          <h4>Located in: </h4><br>
+          <p class="subtitle">{{ college.city }} , {{ college.state }}</p>
           
+          
+          <div>
+            <a href="{{ college.url }}" > Website </a>
+            <a class="ablumsstuff" href="{% url 'hbcu_detail' pk=college.pk %}">| More Details</a>
+          </div>
+
           </div>
 
           <br>
           {% endfor %}
 
-
-<a href="{% url 'index' %}">Home</a>
-
+</div>
 <!-- <section >
 Floaters
 
