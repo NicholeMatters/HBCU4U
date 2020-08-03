@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import College, User
-from .forms import UserForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
