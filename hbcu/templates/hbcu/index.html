@@ -1,26 +1,47 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<script src="script.js"></script>
-  
+
+
+<!-- <script src="{% static 'js/schools.js' %}" type="module"></script>
+<script src="{% static 'js/main.js' %}" type='module' defer></script> -->
+
 <h1> Discover the HBCU 4 U</h1>
+
+
+
+
+<!-- Added the next three lines -->
+<h1> Customer Database </h1>
+
+<section id="customer">
+	<!-- took off list and class="tc "center pl0 ml0 mw6 ba b--light-silver br2 -->
+	<div id="customer-list">
+	</div>
+	<img></img>
+  </section>
+
+
 
 <a href="hbcu/templates/hbcu/hbcugrads.html">|  HBCU Graduates</a>
 
 <div class="main">
+ 
+
 <section class="intro">
 
 <p> <span class="first-letter">T </span> he HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
 
 <p><span class="first-letter">W</span> ithin this app you can us the <a href="hbcu/filter.html">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
 
-
 </section>
 <br>
 <!-- Container for the image gallery -->
+
+
+
+
 <div class="container">
-
-
 
 
   <!-- Full-width images with number text -->
@@ -88,10 +109,7 @@
   </div>
 </div>
 
-
 </div>
-
-<a href="hbcu/templates/hbcu/map.html">Map<img class="mapicon" src="map.png" alt="Map of HBCUs"></a>
 
 
 
