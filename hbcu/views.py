@@ -35,4 +35,4 @@ def signup(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'hbcu/signup.html', {'form': form})
