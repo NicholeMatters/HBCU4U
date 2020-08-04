@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+
+<button><a class="add" href="{% url 'index' %}">Sign up</a></button>
+
   <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
