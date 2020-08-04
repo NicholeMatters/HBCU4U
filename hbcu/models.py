@@ -22,8 +22,6 @@ class College(models.Model):
       return f"{self.name} located in {self.city}, {self.state}"
 
 
-
-
 class Profile(models.Model):
     user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
