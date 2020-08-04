@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-<title>HBCU 4 U</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="css/bootstrap-theme.min.css"></script>
-{% block content %}
 
-<!-- <script src="{% static 'js/schools.js' %}" type="module"></script>
-<script src="{% static 'js/main.js' %}" type='module' defer></script> -->
+{% block content %}
+<title>HBCU 4 U</title>
+
 
 <h1> Discover the HBCU 4 U</h1>
 <a class="filter" href="{% url 'filter' %}">List Colleges</a>
@@ -26,39 +23,79 @@
 
   </section>
   <br>
-
-<!-- Container for the image gallery -->
-  <div class="container">
-     <div class="row">
-       <div class="col-sm-12">
-<!-- the classes link it to bootstrap. data-ride tells the slides to start moving when the page opens -->
-         <div id="my-slider" class="carousel slide" data-ride="carousel"> 
-<!-- indicators dot nav -->
-
-
-<!-- wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-    <!-- active should only be on the first slide; it will always start on that slide -->
-          <div class="item active">
-            <img src="https://www.pngfind.com/pngs/m/87-877394_al-ag-mech-univ-logo-alabama-a-m.png" alt="Alabama A&M University"/>
-          <div class="carousel-caption">
-            <h1>Alabama A&M University<h1>
-
-  </div>
+<!-- Carosuel take 11 -->
+<div id="container">
+	<div class="css-slider-mask">
+		<ul class="css-slider">
+			<li class="slide" tabindex="1" id="1">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Alabama A&M</p>
+						<span class="slide-gfx" id="s1">
+							<img src="https://speakinoutweeklynews.net/wp-content/uploads/2019/11/680x380_AAMUsecuresfunding_Campus_maxresdefault.jpg" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="2">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Alabama State University</p>
+						<span class="slide-gfx" id="s2">
+							<img src="https://lh3.googleusercontent.com/proxy/RKAtKsiv2DlnQPLJaN_3ndYFQm2A6hHqmF7s4prmf-tq4SvAV8WsBIhYa_rAzLxaCtMWReAywm6BcUp4ZtBJFvlcLbXaXjOfmuK-owc" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="3">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Amazing snorkling site</p>
+						<span class="slide-gfx" id="s3">
+							<img src="http://www.virtualinkdesign.com/images/slide-img3.jpg" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="4">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Bethune-Cookman University</p>
+						<span class="slide-gfx" id="s4">
+							<img src="https://i1.wp.com/www.wmfe.org/wp-content/uploads/2016/02/060413-national-hbcu-review-bethune-cookman.jpg?fit=743%2C495&ssl=1" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="5">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Clark Atlanta University</p>
+						<span class="slide-gfx" id="s5">
+							<img src="https://www.blackpast.org/wp-content/uploads/M-WEB-DuBois-bust-by-Ayokunle-Odeleye-at-Clark-Atlanta-University-Wikipedia.jpg" />
+						</span>
+					</span>
+				</span>
+			</li>
+		</ul>
+	</div>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<defs>
+			<linearGradient gradientUnits="objectBoundingBox" id="gradient" x2="0" y2="1">
+				<stop stop-color="rgba(0,255,255,0.00)" offset="0.0"/>
+				<stop stop-color="rgba(0,255,255,0.30)" offset="0.5"/>
+				<stop stop-color="rgba(0,255,255,1.00)" offset="1.0"/>
+			</linearGradient>
+			<radialGradient id="gradient2">
+				<stop offset="10%" stop-color="rgba(255,255,255,1)"/>
+				<stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+			</radialGradient>
+			<mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
+				<ellipse fill="url(#gradient2)" cx="0" cy="1" rx="1" ry="0.8"/>
+				<ellipse fill="url(#gradient2)" cx="1" cy="1" rx="1" ry="0.8"/>
+			</mask>
+		</defs>
+	</svg>
+</div>
+				
 
 </div>
 
-<!-- left and right buttons called: control next and prev buttons -->
 
-
-      </div>
-
-
-    </div>  
-  </div>
-</div>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 
 {% endblock %}

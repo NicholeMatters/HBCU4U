@@ -3,7 +3,11 @@
   text-align: center;
   flex-flow: space-around;
 }
-
+h1 {
+  text-align: center;
+  color: black;
+  text-shadow: 3px 3px 5px white;
+}
 
 section {
   width: 30%;
@@ -21,214 +25,19 @@ section {
   line-height: 70px;
 }
 
-.floater {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  /* background: red; */
-  height: 100px;
-  /* background-color: red; */
-  position: relative;
-  animation-name: Morehouse;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  
-  
-}
-
-@keyframes Morehouse {
-  /* moves right */
-  0%   { left:0px; top:0px;} 
-  25%  {left:200px; top:0px;};
-  50%  {background-color:rgb(208, 209, 216); left:200px; top:200px;};
-  /* moves left */
-  75%  {background-color:rgb(49, 46, 228); left:0px; top:200px;}
-  100% {background-color:rgb(226, 220, 220); left:0px; top:0px;}
-  width: 75%;
-}
-
-
-floater2 {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  height: 100px;
-  background-color: white;
-  position: sticky;
-  animation-name: Spelman;
-  animation-duration: 4s;
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
-}
-
-
-
-@keyframes Spelman {
-  /* moves right */
-  0%   {background-color:rgb(247, 235, 235); left:0px; top:0px;} 
-  25%  {background-color:rgb(126, 89, 211); left:200px; top:0px;};
-  50%  {background-color:blue; left:200px; top:200px;};
-  /* moves left */
-  75%  {background-color:rgb(225, 233, 225); left:0px; top:200px;}
-  100% {background-color:rgb(164, 202, 214); left:0px; top:0px;}
-}
-
-body {
-  background: rgb(143, 119, 99);
-  animation: pulse 5s infinite;
-}
-
-/* @keyframes pulse {
-  0% {
-    background-color: rgb(64, 67, 70);
-  }
-  100% {
-    background-color: rgb(211, 181, 9);
-  }
-} */
-
-h1 {
-  text-align: center;
-  color: black;
-  text-shadow: 3px 3px 5px white;
-}
-
 body {
   background: rgb(247, 145, 12);
 }
-
-.select_filter {
-  text-align: center;
-}
-
 a {
   text-align: center;
   color: black;
 }
 
 
-
-/* IMAGES on HOMEPAGE */
-
-* {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-  width: 60%;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color:white;
-  padding: 2px 16px;
-  color: rgb(228, 17, 17);
-  border-radius: 50%;
-  font-stretch: semi-expanded;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-
-/* Fainting Slideshow */
-#slideshow {
-  margin: 80px auto;
-  position: relative;
-  width: 240px;
-  height: 240px;
-  padding: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
-#slideshow > div {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-}
-
-/* js-customer-database-NicholeMatters-1 added from styles.css
-
-/* width: 250px;
-  height: 250px; */
-  //background-color: red;
-
 p{
   display:flex;
   flex-flow: row wrap; 
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
 }
 
@@ -331,13 +140,389 @@ h4 {
   height: 95%;
 }
 
-.mapicon {
-  position: fixed; 
-  bottom: 10px; 
-  right: 15px;
-}
 img.detail_logo {
   position: fixed; 
   bottom: 10px; 
   right: 15px;
 }
+
+/* Search Bar */
+/* Add a black background color to the top navigation bar */
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+  width: 100%;
+  position: fixed; /* Fixed topbar (stay in place on scroll) */
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: rgb(112, 72, 18);
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+
+/* Carousel */
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+/* size of images */
+#container {
+	width: 40%;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.slide-gfx img {
+	border-radius: 20px;
+	box-shadow: 0 0 75px rgba(255,255,255,1);
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.css-slider-mask {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.css-slider {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: none;
+	width: 96%;
+	height: 100%;
+	margin-left: 2%;
+	z-index: 1;
+}
+
+.css-slider {
+	position: relative;
+	display: none;
+}
+
+body:nth-child(2) .css-slider {
+	display: block;
+}
+
+.css-slider .slide {
+	display: block;
+	position: absolute;
+	left: 40px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding-left: 0;
+	padding-right: 40px;
+	z-index: 100;
+	outline: 0;
+}
+
+.css-slider .slide {
+	background: url('http://www.virtualinkdesign.com/images/arrow-right.svg') no-repeat right center;
+	background-size: 25px auto;
+}
+
+.css-slider .slide:hover {
+	background-image: url('http://www.virtualinkdesign.com/images/arrow-right-hover.svg');
+	cursor: pointer;
+}
+
+.css-slider .slide:target,
+.css-slider .slide:target:hover,
+.css-slider .slide:focus,
+.css-slider .slide:focus:hover,
+.css-slider .slide:last-child,
+.css-slider .slide:last-child:hover {
+	left: 40px;
+	right: 40px;
+	padding-left: 0;
+	padding-right: 0;
+	background: transparent;
+	z-index: 101;
+	cursor: default;
+}
+
+.css-slider .slide:target ~ .slide,
+.css-slider .slide:focus ~ .slide {
+	padding-left: 40px;
+	padding-right: 0;
+	left: 0;
+	right: 40px;
+}
+
+.css-slider .slide:target ~ .slide,
+.css-slider .slide:focus ~ .slide {
+	background: url('http://www.virtualinkdesign.com/images/arrow-left.svg') no-repeat left center;
+	background-size: 25px auto;
+}
+
+.css-slider .slide:target ~ .slide:hover,
+.css-slider .slide:focus ~ .slide:hover {
+	background-image: url('http://www.virtualinkdesign.com/images/arrow-left-hover.svg');
+}
+
+.css-slider .slide .slide-outer {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.css-slider .slide .slide-outer .slide-inner {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.css-slider .slide .slide-outer .slide-inner .slide-gfx {
+	position: relative;
+	display: inline-block;
+}
+
+.css-slider .slide:target .slide-outer,
+.css-slider .slide:focus .slide-outer,
+.css-slider .slide:last-child .slide-outer {
+	display: block;
+	display: table;
+}
+
+.css-slider .slide:target ~ .slide:last-child,
+.css-slider .slide:focus ~ .slide:last-child {
+	cursor: pointer;
+}
+
+.css-slider .slide:target ~ .slide:last-child .slide-outer,
+.css-slider .slide:focus ~ .slide:last-child .slide-outer {
+	display: none;
+}
+
+.css-slider .slide .slide-outer .slide-gfx {
+	z-index: 102;
+	text-align: left;
+}
+
+.css-slider .slide:target ~ .slide:nth-child(1),
+.css-slider .slide:focus  ~ .slide:nth-child(1) { z-index:99; }
+.css-slider .slide:target ~ .slide:nth-child(2),
+.css-slider .slide:focus  ~ .slide:nth-child(2) { z-index:98; }
+.css-slider .slide:target ~ .slide:nth-child(3),
+.css-slider .slide:focus  ~ .slide:nth-child(3) { z-index:97; }
+.css-slider .slide:target ~ .slide:nth-child(4),
+.css-slider .slide:focus  ~ .slide:nth-child(4) { z-index:96; }
+.css-slider .slide:target ~ .slide:nth-child(5),
+.css-slider .slide:focus  ~ .slide:nth-child(5) { z-index:95; }
+
+.css-slider .slide .slide-outer {
+	display: block !important;
+	display: table !important;
+}
+
+.css-slider .slide .slide-outer {
+	-webkit-transition-property:        opacity, -wekbit-transform;
+	-moz-transition-property:           opacity, -moz-transform;
+	-ms-transition-property:            opacity, -ms-transform;
+	-o-transition-property:             opacity, -o-transform;
+	transition-property:                opacity, transform;
+	-webkit-transition-duration:        2s;
+	-moz-transition-duration:           2s;
+	-ms-transition-duration:            2s;
+	-o-transition-duration:             2s;
+	transition-duration:                2s;
+	-webkit-transition-timing-function: ease;
+	-moz-transition-timing-function:    ease;
+	-ms-transition-timing-function:     ease;
+	-o-transition-timing-function:      ease;
+	transition-timing-function:         ease;
+}
+
+.css-slider .slide:target ~ .slide .slide-outer,
+.css-slider .slide:target ~ .slide:last-child .slide-outer,
+.css-slider .slide:focus ~ .slide .slide-outer,
+.css-slider .slide:focus ~ .slide:last-child .slide-outer {
+	-webkit-transform: translate(-150%,0); -webkit-transform: translate3D(-150%,0,0);
+	-moz-transform:    translate(-150%,0); -moz-transform:    translate3D(-150%,0,0);
+	-ms-transform:     translate(-150%,0); -ms-transform:     translate3D(-150%,0,0);
+	-o-transform:      translate(-150%,0); -o-transform:      translate3D(-150%,0,0);
+	transform:         translate(-150%,0); transform:         translate3D(-150%,0,0);
+}
+
+.css-slider .slide .slide-outer {
+	-webkit-transform: translate(200%,0); -webkit-transform: translate3D(200%,0,0);
+	-moz-transform:    translate(200%,0); -moz-transform:    translate3D(200%,0,0);
+	-ms-transform:     translate(200%,0); -ms-transform:     translate3D(200%,0,0);
+	-o-transform:      translate(200%,0); -o-transform:      translate3D(200%,0,0);
+	transform:         translate(200%,0); transform:         translate3D(200%,0,0);
+}
+
+.css-slider .slide:target .slide-outer,
+.css-slider .slide:focus .slide-outer,
+.css-slider .slide:last-child .slide-outer {
+	-webkit-transform: translate(0,0); -webkit-transform: translate3D(0,0,0);
+	-moz-transform:    translate(0,0); -moz-transform:    translate3D(0,0,0);
+	-ms-transform:     translate(0,0); -ms-transform:     translate3D(0,0,0);
+	-o-transform:      translate(0,0); -o-transform:      translate3D(0,0,0);
+	transform:         translate(0,0); transform:         translate3D(0,0,0);
+}
+
+.css-slider .slide {
+	-webkit-transition-property:        left, padding-left;
+	-moz-transition-property:           left, padding-left;
+	-ms-transition-property:            left, padding-left;
+	-o-transition-property:             left, padding-left;
+	transition-property:                left, padding-left;
+	-webkit-transition-duration:        1s;
+	-moz-transition-duration:           1s;
+	-ms-transition-duration:            1s;
+	-o-transition-duration:             1s;
+	transition-duration:                1s;
+	-webkit-transition-timing-function: ease;
+	-moz-transition-timing-function:    ease;
+	-ms-transition-timing-function:     ease;
+	-o-transition-timing-function:      ease;
+	transition-timing-function:         ease;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.css-slider .slide-inner {
+	-webkit-animation:           css-slideshow-fade-in 2s;
+	-moz-animation:              css-slideshow-fade-in 2s;
+	-ms-animation:               css-slideshow-fade-in 2s;
+	-o-animation:                css-slideshow-fade-in 2s;
+	animation:                   css-slideshow-fade-in 2s;
+	-wekbit-animation-delay:     1s;
+	-moz-animation-delay:        1s;
+	-ms-animation-delay:         1s;
+	-o-animation-delay:          1s;
+	animation-delay:             1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:    forwards;
+	-ms-animation-fill-mode:     forwards;
+	-o-animation-fill-mode:      forwards;
+	animation-fill-mode:         forwards;
+	opacity: 0;
+}
+
+.css-slider .slide-gfx {
+	-webkit-animation:           css-slideshow-fade-in 2s;
+	-moz-animation:              css-slideshow-fade-in 2s;
+	-ms-animation:               css-slideshow-fade-in 2s;
+	-o-animation:                css-slideshow-fade-in 2s;
+	animation:                   css-slideshow-fade-in 2s;
+	-wekbit-animation-delay:     1s;
+	-moz-animation-delay:        1s;
+	-ms-animation-delay:         1s;
+	-o-animation-delay:          1s;
+	animation-delay:             1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:    forwards;
+	-ms-animation-fill-mode:     forwards;
+	-o-animation-fill-mode:      forwards;
+	animation-fill-mode:         forwards;
+	display: inline-block !important;
+	opacity: 0;
+}
+
+@-webkit-keyframes css-slideshow-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@-moz-keyframes css-slideshow-fade-in    { from { opacity: 0; } to { opacity: 1; } }
+@-ms-keyframes css-slideshow-fade-in     { from { opacity: 0; } to { opacity: 1; } }
+@-o-keyframes css-slideshow-fade-in      { from { opacity: 0; } to { opacity: 1; } }
+@keyframes css-slideshow-fade-in         { from { opacity: 0; } to { opacity: 1; } }
+
+.css-slider .slide-gfx > *:first-child {
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.9, transparent), to(white));
+}
+
+.css-slider .slide-gfx:after {
+	content: '';
+	position: absolute;
+	mask: url("#mask");
+	display: block;
+	transform: scaleY(-1);
+	opacity: 0.5;
+	top: 100%;
+	width: 100%;
+	height: 60px;
+	z-index: 200;
+	margin-top: 2px;
+}
+
+.css-slider #s1:after { background: -moz-element(#s1) no-repeat left bottom; }
+.css-slider #s2:after { background: -moz-element(#s2) no-repeat left bottom; }
+.css-slider #s3:after { background: -moz-element(#s3) no-repeat left bottom; }
+.css-slider #s4:after { background: -moz-element(#s4) no-repeat left bottom; }
+.css-slider #s5:after { background: -moz-element(#s5) no-repeat left bottom; }
