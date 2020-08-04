@@ -4,6 +4,7 @@ from .models import College
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+User = settings.AUTH_USER_MODEL
 
 # Create your views here.
 def index(request):
