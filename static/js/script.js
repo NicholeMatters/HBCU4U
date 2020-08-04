@@ -1,47 +1,23 @@
-// IMAGES ON HOMEPAGE
+//Homepage
 
-var slideIndex = 1;
-showSlides(slideIndex);
+// Initialize all elements with carousel class.
+  <script>
+a = 0;
+var move = 255;
+var slideNum = document.getElementsByClassName("item").length;
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+left_button.onclick = function () {
+    a = (a - 1) % slideNum; // Move back a slide   
+    if( a == -1 ) a = slideNum - 1; // If we move past the first slide, move to the last
+    ruller.style.left = (a*move) + 'px';
+    console.log(a*move); // Consoles the value we want 
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+right_button.onclick = function () {
+    a = (a + 1) % slideNum; // Moves to the next slide, will move to the first when need due to %
+    ruller.style.left = (a*move) + 'px';
+    console.log(a*move); 
 }
+    </script>
 
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-//   var dots = document.getElementsByClassName("demo");
-//   var captionText = document.getElementById("caption");
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-//   captionText.innerHTML = dots[slideIndex-1].alt;
-// }
-
-
-// Fainting Pictures Slideshow
-
-$("#slideshow > div:gt(0)").hide();
-
-setInterval(function() {
-  $('#slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-}, 3000);
-
+    

@@ -13,12 +13,30 @@
 <a class="add" href="{% url 'index' %}">Home</a>
 
   <div class="detail">
-      <img class="image" src="{{ colleges.campus_image }}" height='300' width='300'>
+      <img class="image" src="{{ colleges.campus_image }}" height='80%' >
 
       <div class="detail_page"> "{{ colleges.name }}" </div>
-      <img class="detail_logo" src="{{ colleges.logo }}" height='150' width='150'>
+      {{ colleges.history }}
+      
       <div class="artist_date"> Located in: {{ colleges.city }},{{ colleges.state }}
+
+  <!-- MAJORS -->
+        <h2> {{ colleges.name }} offers the following majors: {{ colleges.major }}
+          <br>
+  <!-- FINANCIAL AID  -->
+        <h2> Need financial aid?</h2>
+        <h3> Check out the scholarships: <h3>
+          {{ colleges.financial_aid }}
+
+  <!-- VIRTUAL TOUR -->
+        <h2>If you can't get to the campus, vist the campus virtual 
+        <a href="{{ colleges.virtual_tour }}" > here </a></h2>
   </div>
+  <!-- <footer> <img class="detail_logo" src="{{ colleges.logo }}" width:'50px'height='50px'>
+  </footer> -->
+
+
+<!-- <a href="{% url 'map' %}"><img class="mapicon" src="images/map.png" alt="Map of HBCUs"></a> -->
 
 
 {% endblock %}

@@ -15,7 +15,7 @@ class College(models.Model):
     logo = models.TextField(null=True, blank=True)
     campus_image = models.TextField(null=True, blank=True)
     virtual_tour = models.CharField(max_length=3000, default='')
-    
+    history = models.CharField( max_length=3000, default='')
     
     class Meta:
       order_with_respect_to = 'name'
