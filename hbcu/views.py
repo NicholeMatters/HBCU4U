@@ -4,7 +4,7 @@ from .models import College
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-User = settings.AUTH_USER_MODEL
+
 
 # Create your views here.
 def index(request):
@@ -27,6 +27,7 @@ def home(request):
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
+         
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
