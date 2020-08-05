@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 
 CustomUser = get_user_model()
 
-class SignUpForm(UserCreationForm):
+class CustomUserCreationForm(UserCreationForm):
     birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
 
     class Meta:

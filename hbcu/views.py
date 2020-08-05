@@ -3,7 +3,7 @@ from .models import College
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 
 
 # Create your views here.
@@ -22,12 +22,11 @@ def filter(request):
 
 @login_required
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'hbcu/index.html')
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-         
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -36,5 +35,5 @@ def signup(request):
             login(request, user)
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'hbcu/signup.html', {'form': form})
