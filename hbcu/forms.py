@@ -1,18 +1,13 @@
 from django import forms
-from .models import User
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import get_user_model
 
-class UserForm(forms.ModelForm):
+CustomUser = get_user_model()
+
+class SignUpForm(UserCreationForm):
+    birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
+
     class Meta:
-        model = User
-        fields = [
-          "firstname", 
-          "lastname",
-          "email", 
-          "city",
-          "state",
-          ]
-
-# class UserProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = UserProfile
+        model = CustomUser
+        fields = ('username', 'birth_date', 'password1', 'password2', )

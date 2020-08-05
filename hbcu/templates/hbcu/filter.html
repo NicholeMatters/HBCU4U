@@ -7,23 +7,26 @@
 <style>
   body {background-color: darkgrey;}
 </style>
-
 <h1> List of Historically Black Colleges and Universities  </h1>
 
+<header>
 <div class="topnav">
-  <a class="active" href="{% url 'index' %}">Home</a>
-  <a href="{% url 'map' %}">Map</a>
-  <div class="search-container">
-    <form action="/hbcu/filter.html">
-      <input type="text" placeholder="--Find A Major--">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+  
+    <a class="active" href="{% url 'index' %}">Home</a>
+    <a href="{% url 'map' %}">Map</a>
+    <div class="search-container">
+      <form action="/hbcu/filter.html">
+        <input type="text" placeholder="--Find A Major--">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
   </div>
 </div>
-<br>
+</header>
 
 <div class="everything">
+  <br>
           {% for college in colleges %}
+          <br>
           <div class="flex">
           
           <img class="list" src="{{ college.logo }}" height='150' width='150'>
@@ -42,7 +45,7 @@
 
           <br>
           {% endfor %}
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </div>
 <!-- <section >
 Floaters
