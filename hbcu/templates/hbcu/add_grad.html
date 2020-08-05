@@ -1,50 +1,36 @@
 {% extends "base.html" %}
-{% load static %}
-
-<title> HBCU Graduates </title>
 
 {% block content %}
+<body>
 
-    <h1><strong>Add a HBCU Graduate</strong></h1>
-    <p><button><a  href="{% url 'add_graduates' %}">Add New Book</a></button></p>
-    <button><a class="add" href="{% url 'list_graduates' %}">Music Collection</a></button>
-
-  <div class="everything">
-          
-          {% for graduate in graduates %}
-          <div class="flex">
-          
-          <h2> "{{ books.book_title }}" </h2>
-          <img src="{{ books.book_cover }}" height='200' width='250'>
-          <h4>By: {{ books.author }}
-          <p> Published: {{ books.date_published }}</p>
+<header>
+<div class="topnav">
+  
+    <a class="active" href="{% url 'index' %}">Home</a>
+    <a href="{% url 'map' %}">Map</a>
+    <div class="search-container">
+      <!-- <form action="/hbcu/filter.html"> -->
+        <!-- <input type="text" placeholder="--Find A Major--"> -->
+        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
         
-          <p>
-          <button class="button2"><a class="ablumsstuff" href="{% url 'graduates_detail' pk=graduate.pk %}">graduate Details</a></button>
-          <button class="button2"><a class="ablumsstuff"
-           href="{% url 'edit_graduates' pk=graduate.pk %}"> Edit graduate </a></button>
-          <button class="button2"> <a class="ablumsstuff" href="{% url 'delete_graduates' pk=graduate.pk %}">Delete graduate</a></button>
-          </p></h4>
-          
-          </div>
-
-          <br>
-          {% endfor %}
-       
-
-<button class="button2"> <a href="{% url 'hbcu_detail' pk=graduate.pk %}">Back to Graduates</a></button>
-
-'first_name',
-            'last_name',
-            'url',
-            'career',
-            'date_born',
-            'date_died',
-            'school',
-            'image',
-            'history',
-
+        <button type="submit"><i class="fa fa-search"></i></button>
+      <!-- </form> -->
   </div>
+</div>
+</header>
 
+<h1>Add New HBCU Graduate</h1>
 
+<div>
+  <form action="{% url 'add_grad' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div >
+      <button type="submit">Add Graduate</button>
+    </div>
+  </form>
+  <button><a class="add" href="{% url 'hbcugrads' %}">return to All HBCU Graduates</a></button>
+</div>
+
+</body>
 {% endblock %}
