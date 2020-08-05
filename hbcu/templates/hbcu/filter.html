@@ -15,10 +15,12 @@
     <a class="active" href="{% url 'index' %}">Home</a>
     <a href="{% url 'map' %}">Map</a>
     <div class="search-container">
-      <form action="/hbcu/filter.html">
-        <input type="text" placeholder="--Find A Major--">
+      <!-- <form action="/hbcu/filter.html"> -->
+        <!-- <input type="text" placeholder="--Find A Major--"> -->
+        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
+        
         <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+      <!-- </form> -->
   </div>
 </div>
 </header>
@@ -30,16 +32,22 @@
           <div class="flex">
           
           <img class="list" src="{{ college.logo }}" height='150' width='150'>
-          <h2> "{{ college.name }}" </h2>
-          <h4>Located in: </h4>
-          <h3><p class="subtitle">{{ college.city }} , {{ college.state }}</p></h3>
+          <h2 class="cname"> "{{ college.name }}" </h2>
+
+          <div>
+            <a class="schoolanchor" href="{{ college.url }}" > Website </a>
+            <a class="schoolanchor" href="{% url 'hbcu_detail' pk=college.pk %}">| More Details</a>
+            <!-- <p></p> -->
+          </div>
+
+          <h3> Located in: 
+          <p class="subtitle">{{ college.city }} , {{ college.state }}<p></h3>
+          
           <div style="display:none" class="majors" > {{ college.major }} </div>
           <div style="display:none" class="financial_aid" > {{ college.financial_aid }} </div>
           <div style="display:none" class="virtual_tour" > {{ college.virtual_tour }} </div>
-          <div>
-            <a href="{{ college.url }}" > Website </a>
-            <a class="ablumsstuff" href="{% url 'hbcu_detail' pk=college.pk %}">| More Details</a>
-          </div>
+
+          
 
           </div>
 

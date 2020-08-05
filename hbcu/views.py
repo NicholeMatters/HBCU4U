@@ -26,7 +26,7 @@ def map(request):
 # User login
 @login_required
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'hbcu/index.html')
 
 def signup(request):
     if request.method == 'POST':
