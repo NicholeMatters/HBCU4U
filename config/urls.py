@@ -18,12 +18,18 @@ from django.conf import settings
 from django.urls import include, path
 from hbcu import views as hbcu_views
 
+from django.conf.urls import url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hbcu_views.index, name='index'),
-    # path('hbcu/filter', hbcu_views.filter, name='filter'),
-    # path('hbcu/<int:pk>/hbcu_detail/', hbcu_views.hbcu_detail, name='hbcu_detail'),
+    path('hbcu/filter', hbcu_views.listColleges, name='filter'),
+    path('hbcu/<int:pk>/hbcu_detail', hbcu_views.hbcu_detail, name='hbcu_detail'),
+    path('hbcu/map', hbcu_views.map, name='map'),
 
+    # user urls
+    url(r'^$', hbcu_views.home, name='home'),
+    url(r'^signup/$', hbcu_views.signup, name='signup'),
 ]
 
 if settings.DEBUG:

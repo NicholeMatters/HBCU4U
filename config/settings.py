@@ -26,7 +26,7 @@ SECRET_KEY = '#g)++o&u02*ujlrq=2!o)!cnwi+j@=+359=e%#@+1c1p32zlv1'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["hbcu4u--gabejunior1196.repl.co", "hbcu4u.gabejunior1196.repl.co", 'hbcu4u--nicholematters.repl.co', 'hbcu4u.nicholematters.repl.co', 'hbcu4u--hexagonstem.repl.co', 'hbcu4u.hexagonstem.repl.co'
+ALLOWED_HOSTS = ['hbcu4u--nicholematters.repl.co', 'hbcu4u.nicholematters.repl.co', 'hbcu4u--hexagonstem.repl.co', 'hbcu4u.hexagonstem.repl.co'
 ]
 
 
@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+AUTH_USER_MODEL="users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -125,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
