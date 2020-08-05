@@ -130,3 +130,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+GDAL_LIBRARY_PATH = 'django/contrib/gis/gdal/libgdal.py' 
