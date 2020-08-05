@@ -1,16 +1,20 @@
 {% extends 'base.html' %} 
+<title> HBCU Details </title>
 {% load static %}
 
-<title> HBCU Details </title>
-
 {% block content %}
+
+<h1> HBCU Details </h1>
+
 <style>
   body {background-color: darkred;}
 </style>
-<a class="add" href="{% url 'index' %}">Home</a>
-<a class="add" href="{% url 'filter' %}">List Colleges</a>
-<a class="add" href="{% url 'map' %}">US Map</a>
-<a class="add" href="{% url 'index' %}">Home</a>
+<div class="detailanchor">
+  <a class="add" href="{% url 'home' %}">Home</a>
+  <a class="add" href="{% url 'filter' %}">List Colleges</a>
+  <a class="add" href="{% url 'map' %}">US Map</a>
+  
+</div>
 
   <div class="detail">
       <img class="image" src="{{ colleges.campus_image }}" height='80%' >

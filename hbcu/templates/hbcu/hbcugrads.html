@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title> Discover HBCUs </title>
+
+{% block content %}
+<style>
+  body {background-color: rgb(95, 15, 64);}
+</style>
+<h1> List of Historically Black graduates and Universities  </h1>
+<p><button><a class="add" href="{% url 'add_grad' %}">Add New Grad</a></button>
+<header>
+<div class="topnav">
+  
+    <a class="active" href="{% url 'index' %}">Home</a>
+    <a href="{% url 'map' %}">Map</a>
+    <div class="search-container">
+      <!-- <form action="/hbcu/filter.html"> -->
+        <!-- <input type="text" placeholder="--Find A Major--"> -->
+        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--School--"/> 
+        
+        <button type="submit"><i class="fa fa-search"></i></button>
+      <!-- </form> -->
+  </div>
+</div>
+</header>
+
+<div class="everything">
+  <br>
+          {% for graduate in graduates %}
+          <br>
+          <div class="flex">
+          
+          <img class="list" src="{{ graduate.image }}" height='150' width='150'>
+          <h1> {{ graduate.career }} </h1>
+          <h2 class="cname"> 
+            {{ graduate.first_name }} {{ graduate.last_name }}
+            {{ graduate.date_born }} - {{ graduate.date_died }}
+          </h2>
+
+          <div>
+            <a class="gradanchor" href="{{ graduate.url }}" > Testimony </a>
+            
+            <!-- <p></p> -->
+          </div>
+
+          <h3> Attended 
+          <p class="subtitle">{{ graduate.school }} <p></h3>
+          <p class="subtitle">{{ graduate.history }} <p>
+
+
+          </div>
+
+          <br>
+          {% endfor %}
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>
+

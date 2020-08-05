@@ -5,7 +5,7 @@
 }
 h1 {
   text-align: center;
-  color: black;
+  color: rgb(238, 101, 16);
   text-shadow: 3px 3px 5px white;
 }
 
@@ -29,13 +29,65 @@ a.main {
 }
 
 body {
-  background: rgb(247, 145, 12);
+  background: rgb(95, 15, 64);
 }
 a {
   text-align: center;
   color: black;
 }
+.intro {
+  background: rgb(227, 100, 20);
+  border-bottom-left-radius: 10%;
+  border-top-right-radius: 10%;
+  color: white;
+  width: 50%;
+  padding: 1rem;
+  border-width: 10px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+.filter {
+  position: relative;
+  background-color: rgb(164, 172, 164);
+  border: none;
+  font-size: 20px;
+  color: rgb(218, 11, 11);
+  padding: 10px;
+  /* width: 200px; */
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 20%;
+}
+.filter:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.filter:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
 
+.filter:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
 
 p{
   display:flex;
@@ -148,9 +200,46 @@ img.detail_logo {
   bottom: 10px; 
   right: 15px;
 }
+h3 {
+  line-height: 0.5cm;
+  text-align: center;
+}
+a.schoolanchor {
+  text-align: center;
+}
+h2.cname {
+  letter-spacing: 0.0625em;
+}
 
 /* Search Bar */
 /* Add a black background color to the top navigation bar */
+  #searchbar{ 
+     margin-left: 15%; 
+     padding:15px; 
+     border-radius: 10px; 
+   } 
+ 
+   input[type=text] { 
+      width: 30%; 
+      -webkit-transition: width 0.15s ease-in-out; 
+      transition: width 0.15s ease-in-out; 
+   } 
+ 
+   /* When the input field gets focus, 
+        change its width to 100% */
+   input[type=text]:focus { 
+     width: 70%; 
+   } 
+ 
+  #list{ 
+    font-size:  1.5em; 
+    margin-left: 90px; 
+   } 
+ 
+.animals{ 
+   display: list-item;     
+  }
+  
 * {box-sizing: border-box;}
 
 body {
@@ -548,3 +637,11 @@ body:nth-child(2) .css-slider {
 .css-slider #s3:after { background: -moz-element(#s3) no-repeat left bottom; }
 .css-slider #s4:after { background: -moz-element(#s4) no-repeat left bottom; }
 .css-slider #s5:after { background: -moz-element(#s5) no-repeat left bottom; }
+
+
+
+/* Individual College Pages */
+.detailanchor {
+  text-align: center;
+  color: rgb(241, 134, 11);
+}

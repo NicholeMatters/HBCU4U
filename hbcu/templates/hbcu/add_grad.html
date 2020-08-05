@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title> HBCU Graduates </title>
+
+{% block content %}
+
+    <h1><strong>Add a HBCU Graduate</strong></h1>
+    <p><button><a  href="{% url 'add_graduates' %}">Add New Book</a></button></p>
+    <button><a class="add" href="{% url 'list_graduates' %}">Music Collection</a></button>
+
+  <div class="everything">
+          
+          {% for graduate in graduates %}
+          <div class="flex">
+          
+          <h2> "{{ books.book_title }}" </h2>
+          <img src="{{ books.book_cover }}" height='200' width='250'>
+          <h4>By: {{ books.author }}
+          <p> Published: {{ books.date_published }}</p>
+        
+          <p>
+          <button class="button2"><a class="ablumsstuff" href="{% url 'graduates_detail' pk=graduate.pk %}">graduate Details</a></button>
+          <button class="button2"><a class="ablumsstuff"
+           href="{% url 'edit_graduates' pk=graduate.pk %}"> Edit graduate </a></button>
+          <button class="button2"> <a class="ablumsstuff" href="{% url 'delete_graduates' pk=graduate.pk %}">Delete graduate</a></button>
+          </p></h4>
+          
+          </div>
+
+          <br>
+          {% endfor %}
+       
+
+<button class="button2"> <a href="{% url 'hbcu_detail' pk=graduate.pk %}">Back to Graduates</a></button>
+
+'first_name',
+            'last_name',
+            'url',
+            'career',
+            'date_born',
+            'date_died',
+            'school',
+            'image',
+            'history',
+
+  </div>
+
+
+{% endblock %}
