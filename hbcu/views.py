@@ -37,3 +37,5 @@ def signup(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'hbcu/signup.html', {'form': form})
+
+
