@@ -40,7 +40,7 @@ def add_grad(request):
 
 def add_hbcu(request):
     if request.method == 'GET':
-        form = gradForm()
+        form = hbcuForm()
     else:
         form = hbcuForm(data=request.POST)
         if form.is_valid():

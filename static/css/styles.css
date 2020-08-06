@@ -59,7 +59,7 @@ a {
   font-size: 20px;
   color: rgb(218, 11, 11);
   padding: 10px;
-  /* width: 200px; */
+  width: 100%;
   text-align: center;
   transition-duration: 0.4s;
   text-decoration: none;
@@ -325,7 +325,7 @@ body {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color:green; /* Set a background color */
+  background-color:rgb(0, 10, 0); /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
