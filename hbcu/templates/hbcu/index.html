@@ -1,110 +1,103 @@
 {% extends "base.html" %}
 {% load static %}
+<title>HBCU 4 U</title>
 {% block content %}
 
-<button><a class="add" href="{% url 'signup' %}">Sign up</a></button>
-
-<!-- <script src="{% static 'js/schools.js' %}" type="module"></script>
-<script src="{% static 'js/main.js' %}" type='module' defer></script> -->
-
 <h1> Discover the HBCU 4 U</h1>
+<button><a class="filter" href="{% url 'filter' %}">List Colleges</a></button>
 
-<a href="hbcu/templates/hbcu/hbcugrads.html">|  HBCU Graduates</a>
 
+<button><a class="filter" href="{% url 'hbcugrads' %}"> HBCU Graduates</a></button>
+
+<button><a class="filter" href="{% url 'signup' %}">Sign up</a></button>
 
 <div class="main">
  
 
-<section class="intro">
+  <section class="intro">
 
-<p> <span class="first-letter">T </span> he HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
+    <p> <span class="first-letter"></span> 
+    The HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
 
-<p><span class="first-letter">W</span> ithin this app you can us the <a href="hbcu/filter.html">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
+    <p><span class="first-letter"></span> 
+    Within this app you can use the <a href="hbcu/filter.html" class="main">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
 
-</section>
-<br>
-<!-- Container for the image gallery -->
-
-
-
-<div class="container">
-
-  <!-- Full-width images with number text -->
-  <div id="slideshow">
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-        <img src="http://www.hbcupages.com/hbcuphotos/aamu.jpg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-        <img src="http://www.hbcupages.com/hbcuphotos/alabamastate.jpg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-        <img src="http://www.hbcupages.com/hbcuphotos/Albany_State_University.gif" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-        <img src="http://www.hbcupages.com/hbcuphotos/alcornseal1.jpeg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-        <img src="http://www.hbcupages.com/hbcuphotos/allenuniversity.jpg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">6 / 6</div>
-        <img src="http://www.hbcupages.com/hbcuphotos/arkansasbaptist.jpg" style="width:100%">
-    </div>
-  </div>
-  
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-  <!-- Image text -->
-  <div class="caption-container">
-    <p id="caption">Historically Black Colleges and Universities</p>
-  </div>
-
-  <!-- Thumbnail images -->
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="http://www.hbcupages.com/hbcuphotos/aamu.jpg" style="width:60%" onclick="currentSlide(1)" alt="Alabama A&M University">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="http://www.hbcupages.com/hbcuphotos/alabamastate.jpg" style="width:60%" onclick="currentSlide(2)" alt="Alabama State University">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="http://www.hbcupages.com/hbcuphotos/Albany_State_University.gif" style="width:60%" onclick="currentSlide(3)" alt="Albany State Univeristy">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="http://www.hbcupages.com/hbcuphotos/alcornseal1.jpeg" style="width:60%" onclick="currentSlide(4)" alt="Alcorn State University">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="http://www.hbcupages.com/hbcuphotos/allenuniversity.jpg" style="width:60%" onclick="currentSlide(5)" alt="Allen University">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="http://www.hbcupages.com/hbcuphotos/arkansasbaptist.jpg" style="width:60%" onclick="currentSlide(6)" alt="Arkansas Baptist">
-    </div>
-  </div>
-</div>
-
-</div>
-
-<!-- Added the next three lines -->
-<h1> Customer Database </h1>
-
-<section id="customer">
-	<!-- took off list and class="tc "center pl0 ml0 mw6 ba b--light-silver br2 -->
-	<div id="customer-list">
-	</div>
-	<img></img>
+    <p> Come explore, expand and experience the HBCU experience </p>
   </section>
+  <br>
+<!-- Carosuel take 11 -->
+<div id="container">
+	<div class="css-slider-mask">
+		<ul class="css-slider">
+			<li class="slide" tabindex="1" id="1">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Alabama A&M</p>
+						<span class="slide-gfx" id="s1">
+							<img src="https://speakinoutweeklynews.net/wp-content/uploads/2019/11/680x380_AAMUsecuresfunding_Campus_maxresdefault.jpg" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="2">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Alabama State University</p>
+						<span class="slide-gfx" id="s2">
+							<img src="https://whnt.com/wp-content/uploads/sites/20/2017/09/alabama-state-university.png?w=796" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="3">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Hampton University</p>
+						<span class="slide-gfx" id="s3">
+							<img src="https://revisionpath.com/wp-content/uploads/hampton-university-hero.jpg" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="4">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Bethune-Cookman University</p>
+						<span class="slide-gfx" id="s4">
+							<img src="https://i1.wp.com/www.wmfe.org/wp-content/uploads/2016/02/060413-national-hbcu-review-bethune-cookman.jpg?fit=743%2C495&ssl=1" />
+						</span>
+					</span>
+				</span>
+			</li>
+			<li class="slide" tabindex="1" id="5">
+				<span class="slide-outer">
+					<span class="slide-inner"><p>Clark Atlanta University</p>
+						<span class="slide-gfx" id="s5">
+							<img src="https://www.blackpast.org/wp-content/uploads/M-WEB-DuBois-bust-by-Ayokunle-Odeleye-at-Clark-Atlanta-University-Wikipedia.jpg" />
+						</span>
+					</span>
+				</span>
+			</li>
+		</ul>
+	</div>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<defs>
+			<linearGradient gradientUnits="objectBoundingBox" id="gradient" x2="0" y2="1">
+				<stop stop-color="rgba(0,255,255,0.00)" offset="0.0"/>
+				<stop stop-color="rgba(0,255,255,0.30)" offset="0.5"/>
+				<stop stop-color="rgba(0,255,255,1.00)" offset="1.0"/>
+			</linearGradient>
+			<radialGradient id="gradient2">
+				<stop offset="10%" stop-color="rgba(255,255,255,1)"/>
+				<stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+			</radialGradient>
+			<mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
+				<ellipse fill="url(#gradient2)" cx="0" cy="1" rx="1" ry="0.8"/>
+				<ellipse fill="url(#gradient2)" cx="1" cy="1" rx="1" ry="0.8"/>
+			</mask>
+		</defs>
+	</svg>
+</div>
+				
+
+</div>
+
 
 
 {% endblock %}

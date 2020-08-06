@@ -1,9 +1,63 @@
 {% extends "base.html" %}
+{% load static %}
 
+<title> Discover HBCUs </title>
 
-<h1> Header  </h1>
+{% block content %}
+<style>
+  body {background-color: rgb(95, 15, 64);}
+</style>
+<h1> List of Historically Black Colleges and Universities  </h1>
 
-<section >
+<header>
+<div class="topnav">
+  
+    <a class="active" href="{% url 'index' %}">Home</a>
+    <a href="{% url 'map' %}">Map</a>
+    <a href="{% url 'add_hbcu' %}">Add HBCU</a>
+    <a href="{% url 'hbcugrads' %}">HBCU Graduates</a>
+    <div class="search-container">
+      <!-- <form action="/hbcu/filter.html"> -->
+        <!-- <input type="text" placeholder="--Find A Major--"> -->
+        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
+        
+        <button type="submit"><i class="fa fa-search"></i></button>
+      <!-- </form> -->
+  </div>
+</div>
+</header>
+
+<div class="everything">
+  <br>
+          {% for college in colleges %}
+          <br>
+          <div class="flex">
+          
+          <img class="list" src="{{ college.logo }}" height='150' width='150'>
+          <h2 class="cname"> "{{ college.name }}" </h2>
+
+          <div>
+            <a class="schoolanchor" href="{{ college.url }}" > Website </a>
+            <a class="schoolanchor" href="{% url 'hbcu_detail' pk=college.pk %}">| More Details</a>
+            <!-- <p></p> -->
+          </div>
+
+          <h3> Located in: 
+          <p class="subtitle">{{ college.city }} , {{ college.state }}<p></h3>
+          
+          <div style="display:none" class="majors" > {{ college.major }} </div>
+          <div style="display:none" class="financial_aid" > {{ college.financial_aid }} </div>
+          <div style="display:none" class="virtual_tour" > {{ college.virtual_tour }} </div>
+
+          
+
+          </div>
+
+          <br>
+          {% endfor %}
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>
+<!-- <section >
 Floaters
 
 <div><img src="https://bloximages.newyork1.vip.townnews.com/cbs46.com/content/tncms/assets/v3/editorial/6/b8/6b8caa83-d497-52c0-b873-3365497f76fc/5b74cd3e80dbd.image.jpg?resize=400%2C225" alt="Morehouse College"  name="Morehouse" style="width=50px;height=50px" class="floater"></div>
@@ -12,7 +66,7 @@ Floaters
 
 <p><img src="https://media-exp1.licdn.com/dms/image/C510BAQHNlWd3qb46KQ/company-logo_200_200/0?e=2159024400&v=beta&t=fDrTLKsLpEksXgCScawhpJ8lSq6d4ImXXo1PuUE9qpQ" alt="Clark Atlanta University"  name="Clark Atlanta University" class="floater"></p>
 
-</section>
+</section> -->
 
   
 <!-- MAJORS -->
@@ -40,3 +94,6 @@ Floaters
 </select></center>
 
 
+
+
+{% endblock %}

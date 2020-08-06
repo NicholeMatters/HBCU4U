@@ -7,6 +7,6 @@ class Command(BaseCommand):
     with open('schools.csv','r') as csvfile:
         reader= csv.reader(csvfile)
         for row in reader:
-          College.objects.create(name=row[0],city=row[2],state=row[3])
+          College.objects.create(name=row[0],city=row[4],state=row[5])
     
     print("Done!")
