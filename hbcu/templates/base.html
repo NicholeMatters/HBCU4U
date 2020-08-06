@@ -6,26 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
  
   
-  <script src="{% static 'js/script.js' %}" defer></script>
+    <script src="{% static 'js/script.js' %}" defer></script>
+    
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Discover HBCUs</title>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
-    <link href="{% static 'js/script.js' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'js/script.js' %}" />
   <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" /> -->
 
 </head>
 
 
-<body class="sans-serif pv3 ph2 bg-light-red">
-  <div class="mw9 center">
+<body>
+  <div>
     {% block content %}
      
     {% endblock %}
 
   </div>
-   
+ <script src="{% static 'schools.js' %}"></script>  
 </body>
 </html>
 

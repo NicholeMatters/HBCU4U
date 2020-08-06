@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import College
+from .models import College, HBCUgrads
+from .forms import gradForm, hbcuForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
@@ -22,11 +23,36 @@ def map(request):
   colleges = College.objects.all().order_by('state')
   return render(request, 'hbcu/map.html', context={'colleges':colleges})
 
+def hbcuGrad(request):
+  graduate = HBCUgrads.objects.all().order_by('last_name')
+  return render(request, 'hbcu/hbcugrads.html', context={'graduates':graduate})
+
+def add_grad(request):
+    if request.method == 'GET':
+        form = gradForm()
+    else:
+        form = gradForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(to='hbcugrads')
+
+    return render(request, "hbcu/add_grad.html", {"form": form})
+
+def add_hbcu(request):
+    if request.method == 'GET':
+        form = hbcuForm()
+    else:
+        form = hbcuForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(to='filter')
+
+    return render(request, "hbcu/add_hbcu.html", {"form": form})
 
 # User login
 @login_required
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'hbcu/index.html')
 
 def signup(request):
     if request.method == 'POST':

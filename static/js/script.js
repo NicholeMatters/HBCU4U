@@ -1,29 +1,5 @@
 //Homepage
 
-// Initialize all elements with carousel class.
-$(document).ready(function(){
-			$('.customer-logos').slick({
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				autoplay: true,
-				autoplaySpeed: 1000,
-				arrows: false,
-				dots: false,
-					pauseOnHover: false,
-					responsive: [{
-					breakpoint: 768,
-					settings: {
-						slidesToShow: 3
-					}
-				}, {
-					breakpoint: 520,
-					settings: {
-						slidesToShow: 2
-					}
-				}]
-			});
-		});
-
 // Back to top button
 mybutton = document.getElementById("myBtn");
 
@@ -43,3 +19,20 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
+// Search bar
+function search_major() { 
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('majors'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+} 

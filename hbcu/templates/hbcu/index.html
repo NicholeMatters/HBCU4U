@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-
-{% block content %}
 <title>HBCU 4 U</title>
-
+{% block content %}
 
 <h1> Discover the HBCU 4 U</h1>
-<a class="filter" href="{% url 'filter' %}">List Colleges</a>
-<a class="filter" href="hbcu/templates/hbcu/hbcugrads.html">|  HBCU Graduates</a>
-<button><a class="add" href="{% url 'signup' %}">Sign up</a></button>
+<button><a class="filter" href="{% url 'filter' %}">List Colleges</a></button>
+
+
+<button><a class="filter" href="{% url 'hbcugrads' %}"> HBCU Graduates</a></button>
+
+<button><a class="filter" href="{% url 'signup' %}">Sign up</a></button>
 
 <div class="main">
  
@@ -19,8 +20,9 @@
     The HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
 
     <p><span class="first-letter"></span> 
-    Within this app you can us the <a href="hbcu/filter.html" class="main">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
+    Within this app you can use the <a href="hbcu/filter.html" class="main">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
 
+    <p> Come explore, expand and experience the HBCU experience </p>
   </section>
   <br>
 <!-- Carosuel take 11 -->
