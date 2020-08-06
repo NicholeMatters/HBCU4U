@@ -1,5 +1,5 @@
 from django import forms
-from .models import HBCUgrads
+from .models import HBCUgrads, College
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
@@ -28,6 +28,22 @@ class gradForm(forms.ModelForm):
             'history',
         ]
       
-
+class hbcuForm(forms.ModelForm):
+    class Meta:
+        model = College
+        fields = [
+            'name',
+            'url',
+            'major',
+            'degree',
+            'city',
+            'state',
+            'technology',
+            'financial_aid',
+            'logo',
+            'campus_image',
+            'virtual_tour',
+            'history',
       
+        ]    
 

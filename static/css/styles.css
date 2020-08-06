@@ -37,10 +37,11 @@ a {
 }
 .intro {
   background: rgb(227, 100, 20);
+  text-align:justify;
   border-bottom-left-radius: 10%;
   border-top-right-radius: 10%;
   color: white;
-  width: 50%;
+  width: 45%;
   padding: 1rem;
   border-width: 10px;
   border-style: solid;

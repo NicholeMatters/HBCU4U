@@ -28,6 +28,7 @@ urlpatterns = [
     path('hbcu/map', hbcu_views.map, name='map'),
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
     path('hbcu/addGraduate/', hbcu_views.add_grad, name='add_grad'),
+    path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),
 
     # user urls
     url(r'^$', hbcu_views.home, name='home'),

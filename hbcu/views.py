@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import College, HBCUgrads
-from .forms import gradForm
+from .forms import gradForm, hbcuForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
@@ -37,6 +37,17 @@ def add_grad(request):
             return redirect(to='hbcugrads')
 
     return render(request, "hbcu/add_grad.html", {"form": form})
+
+def add_hbcu(request):
+    if request.method == 'GET':
+        form = gradForm()
+    else:
+        form = hbcuForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(to='filter')
+
+    return render(request, "hbcu/add_hbcu.html", {"form": form})
 
 # User login
 @login_required

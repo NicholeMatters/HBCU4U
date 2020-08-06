@@ -8,14 +8,9 @@
   
     <a class="active" href="{% url 'index' %}">Home</a>
     <a href="{% url 'map' %}">Map</a>
-    <div class="search-container">
-      <!-- <form action="/hbcu/filter.html"> -->
-        <!-- <input type="text" placeholder="--Find A Major--"> -->
-        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
-        
-        <button type="submit"><i class="fa fa-search"></i></button>
-      <!-- </form> -->
-  </div>
+    <a class="filter" href="{% url 'filter' %}">List Colleges</a>
+    <a class="filter" href="{% url 'hbcugrads' %}"> HBCU Graduates</a>
+
 </div>
 </header>
 
