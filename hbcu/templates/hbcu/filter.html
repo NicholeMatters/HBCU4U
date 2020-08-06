@@ -8,13 +8,13 @@
   body {background-color: rgb(95, 15, 64);}
 </style>
 <h1> List of Historically Black Colleges and Universities  </h1>
-
+<h3 class="subtitle"> ** represents HBCUs that are no longer operational</h3>
 <header>
 <div class="topnav">
   
     <a class="active" href="{% url 'index' %}">Home</a>
     <a href="{% url 'map' %}">Map</a>
-    <a href="{% url 'add_hbcu' %}">Add HBCU</a>
+    <!-- <a href="{% url 'add_hbcu' %}">Add HBCU</a> -->
     <a href="{% url 'hbcugrads' %}">HBCU Graduates</a>
     <div class="search-container">
       <!-- <form action="/hbcu/filter.html"> -->
@@ -34,7 +34,7 @@
           <div class="flex">
           
           <img class="list" src="{{ college.logo }}" height='150' width='150'>
-          <h2 class="cname"> "{{ college.name }}" </h2>
+          <h2 class="cname"> {{ college.name }} </h2>
 
           <div>
             <a class="schoolanchor" href="{{ college.url }}" > Website </a>
