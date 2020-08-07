@@ -7,16 +7,16 @@
 <style>
   body {background-color: rgb(95, 15, 64);}
 </style>
-<h1> Filter Historically Black Colleges and Universities  </h1>
+<h1> List of Historically Black Colleges and Universities  </h1>
 <h3 class="subtitle"> ** represents HBCUs that are no longer operational</h3>
 <header>
 
 <div class="topnav">
   
     <a class="active" href="{% url 'index' %}">Home</a>
+    <a href="{% url 'filter' %}">Filter Search</a>
     <a href="{% url 'map' %}">Map</a>
     <!-- <a href="{% url 'add_hbcu' %}">Add HBCU</a> -->
-    <a href="{% url 'list_hbcus' %}">List Colleges </a>
     <a href="{% url 'hbcugrads' %}">HBCU Graduates</a>
     <div class="search-container">
       <!-- <form action="/hbcu/filter.html"> -->
@@ -49,12 +49,19 @@ This is my DIV element.
           <h2 class="cname"> {{ college.name }} </h2>
 
           <div>
+            <a class="schoolanchor" href="{{ college.url }}" > Website </a>
+            <a class="schoolanchor" href="{% url 'hbcu_detail' pk=college.pk %}">| More Details</a>
+            <!-- <p></p> -->
+          </div>
 
-          <div style="display:none" class="name" > {{ college.name }} </div>
-          <div style="display:none" class="state city">{{ college.city }} , {{ college.state }}</div>         
+          <h3> Located in: 
+          <p class="subtitle">{{ college.city }} , {{ college.state }}<p></h3>
+          
           <div style="display:none" class="majors" > {{ college.major }} </div>
           <div style="display:none" class="financial_aid" > {{ college.financial_aid }} </div>
           <div style="display:none" class="virtual_tour" > {{ college.virtual_tour }} </div>
+
+          
 
           </div>
 

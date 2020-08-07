@@ -13,6 +13,10 @@ def index(request):
 
 def listColleges(request):
   colleges = College.objects.all().order_by('name')
+  return render(request, 'hbcu/list_hbcus.html', context={'colleges':colleges})
+
+def filter(request):
+  colleges = College.objects.all().order_by('name')
   return render(request, 'hbcu/filter.html', context={'colleges':colleges})
 
 def hbcu_detail(request, pk):

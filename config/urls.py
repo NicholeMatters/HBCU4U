@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hbcu_views.index, name='index'),
     path('hbcu/filter', hbcu_views.listColleges, name='filter'),
+    path('hbcu/list', hbcu_views.listColleges, name='list_hbcus'),
     path('hbcu/<int:pk>/hbcu_detail', hbcu_views.hbcu_detail, name='hbcu_detail'),
     path('hbcu/map', hbcu_views.map, name='map'),
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
