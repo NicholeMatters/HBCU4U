@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
     'hbcu',
     'users',
+    'mapwidgets',
 ]
 
 MIDDLEWARE = [
