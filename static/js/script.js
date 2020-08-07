@@ -36,3 +36,15 @@ function search_major() {
         } 
     } 
 } 
+
+function search_financial_aid() {
+  let input = document.getElementById('searchbar2').value 
+  input=input.toLowerCase(); 
+
+  var x = document.getElementById("financial_aid");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
