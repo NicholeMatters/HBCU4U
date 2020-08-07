@@ -67,3 +67,12 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'hbcu/signup.html', {'form': form})
+
+
+class CityCreateView(FormView):
+    template_name = " hbcu/templates/hbcu/form.html"
+    form_class = CityCreateForm
+    success_url = '/hbcu/'
+
+    def form_valid(self, form):
+        form.save()

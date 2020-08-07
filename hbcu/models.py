@@ -100,3 +100,15 @@ class HBCUgrads(models.Model):
 
     def __str__(self):
       return f"{self.first_name} {self.first_name} attended {self.school}"
+
+
+def __str__(self):
+        return self.address
+
+
+class City(models.Model):
+    name = models.CharField(max_length=255)
+    location = models.PointField(help_text="Use map widget for point the house location")
+
+    def __str__(self):
+        return self.name

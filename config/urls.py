@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf import settings
-from django.urls import include, path
+from django.urls import include, path, re_path 
 from hbcu import views as hbcu_views
 
 from django.conf.urls import url
+
+from hbcu.views import CityCreateView, CityListView, CityDetailView
+
+app_name = 'hbcu'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +33,11 @@ urlpatterns = [
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
     path('hbcu/addGraduate/', hbcu_views.add_grad, name='add_grad'),
     path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),
+
+    path('', CityListView.as_view(), name="list"),
+    re_path(r'^(?P<pk>\d+)/$', CityDetailView.as_view(), name="detail"),
+    re_path(r'^create/$', CityCreateView.as_view(), name="create"),
+
 
     # user urls
     url(r'^$', hbcu_views.home, name='home'),

@@ -4,7 +4,11 @@ from .models import HBCUgrads, College
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
-from mapwidgets.widgets import GooglePointFieldWidget, GoogleStaticOverlayMapWidget
+
+from hbcu.models import City
+from mapwidgets.widgets import GooglePointFieldWidget,GoogleStaticOverlayMapWidget, GoogleStaticMapWidget
+
+
 
 CustomUser = get_user_model()
 
@@ -49,12 +53,27 @@ class hbcuForm(forms.ModelForm):
       
         ]    
 
-class CityForm(forms.ModelForm):
+class CityCreateForm(forms.ModelForm):
 
     class Meta:
         model = City
-        fields = ("coordinates", "city_hall")
+        fields = ("name", "coordinates", "city_hall")
+        fields = ('name', 'location')
         widgets = {
             'coordinates': GooglePointFieldWidget,
-            'city_hall': GoogleStaticOverlayMapWidget,
+            'city_hall': GooglePointFieldWidget,
+            'location': GooglePointFieldWidget,
+        }
+
+
+class CityDetailForm(forms.ModelForm):
+
+    class Meta:
+        model = City
+        fields = ("name", "coordinates", "city_hall")
+        fields = ('name', 'location')
+        widgets = {
+            'coordinates': GoogleStaticMapWidget(zoom=12, size="240x240"),
+            'city_hall': GoogleStaticOverlayMapWidget(zoom=12, thumbnail_size="50x50", size="640x640"),
+            'location': GoogleStaticOverlayMapWidget(zoom=12, thumbnail_size='50x50', size='640x640'),
         }
