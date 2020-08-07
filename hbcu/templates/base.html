@@ -16,6 +16,13 @@
     <link href="{% static 'js/script.js' %}" />
   <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" /> -->
 
+  <form method="POST" action="">
+    {% csrf_token %}
+    {{form.media}}
+    {{form.as_p}}
+  </form>
+
+
 </head>
 
 
