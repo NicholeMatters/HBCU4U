@@ -4,40 +4,34 @@
 <title> Discover HBCUs </title>
 
 {% block content %}
-<style>
-  body {background-color: rgb(95, 15, 64);}
-</style>
+    <div class="topnav2">
+      <a href="{% url 'list_hbcus' %}" class="active">All HBCUs </a>
+      <div id="myLinks">
+       <a href="{% url 'index' %}"  class="currentpg">HBCU4U</a>
+       <a href="{% url 'filter' %}">Filter</a>
+       <a href="{% url 'hbcugrads' %}"> Graduates</a>
+       
+      </div>
+          <!-- <input id="searchbarAll" onkeyup="search" type="text" name="search" placeholder="--Search--"/> 
+          <button type="submit"><i class="fa fa-search"></i></button> -->
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+     <i class="fa fa-bars"></i>
+     </a>
+    </div> 
+
 <h1> List of Historically Black Colleges and Universities  </h1>
 <h3 class="subtitle"> ** represents HBCUs that are no longer operational</h3>
 <header>
 
 <div class="topnav">
   
-    <a class="active" href="{% url 'index' %}">Home</a>
-    <a href="{% url 'filter' %}">Filter Search</a>
-    <a href="{% url 'map' %}">Map</a>
-    <!-- <a href="{% url 'add_hbcu' %}">Add HBCU</a> -->
-    <a href="{% url 'hbcugrads' %}">HBCU Graduates</a>
     <div class="search-container">
       <!-- <form action="/hbcu/filter.html"> -->
         <!-- <input type="text" placeholder="--Find A Major--"> -->
-        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
-        <input id="searchbar2" onkeyup="search_financial_aid()" type="text" name="search" placeholder="--Find A Financial Aid--"/> 
-
-
-        <button type="submit"><i class="fa fa-search"></i></button>
       <!-- </form> -->
-  </div>
+    </div>
 </div>
 </header>
-
-<!-- <p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<div id="myDIV">
-This is my DIV element.
-</div> -->
 
 <div class="everything">
   <br>
@@ -60,8 +54,6 @@ This is my DIV element.
           <div style="display:none" class="majors" > {{ college.major }} </div>
           <div style="display:none" class="financial_aid" > {{ college.financial_aid }} </div>
           <div style="display:none" class="virtual_tour" > {{ college.virtual_tour }} </div>
-
-          
 
           </div>
 

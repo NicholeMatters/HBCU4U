@@ -1,3 +1,14 @@
+//Hamburger Menu
+
+function hiddenMenu() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 //Homepage
 
 // Back to top button
@@ -22,13 +33,16 @@ function topFunction() {
 
 
 // Search bar
+//add a y variable to use the block element used in the menu (share parent or grandparent)
 function search_major() { 
+    console.log("search_major was called")
     let input = document.getElementById('searchbar').value 
     input=input.toLowerCase(); 
     let x = document.getElementsByClassName('majors'); 
       
     for (i = 0; i < x.length; i++) {  
         if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            // x[i] grab parent make == block
             x[i].style.display="none"; 
         } 
         else { 

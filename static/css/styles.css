@@ -5,12 +5,12 @@
 }
 h1 {
   text-align: center;
-  color: rgb(238, 101, 16);
+  color: 432818;
   text-shadow: 3px 3px 5px white;
 }
 
 section {
-  width: 30%;
+  width: 80%;
   font-size: 150%;
 }
 a.main {
@@ -29,20 +29,20 @@ a.main {
 }
 
 body {
-  background: rgb(95, 15, 64);
+  background: #BB9457;
 }
 a {
   text-align: center;
   color: black;
 }
 .intro {
-  background: rgb(227, 100, 20);
+  background: #6f1d1b;
   text-align:justify;
   border-bottom-left-radius: 10%;
   border-top-right-radius: 10%;
   color: white;
-  width: 45%;
-  padding: 1rem;
+  width: 80%;
+  /* padding: 1rem; */
   border-width: 10px;
   border-style: solid;
   border-image: 
@@ -142,12 +142,12 @@ a.add {
   flex-wrap: wrap; 
   flex-direction: row;
   justify-content: space-around;
-  color: white;
+  color: #ffe6a7;
   border: 2px solid rgb(128, 124, 106);
   width: 300px;
   /* height: 100px; */
   border-radius: 75%;
-  background:rgb(218, 6, 6);
+  background: #6f1d1b;
   text-align: justify;
   text-justify: inter-word;
   box-shadow: 0 0 5px 5px #141414;
@@ -207,12 +207,13 @@ h3 {
 }
 a.schoolanchor {
   text-align: center;
+  color: #99582a;
 }
 h2.cname {
   letter-spacing: 0.0625em;
 }
 
-/* Search Bar */
+Search Bar
 /* Add a black background color to the top navigation bar */
   #searchbar { 
      margin-left: 15%; 
@@ -324,6 +325,7 @@ body {
     border: 1px solid #ccc;  
   }
 }
+
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -352,8 +354,8 @@ html, body {
 }
 /* size of images */
 #container {
-	width: 40%;
-	height: 600px;
+	width: 80%;
+	height: 50%;
 	margin: 0 auto;
 }
 
@@ -378,8 +380,8 @@ html, body {
 	margin: 0;
 	padding: 0;
 	display: none;
-	width: 96%;
-	height: 100%;
+	/* width: 96%;
+	height: 100%; */
 	margin-left: 2%;
 	z-index: 1;
 }
@@ -401,7 +403,7 @@ body:nth-child(2) .css-slider {
 	right: 0;
 	bottom: 0;
 	padding-left: 0;
-	padding-right: 40px;
+	padding-right: 10px;
 	z-index: 100;
 	outline: 0;
 }
@@ -462,6 +464,7 @@ body:nth-child(2) .css-slider {
 	text-align: center;
 	width: 100%;
 	height: 100%;
+  
 }
 
 .css-slider .slide .slide-outer .slide-inner .slide-gfx {
@@ -653,3 +656,57 @@ body:nth-child(2) .css-slider {
   text-align: center;
   color: rgb(241, 134, 11);
 }
+
+/* NEW HAMBURGER MENU BAR */
+
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav2 {
+  overflow: hidden;
+  background-color: rgb(117, 73, 37);
+  position: relative;
+}
+
+.topnav2 #myLinks {
+  display: none;
+}
+
+.topnav2 a {
+  float: left;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav2 a.icon2 {
+  float: right;
+}
+
+.topnav2 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: rgb(11, 31, 12);
+  color: white;
+}
+
+.currentpg {
+  background-color: 6f1d1b;
+  color: white;
+}
+/* .formbox {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+} */

@@ -3,28 +3,24 @@
 <title>HBCU 4 U</title>
 {% block content %}
 
-<h1> Discover the HBCU 4 U</h1>
-<button><a class="filter" href="{% url 'list_hbcus' %}">List Colleges</a></button>
-<button><a class="filter" href="{% url 'filter' %}">Filter</a></button>
+<!-- Simulate a smartphone / tablet look -->
+<!-- <div class="mobile-container"> -->
 
-<button><a class="filter" href="{% url 'hbcugrads' %}"> HBCU Graduates</a></button>
+<!-- Top Navigation Menu -->
+    <div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+       <a href="{% url 'filter' %}">Filter</a>
+       <a href="{% url 'hbcugrads' %}"> Graduates</a>
+       <a href="{% url 'signup' %}">Sign up</a>
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+     <i class="fa fa-bars"></i>
+     </a>
+    </div>
+<!-- </div>  -->
 
-<button><a class="filter" href="{% url 'signup' %}">Sign up</a></button>
-
-<div class="main">
- 
-
-  <section class="intro">
-
-    <p> <span class="first-letter"></span> 
-    The HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
-
-    <p><span class="first-letter"></span> 
-    Within this app you can use the <a href="hbcu/filter.html" class="main">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
-
-    <p> Come explore, expand and experience the HBCU experience </p>
-  </section>
-  <br>
 <!-- Carosuel take 11 -->
 <div id="container">
 	<div class="css-slider-mask">
@@ -94,8 +90,19 @@
 		</defs>
 	</svg>
 </div>
-				
 
+<div>				
+  <section class="intro">
+
+    <p> <span class="first-letter"></span> 
+    The HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
+
+    <p><span class="first-letter"></span> 
+    Within this app you can use the <a href="hbcu/filter.html" class="main">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
+
+    <p> Come explore, expand and experience the HBCU experience </p>
+  </section>
+  
 </div>
 
 

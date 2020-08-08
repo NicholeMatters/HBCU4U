@@ -4,10 +4,20 @@
 <title> Discover HBCUs </title>
 
 {% block content %}
-<style>
-  body {background-color: rgb(95, 15, 64);}
-</style>
-<h1> List of Historically Black graduates and Universities  </h1>
+ <div class="topnav2">
+      <a href="{% url 'hbcugrads' %}"  class="active">Graduates</a>
+      <div id="myLinks">
+        <a href="{% url 'index' %}"> HBCU4U </a>
+       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+       <a href="{% url 'filter' %}">Filter</a>
+       
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+     <i class="fa fa-bars"></i>
+     </a>
+    </div>
+
+<h1> List of HBCU Graduates  </h1>
 <p><button><a class="add" href="{% url 'add_grad' %}">Add New Grad</a></button>
 <header>
 <div class="topnav">
