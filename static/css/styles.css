@@ -10,8 +10,17 @@ h1 {
 }
 
 section {
-  width: 80%;
+  width: 100%;
   font-size: 150%;
+  object-position: 50% 50%;
+  /* makes center */
+  margin: 0 auto;
+  
+}
+section .intro {
+  object-fit: none;
+  object-position: 50% 50%;
+  text-align: center;
 }
 a.main {
   width: 30%;
@@ -407,3 +416,120 @@ body {
   margin-right: auto;
   text-align: left;
 } */
+
+
+/* Homepage Carousel */
+html, body {
+  padding 10px 2px 0px 2px;
+  margin 0;
+}
+
+.galleryContainer {
+  width: 100%;;
+  height: 500px;
+  max-width: 1000px;
+  user-select: none;
+  box-shadow: 0px 0px 3px 1px #00000078;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.galleryContainer .slideShowContainer {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  background-color: rgb(197, 169, 136);
+  position: relative;
+}
+
+.galleryContainer .slideShowContainer .imageHolder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0; /*hides images*/
+}
+
+.galleryContainer .slideShowContainer .imageHolder img {
+  width: 100%;
+  height: 100%;
+}
+
+.galleryContainer .slideShowContainer .imageHolder .captionText {
+  display: none;
+}
+/* Shadow of arrow boxes, this builds both boxes on top of each other */
+.galleryContainer .slideShowContainer .leftArrow, .galleryContainer .slideShowContainer .rightArrow {
+  width: 50px;
+  background: #00000036;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transition: background 0.5s;
+  height: 72px;
+  top: 50%;
+  transform: translateY (-50%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+} 
+/* This will override pervious css; this relocated the right box */
+.galleryContainer .slideShowContainer .rightArrow {
+  left: auto;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.galleryContainer .slideShowContainer .leftArrow:hover, .galleryContainer .slideShowContainer .rightArrow:hover {
+  background: #000000a8;
+  cursor: pointer;
+}
+/* create a box then hidden two side and rotate to create an arrow */
+.galleryContainer .slideShowContainer .arrow {
+  display: inline-block;
+  border: 3px solid white;
+  width: 10px;
+  height: 10px;
+  border-left: none;
+  border-bottom: none;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.galleryContainer .slideShowContainer .arrow.arrowLeft {
+  transform: rotateZ(-135deg);
+}
+.galleryContainer .slideShowContainer .arrow.arrowRight {
+  transform: rotateZ(45deg);
+}
+
+.galleryContainer .slideShowContainer > .captionHolder {
+  position: absolute; /*will move to the bottom*/
+  bottom: 0;
+  z-index: 1; /*On top of other elements */
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  background: #00000047;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+}
+.galleryContainer .slideShowContainer > .captionHolder .captionText {
+  margin: 0;
+}
+.galleryContainer .slideShowContainer #playPauseBtn {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  z-index: 5;
+  margin: 5px;
+  cursor: pointer;
+  background-image: url("https://previews.123rf.com/images/romanbykhalets/romanbykhalets2002/romanbykhalets200200098/139666822-play-and-pause-vector-button-black-icons-isolated-on-transparent-background-black-vector-media-play-.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -62,3 +62,12 @@ function search_financial_aid() {
     x.style.display = "none";
   }
 }
+
+// CAROUSEL Homepage
+var slideIndex,slides,dots,captionText;
+function initGallery(){
+  slideIndex=0;
+  slides=document.getElementsByClassName("imageHolder");
+  slides[slideIndex].style.opacity=1;
+}
+initGallery();
