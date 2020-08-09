@@ -85,8 +85,7 @@ class Major(models.Model):
       return f"{self.firstname} {self.lastname}, {self.email}"
 
 class HBCUgrads(models.Model):
-    first_name = models.TextField(max_length=3000, default='')
-    last_name = models.TextField(max_length=3000, default='')
+    name = models.TextField(max_length=3000, default='')
     url = models.URLField(null=True, blank=True, default='')
     career = models.TextField( max_length=3000, default='')
     date_born = models.TextField(max_length=3000, default='')
@@ -96,7 +95,7 @@ class HBCUgrads(models.Model):
     history = models.TextField( max_length=3000, default='')
     
     class Meta:
-      order_with_respect_to = 'last_name'
+      order_with_respect_to = 'name'
 
     def __str__(self):
-      return f"{self.first_name} {self.first_name} attended {self.school}"
+      return f"{self.name} attended {self.school}"

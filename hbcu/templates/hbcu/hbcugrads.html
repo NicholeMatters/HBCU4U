@@ -10,18 +10,18 @@
         <a href="{% url 'index' %}"> HBCU4U </a>
        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
        <a href="{% url 'filter' %}">Filter</a>
-       
       </div>
      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
      <i class="fa fa-bars"></i>
      </a>
-    </div>
+ </div>
 
 <h1> List of HBCU Graduates  </h1>
-<p><button><a class="add" href="{% url 'add_grad' %}">Add New Grad</a></button>
+<button><a class="add" href="{% url 'add_grad' %}">Add New Grad</a>
+</button>
+
 <header>
 <div class="topnav">
-  
     <a class="active" href="{% url 'index' %}">Home</a>
     <a href="{% url 'map' %}">Map</a>
     <div class="search-container">
@@ -31,7 +31,7 @@
         
         <button type="submit"><i class="fa fa-search"></i></button>
       <!-- </form> -->
-  </div>
+    </div>
 </div>
 </header>
 
@@ -39,13 +39,12 @@
   <br>
           {% for graduate in graduates %}
           <br>
-          <div class="flex">
 
           <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
               <div class="tc">
-                <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h3 w3 dib" title="Photo of a kitty staring at you">
-                <!-- <img src="{{ graduate.image }}" class="br-100 h3 w3 dib" title="HBSU Graduates"> -->
-                <h1 class="f4">{{ graduate.first_name }} {{ graduate.last_name }}</h1>
+                <!-- <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h3 w3 dib" title="Photo of a kitty staring at you"> -->
+                <img src="{{ graduate.image }}" class="br-100 h3 w3 dib" title="{{ graduate.name }}">
+                <h1 class="f4">{{ graduate.name }} </h1>
                 <hr class="mw3 bb bw1 b--black-10">
                 {{ graduate.career }}
                 {{ graduate.date_born }} - {{ graduate.date_died }}
@@ -55,10 +54,9 @@
               </p>
           </article>
           <!-- <img class="list" src="" height='150' width='150'> -->
+        
           <br>
           {% endfor %}
-
-
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </div>

@@ -28,7 +28,7 @@ def map(request):
   return render(request, 'hbcu/map.html', context={'colleges':colleges})
 
 def hbcuGrad(request):
-  graduate = HBCUgrads.objects.all().order_by('last_name')
+  graduate = HBCUgrads.objects.all().order_by('name')
   return render(request, 'hbcu/hbcugrads.html', context={'graduates':graduate})
 
 def add_grad(request):
