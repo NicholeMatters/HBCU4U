@@ -38,18 +38,18 @@ a.main {
 }
 
 body {
-  background: #BB9457;
+  background: #EEEEEE;
 }
 a {
   text-align: center;
   color: black;
 }
 .intro {
-  background: #6f1d1b;
+  background:#EEEEEE;
   text-align:justify;
   border-bottom-left-radius: 10%;
   border-top-right-radius: 10%;
-  color: white;
+  color: #3B2B1B;
   width: 80%;
   /* padding: 1rem; */
   border-width: 10px;
