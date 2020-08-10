@@ -5,20 +5,29 @@
 
 {% block content %}
 
+<div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+       <a href="{% url 'filter' %}">Filter</a>
+       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+       <a href="{% url 'map' %}">Map</a>
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+     <i class="fa fa-bars"></i>
+     </a>
+    </div>
+
 <h1> Filter Historically Black Colleges and Universities  </h1>
 <h3 class="subtitle"> ** represents HBCUs that are no longer operational</h3>
 <header>
 
 <div class="topnav">
-  
-    <a class="active" href="{% url 'index' %}">Home</a>
-    <a href="{% url 'map' %}">Map</a>
-    <!-- <a href="{% url 'add_hbcu' %}">Add HBCU</a> -->
-    <a href="{% url 'list_hbcus' %}">List Colleges </a>
-    <a href="{% url 'hbcugrads' %}">HBCU Graduates</a>
+ 
     <div class="search-container">
 
         <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
+
         <input id="searchbar2" onkeyup="search_financial_aid()" type="text" name="search" placeholder="--Find A Financial Aid--"/> 
 
 
@@ -51,31 +60,6 @@
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </div>
-
-
-  <div class="form-row">
-      <div class "form-groun col-12">
-          <div class="input-group">
-                <input class="form-control py-2 border-right-0 border" tyoe="">
-                <span cladd="input-group-append">
-                    <div class="input-group-text bg-transparent">
-                        <i class="fa fa-search"></i>
-                    </div>  
-                </span>
-          </div>  
-      </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--   

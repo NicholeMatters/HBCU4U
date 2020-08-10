@@ -12,7 +12,8 @@
       <div id="myLinks">
        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
        <a href="{% url 'filter' %}">Filter</a>
-       <a href="{% url 'hbcugrads' %}"> Graduates</a>
+       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+       <a href="{% url 'map' %}">Map</a>
        <a href="{% url 'signup' %}">Sign up</a>
       </div>
      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
@@ -63,7 +64,7 @@
     Come explore, expand and experience Historically Black Colleges and Universities</p>
   </section>
   
-<!-- <a href="hbcu/filter.html" class="main">filter</a>  -->
+<center><button><a href="{% url 'filter' %}" class="main">filter</a></button></center>
 
 
 

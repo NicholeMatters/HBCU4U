@@ -32,7 +32,7 @@ function topFunction() {
 // Search bar
 //add a y variable to use the block element used in the menu (share parent or grandparent)
 function search_major() { 
-    console.log("search_major was called")
+    // console.log("search_major was called")
     let input = document.getElementById('searchbar').value 
     input=input.toLowerCase(); 
     let x = document.getElementsByClassName('majors'); 
