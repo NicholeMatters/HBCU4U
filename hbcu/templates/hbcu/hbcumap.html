@@ -1,6 +1,7 @@
-<!-- {% extends "base.html" %} {% load static %} -->
+{% extends "base.html" %} {% load static %}
 <!-- <title>HBCU 4 U</title> -->
-<!-- {% block content %} -->
+{% block content %}
+
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +14,7 @@
 
 	</script>
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+
 
 	<style>
 		body {
@@ -888,3 +890,5 @@ geojson.features.forEach(function(marker) {
 </body>
 
 </html>
+
+{% endblock %}

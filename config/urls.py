@@ -25,7 +25,8 @@ urlpatterns = [
     path('', hbcu_views.index, name='index'),
     path('hbcu/filter', hbcu_views.listColleges, name='filter'),
     path('hbcu/<int:pk>/hbcu_detail', hbcu_views.hbcu_detail, name='hbcu_detail'),
-    path('hbcu/map', hbcu_views.map, name='map'),
+    # Modified map urls for hbcumap.html
+    path('hbcu/hbcumap', hbcu_views.map, name='map'),
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
     path('hbcu/addGraduate/', hbcu_views.add_grad, name='add_grad'),
     path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),

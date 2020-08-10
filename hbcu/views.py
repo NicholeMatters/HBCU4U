@@ -19,9 +19,10 @@ def hbcu_detail(request, pk):
   school = get_object_or_404(College, pk=pk)
   return render(request, "hbcu/hbcu_detail.html", {'colleges':school})
 
-def map(request):
-  colleges = College.objects.all().order_by('state')
-  return render(request, 'hbcu/map.html', context={'colleges':colleges})
+# Comment out older map
+# def map(request):
+#   colleges = College.objects.all().order_by('state')
+#   return render(request, 'hbcu/map.html', context={'colleges':colleges})
 
 def hbcuGrad(request):
   graduate = HBCUgrads.objects.all().order_by('last_name')
@@ -48,6 +49,11 @@ def add_hbcu(request):
             return redirect(to='filter')
 
     return render(request, "hbcu/add_hbcu.html", {"form": form})
+
+# Adding hbcumap.html
+def map(request):
+    return render(request, 'hbcu/hbcumap.html', {})
+
 
 # User login
 @login_required
