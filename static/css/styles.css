@@ -139,7 +139,7 @@ a {
   font-size:14px;
 }
 a.add {
-  color: white;
+  color:#1B59C5;
   font-size: 20px;
   text-align: center;
 }
@@ -204,9 +204,10 @@ h4 {
   flex-direction: row;
   justify-content: space-around;
   color: white;
-  border: 2px solid rgb(199, 166, 18);
+  /* border: 2px solid rgb(199, 166, 18); */
   width: 90%;
   height: 95%;
+  margin: 0 auto;
 }
 
 img.detail_logo {
@@ -365,7 +366,7 @@ body {
 /* Individual College Pages */
 .detailanchor {
   text-align: center;
-  color: rgb(241, 134, 11);
+  color: #1B59C5;
 }
 
 /* NEW HAMBURGER MENU BAR */

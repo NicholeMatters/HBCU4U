@@ -3,26 +3,39 @@
 {% load static %}
 
 {% block content %}
+<div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+       <a href="{% url 'filter' %}">Filter</a>
+       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+       <a href="{% url 'map' %}">Map</a>
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+     <i class="fa fa-bars"></i>
+     </a>
+</div>
 
 <h1> HBCU Details </h1>
 
-<div class="detailanchor">
+<!-- <div class="detailanchor">
   <a class="add" href="{% url 'home' %}">Home</a>
   <a class="add" href="{% url 'list_hbcus' %}">List Colleges</a>
   <a class="add" href="{% url 'map' %}">US Map</a>
   
-</div>
+</div> -->
 
   <div class="detail">
       <img class="image" src="{{ colleges.campus_image }}" height='80%' >
 
-      <div class="detail_page"> "{{ colleges.name }}" </div>
+      <!-- <div class="detail_page"> "{{ colleges.name }}" </div> -->
+      <h1> {{ colleges.name }} </h1>
       {{ colleges.history }}
       
       <div class="artist_date"> Located in: {{ colleges.city }},{{ colleges.state }}
 
   <!-- MAJORS -->
-        <h2> {{ colleges.name }} offers the following majors: {{ colleges.major }}
+        <p> {{ colleges.name }} offers the following majors: {{ colleges.major }}</p>
           <br>
   <!-- FINANCIAL AID  -->
         <h2> Need financial aid?</h2>
