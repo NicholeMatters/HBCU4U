@@ -12,18 +12,36 @@ h1 {
 
 section {
   width: 50%;
-  font-size: 24px;
-  object-position: 50%;
+  font-size: 20px;
+  /* object-position: 50%; */
   /* makes center */
   margin: 0 auto;
   
 }
-section .intro {
-  width: 50%;
-  object-fit: none;
-  object-position: 50%;
-  text-align: center;
+
+
+section .intro p {
+  /* text-align: center; */
 }
+.intro {
+  background:#EEEEEE;
+  /* text-align:center; */
+  color: #3B2B1B;
+  width: 100%;
+  /* padding: 1rem;
+  border-width: 10px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%; */
+}
+li {
+   margin-left: 210px;;
+}
+
 a.main {
   width: 30%;
   font-size: 100%;
@@ -46,23 +64,7 @@ a {
   text-align: center;
   color: black;
 }
-.intro {
-  background:#EEEEEE;
-  text-align:justify;
-  border-bottom-left-radius: 10%;
-  border-top-right-radius: 10%;
-  color: #3B2B1B;
-  width: 80%;
-  /* padding: 1rem; */
-  border-width: 10px;
-  border-style: solid;
-  border-image: 
-    linear-gradient(
-      to bottom, 
-      red, 
-      rgba(0, 0, 0, 0)
-    ) 1 100%;
-}
+
 .filter {
   position: relative;
   background-color: rgb(164, 172, 164);
@@ -153,7 +155,7 @@ a.add {
   flex-wrap: wrap; 
   flex-direction: row;
   justify-content: space-around;
-  color: #DA9021;
+  color: #1B59C5;
   /* border: 2px solid rgb(128, 124, 106); */
   width: 300px;
   /* height: 100px; */
