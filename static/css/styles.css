@@ -218,6 +218,7 @@ a.schoolanchor {
   text-align: center;
   color: #99582a;
 }
+
 h2.cname {
   letter-spacing: 0.0625em;
 }
@@ -731,4 +732,21 @@ html, body {
     .pa4-ns {
         padding: 2rem;
     }
+}
+
+/* Graduate Pages */
+/* p.extraText {
+    white-space: nowrap; 
+    width: 80%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px none #000000;
+}
+p.extraText:hover {
+  overflow: visible;
+} */
+#more {
+  display: none;
+  position: absolute;
+  
 }

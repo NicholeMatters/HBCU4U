@@ -147,3 +147,21 @@ setTimer();
 //           timer=null;
 //           playPauseBtn.style.backgroundPositionY="-33px";
 //     }
+
+
+//Graduate Page read more
+function readMore() {
+  var cont = document.getElementById("cont");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("newBtn");
+
+  if (cont.style.display === "none") {
+    cont.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    cont.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}

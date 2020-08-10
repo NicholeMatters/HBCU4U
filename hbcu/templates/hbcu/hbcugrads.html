@@ -17,23 +17,23 @@
  </div>
 
 <h1> List of HBCU Graduates  </h1>
-<button><a class="add" href="{% url 'add_grad' %}">Add New Grad</a>
+<button><a class="schoolanchor graduates" href="{% url 'add_grad' %}"><center>Add New Grad</center></a>
 </button>
 
-<header>
+<!-- <header>
 <div class="topnav">
     <a class="active" href="{% url 'index' %}">Home</a>
     <a href="{% url 'map' %}">Map</a>
     <div class="search-container">
       <!-- <form action="/hbcu/filter.html"> -->
         <!-- <input type="text" placeholder="--Find A Major--"> -->
-        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--School--"/> 
+        <!--<input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--School--"/> 
         
         <button type="submit"><i class="fa fa-search"></i></button>
       <!-- </form> -->
-    </div>
+    <!--</div>
 </div>
-</header>
+</header> -->
 
 <div class="everything">
   <br>
@@ -42,16 +42,22 @@
 
           <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
               <div class="tc">
-                <!-- <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h3 w3 dib" title="Photo of a kitty staring at you"> -->
-                <img src="{{ graduate.image }}" class="br-100 h3 w3 dib" title="{{ graduate.name }}">
-                <h1 class="f4">{{ graduate.name }} </h1>
+               
+                <img src="{{ graduate.image }}" class="br-100 h3 w4 dib" title="{{ graduate.name }}">
+                <h2>{{ graduate.name }} </h2>
                 <hr class="mw3 bb bw1 b--black-10">
                 {{ graduate.career }}
+                <hr>
+                <h1 class="f4"> {{ graduate.school }} </h1>
                 {{ graduate.date_born }} - {{ graduate.date_died }}
               </div>
-              <p class="lh-copy measure center f6 black-70">
-                Attended {{ graduate.school }}.  {{ graduate.history }} 
+              <div class="sidebar-box">
+              <p class="lh-copy measure center f6 black-70 extraText button">
+                <span id="cont"></span>
+                <span id="more">{{ graduate.history }}</span> 
               </p>
+              <button onclick="readMore()" id="newBtn">Read more</button>
+              </div>
           </article>
           <!-- <img class="list" src="" height='150' width='150'> -->
         
