@@ -57,7 +57,7 @@
 		mapboxgl.accessToken = 'pk.eyJ1IjoiaGV4YWdvbnN0ZW0yMDIwIiwiYSI6ImNrZGwzMDB2MzB1czYycnA5a3MzYmR0Z3QifQ.muYB_fdEM1IkFZT3Fw6N5w';
       let map = new mapboxgl.Map({
        container: 'map',
-       style: 'mapbox://styles/mapbox/light-v10',
+       style: 'mapbox://styles/mapbox/satellite-streets-v10',
        center: [-96, 37.8],
       zoom: 4
 });
@@ -881,10 +881,14 @@ geojson.features.forEach(function(marker) {
   // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
-  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) 
+  
+  // add popups
     .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
   .addTo(map);
 });
+
+
 	</script>
 
 </body>
