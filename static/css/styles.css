@@ -10,16 +10,17 @@ h1 {
 }
 
 section {
-  width: 100%;
-  font-size: 150%;
-  object-position: 50% 50%;
+  width: 50%;
+  font-size: 24px;
+  object-position: 50%;
   /* makes center */
   margin: 0 auto;
   
 }
 section .intro {
+  width: 50%;
   object-fit: none;
-  object-position: 50% 50%;
+  object-position: 50%;
   text-align: center;
 }
 a.main {
@@ -167,14 +168,14 @@ img.list {
 }
 h2 {
   text-align: center;
-  color: rgb(27, 31, 28);
+  color:#3B2B1B;
   background: white;
   border-radius: 10%;
   font-size: 30px;
   /* width: 400px; */
   word-spacing: 5px;
-  font-family: "Architects Daughter";
-  text-shadow: 2px 1px #3a6e46;
+  font-family: Tahoma;
+  
   
 }
 
@@ -189,7 +190,7 @@ h4 {
   align-items: center;
   word-spacing: 5px;
   line-height: .75;
-  font-family:Goudy Old Style;
+  font-family:Lato;
   border-radius: 75%;
 
 }
@@ -426,9 +427,9 @@ html, body {
 }
 
 .galleryContainer {
-  width: 100%;;
-  height: 500px;
-  max-width: 1000px;
+  width: 50%;;
+  height: 250px;
+  max-width: 500px;
   user-select: none;
   box-shadow: 0px 0px 3px 1px #00000078;
   padding: 10px;
