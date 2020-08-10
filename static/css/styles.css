@@ -7,6 +7,7 @@ h1 {
   text-align: center;
   color: 432818;
   text-shadow: 3px 3px 5px white;
+  font-family: lato;
 }
 
 section {
@@ -130,7 +131,7 @@ p{
 /* List of Colleges Page */
 .subtitle {
   font-size:20px;
-  color: white;
+  color: #3B2B1B;
 }
 a {
   font-size:14px;
@@ -152,15 +153,15 @@ a.add {
   flex-wrap: wrap; 
   flex-direction: row;
   justify-content: space-around;
-  color: #ffe6a7;
-  border: 2px solid rgb(128, 124, 106);
+  color: #DA9021;
+  /* border: 2px solid rgb(128, 124, 106); */
   width: 300px;
   /* height: 100px; */
-  border-radius: 75%;
-  background: #6f1d1b;
+  /* border-radius: 75%; */
+  background: #EEEEEE;
   text-align: justify;
   text-justify: inter-word;
-  box-shadow: 0 0 5px 5px #141414;
+  /* box-shadow: 0 0 5px 5px #141414; */
 }
 img.list {
   border-radius: 75%;
@@ -169,12 +170,12 @@ img.list {
 h2 {
   text-align: center;
   color:#3B2B1B;
-  background: white;
-  border-radius: 10%;
+  background: #eeeeee;
+  /* border-radius: 10%; */
   font-size: 30px;
   /* width: 400px; */
   word-spacing: 5px;
-  font-family: Tahoma;
+  font-family: lato;
   
   
 }
@@ -190,7 +191,7 @@ h4 {
   align-items: center;
   word-spacing: 5px;
   line-height: .75;
-  font-family:Lato;
+  font-family: lato;
   border-radius: 75%;
 
 }
@@ -264,7 +265,7 @@ Search Bar
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: lato;
 }
 
 .topnav {
@@ -290,7 +291,7 @@ body {
 }
 
 .topnav a.active {
-  background-color: rgb(112, 72, 18);
+  background-color:red;
   color: white;
 }
 
@@ -378,7 +379,7 @@ body {
 
 .topnav2 {
   overflow: hidden;
-  background-color: rgb(117, 73, 37);
+  background-color: #1B59C5;
   position: relative;
 }
 
@@ -400,11 +401,11 @@ body {
 
 .topnav2 a:hover {
   background-color: #ddd;
-  color: black;
+  color: #C81010;
 }
 
 .active {
-  background-color: rgb(11, 31, 12);
+  background-color: #C81010;
   color: white;
 }
 
@@ -512,7 +513,7 @@ html, body {
   bottom: 0;
   z-index: 1; /*On top of other elements */
   color: white;
-  font-family: sans-serif;
+  font-family: lato;
   font-size: 20px;
   text-align: center;
   width: 100%;
