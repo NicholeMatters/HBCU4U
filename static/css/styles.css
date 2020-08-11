@@ -28,16 +28,22 @@
   height: 100%;
 }
 .homepageImage img {
+  display:flex;
   width:200%;
   /* height: 60%; */
-  /* margin-top: 170%;
-  margin-right: 100%; */
+  margin-top: 170%;
+  margin-right: 100%;
   border: 3px solid brown;
+}
+a .main {
+  font-size: 20px;
+  color: red;
 }
 .main {
   display: flex;
   text-align: center;
   flex-flow: space-around;
+ 
 }
 h1 {
   text-align: center;
