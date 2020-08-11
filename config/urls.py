@@ -33,7 +33,8 @@ urlpatterns = [
 
     # user urls
     # url(r'^$', hbcu_views.home, name='home'),
-    url(r'^signup/$', hbcu_views.signup, name='signup.html'),
+    # url(r'^signup/$', hbcu_views.signup, name='signup'),
+    url(r'^register/$', hbcu_views.register, name='register'),
 ]
 
 if settings.DEBUG:
