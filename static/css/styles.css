@@ -802,3 +802,12 @@ h3.filterA {
   color:#1B59C5;
   font-size: 30px;
 }
+
+/* filter */
+.loader-div {
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}
