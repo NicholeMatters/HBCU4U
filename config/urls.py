@@ -32,7 +32,7 @@ urlpatterns = [
     path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),
 
     # user urls
-    url(r'^$', hbcu_views.home, name='home'),
+    # url(r'^$', hbcu_views.home, name='home'),
     url(r'^signup/$', hbcu_views.signup, name='signup'),
 ]
 

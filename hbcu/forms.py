@@ -4,13 +4,13 @@ from .models import HBCUgrads, College
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
-CustomUser = get_user_model()
+User = get_user_model()
 
 class SignUpForm(UserCreationForm):
     birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
 
     class Meta:
-        model = CustomUser
+        model = User
         fields = ('username', 'birth_date', 'password1', 'password2', )
 
 class gradForm(forms.ModelForm):

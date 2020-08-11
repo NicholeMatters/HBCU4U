@@ -33,9 +33,9 @@ class College(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
-    location = models.TextField(max_length=30, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+    # bio = models.TextField(max_length=500, blank=True)
+    # location = models.TextField(max_length=30, blank=True)
+    # birth_date = models.DateField(null=True, blank=True)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
@@ -56,18 +56,18 @@ class Product(models.Model):
     category = models.TextField(max_length=200, null=True, choices=CATEGORY)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
-class Order(models.Model):
-    STATUS = (
-            ('Pending', 'Pending'),
-            ('Out for delivery', 'Out for delivery'),
-            ('Delivered', 'Delivered'),
-            )
+# class Order(models.Model):
+#     STATUS = (
+#             ('Pending', 'Pending'),
+#             ('Out for delivery', 'Out for delivery'),
+#             ('Delivered', 'Delivered'),
+#             )
 
-    user = models.ForeignKey(User, null=True, on_delete= models.SET_NULL)
-    product = models.ForeignKey(Product, null=True, on_delete= models.SET_NULL)
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
-    status = models.TextField(max_length=200, null=True, choices= STATUS)
-    # tags = models.ManyToManyField(Tag)
+#     user = models.ForeignKey(User, null=True, on_delete= models.SET_NULL)
+#     product = models.ForeignKey(Product, null=True, on_delete= models.SET_NULL)
+#     date_created = models.DateTimeField(auto_now_add=True, null=True)
+#     status = models.TextField(max_length=200, null=True, choices= STATUS)
+#     # tags = models.ManyToManyField(Tag)
 
 class Major(models.Model):
     username = models.TextField(max_length=255, null=True)
