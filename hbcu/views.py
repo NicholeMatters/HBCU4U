@@ -69,7 +69,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('index.html')
+            return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'hbcu/signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})

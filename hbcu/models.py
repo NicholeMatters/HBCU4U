@@ -2,12 +2,12 @@ from django.db import models
 #imports the states codes to avoid human error typos
 # from localflavor.us.models import USStateField
 
-from django.contrib.auth import get_user_model
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+# from django.contrib.auth import get_user_model
+# from django.db.models.signals import post_save
+# from django.dispatch import receiver
 from django.conf import settings
 
-User = get_user_model()
+# User = get_user_model()
 
 # Create your models here.
 class College(models.Model):
@@ -31,17 +31,17 @@ class College(models.Model):
       return f"{self.name} located in {self.city}, {self.state}"
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE)
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE)
     # bio = models.TextField(max_length=500, blank=True)
     # location = models.TextField(max_length=30, blank=True)
     # birth_date = models.DateField(null=True, blank=True)
 
-@receiver(post_save, sender=User)
-def update_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-    instance.profile.save()
+# @receiver(post_save, sender=User)
+# def update_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
+#     instance.profile.save()
 
 
 class Product(models.Model):
