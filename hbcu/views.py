@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import College, HBCUgrads
 from .forms import gradForm, hbcuForm
 
-# from django.contrib.auth.decorators import login_required
-# from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
@@ -57,10 +57,10 @@ def map(request):
     return render(request, 'hbcu/hbcumap.html', {})
 
 
-# # User login
-# @login_required
-# def home(request):
-#     return render(request, 'hbcu/index.html')
+# User login
+@login_required
+def home(request):
+    return render(request, 'hbcu/index.html')
 
 # def signup(request):
 #     if request.method == 'POST':
@@ -74,7 +74,7 @@ def map(request):
 #             return redirect('home')
 #     else:
 #         form = UserCreationForm()
-#     return render(request, 'signup.html', {'form': form})
+#     return render(request, 'hbcu/register.html', {'form': form})
 
 def register(request):
     if request.method == 'POST':
