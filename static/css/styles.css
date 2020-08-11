@@ -1,3 +1,9 @@
+/* Homepage */
+.homepageBody {
+  display: flex;
+  border: 3px solid red;
+}
+
 .main {
   display: flex;
   text-align: center;
@@ -16,6 +22,7 @@ section {
   /* object-position: 50%; */
   /* makes center */
   margin: 0 auto;
+
   
 }
 
