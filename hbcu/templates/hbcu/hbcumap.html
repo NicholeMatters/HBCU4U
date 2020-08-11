@@ -1,0 +1,899 @@
+{% extends "base.html" %} {% load static %}
+<!-- <title>HBCU 4 U</title> -->
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<title></title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'>
+
+	</script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		#map {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		.marker {
+			background-image: url("https://i.etsystatic.com/22672222/r/il/708269/2346408030/il_794xN.2346408030_s0ak.jpg");
+			background-size: cover;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		.mapboxgl-popup {
+			max-width: 200px;
+		}
+
+		.mapboxgl-popup-content {
+			text-align: center;
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id='map'></div>
+
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiaGV4YWdvbnN0ZW0yMDIwIiwiYSI6ImNrZGwzMDB2MzB1czYycnA5a3MzYmR0Z3QifQ.muYB_fdEM1IkFZT3Fw6N5w';
+      let map = new mapboxgl.Map({
+       container: 'map',
+       style: 'mapbox://styles/mapbox/light-v10',
+
+       center: [-96, 37.8],
+      zoom: 4
+});
+
+     let geojson = {
+     type: 'FeatureCollection',
+     features: [{
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [-86.568539, 34.782913]
+    },
+      properties: {
+      title: 'Mapbox',
+      description: ' Alabama A & M University '
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.294050, 32.363612]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Alabama State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-84.140389, 31.569147]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Albany State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-91.137260, 31.874213]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Alcorn State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.020236, 34.011010]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Allen University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-92.290517, 34.735141]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Arkansas Baptist College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.020397, 34.012831]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Benedict College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-79.779087, 36.067941]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Bennett College for Women'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.031746, 29.211022]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Bethune-Cookman University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-88.055727, 30.696231]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Bishop State Community College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.237553, 37.267231]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Bluefield State College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-76.759521, 39.0193]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Bowie State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-83.877293, 39.715245]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Central State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-75.529349, 39.933336]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Cheyney University of Pennsylvania'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-80.854168, 33.499093]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Claflin University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-84.41135, 33.751655]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Clark Atlanta University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.043139, 34.913494]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Clinton Junior College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-90.56886, 34.253493]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Coahoma Community College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-87.017772, 32.425726]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Concordia College-Selma'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-76.65774, 39.31256]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Coppin State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-75.542295, 39.186204]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Delaware State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.12574, 33.311863]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Denmark Technical College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-90.066309, 29.996639]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Dillard University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-81.683646, 30.343868]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Edward Waters College'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-76.21411, 36.281169]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Elizabeth City State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-78.892618, 35.074291]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Fayetteville State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.803725, 36.167358]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Fisk University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-84.285056, 30.42682]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Florida Agricultural and Mechanical University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [ -80.270796, 25.917822]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Florida Memorial University'
+    }
+  },
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-83.898039, 32.536373]
+},
+properties: {
+title: 'Mapbox',
+description: 'Fort Valley State University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-85.991377, 33.995681]
+},
+properties: {
+title: 'Mapbox',
+description: 'Gadsden State Community College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-92.718842, 32.520788]
+},
+properties: {
+title: 'Mapbox',
+description: 'Grambling State University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-86.342826, 32.350255]
+},
+properties: {
+title: 'Mapbox',
+description: 'H Councill Trenholm State Technical College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-76.334253, 37.022788]
+},
+properties: {
+title: 'Mapbox',
+description: 'Hampton University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-76.334253, 37.022788]
+},
+properties: {
+title: 'Mapbox',
+description: 'Hampton University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-90.224919, 38.631932]
+},
+properties: {
+title: 'Mapbox',
+description: 'Harris-Stowe State University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-77.019556, 38.922676]
+},
+properties: {
+title: 'Mapbox',
+description: 'Howard University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-97.722289, 30.264644]
+},
+properties: {
+title: 'Mapbox',
+description: 'Huston-Tillotson University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-84.409383, 33.754282]
+},
+properties: {
+title: 'Mapbox',
+description: 'Interdenominational Theological Center'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-86.573412, 34.771925]
+},
+properties: {
+title: 'Mapbox',
+description: 'J F Drake State Technical College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-90.206382, 32.296949]
+},
+properties: {
+title: 'Mapbox',
+description: 'Jackson State University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-95.179987, 32.589219]
+},
+properties: {
+title: 'Mapbox',
+description: 'Jarvis Christian College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-80.855708, 35.243560]
+},
+properties: {
+title: 'Mapbox',
+description: 'Johnson C Smith University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-84.855812, 38.200350]
+},
+properties: {
+title: 'Mapbox',
+description: 'Kentucky State University'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+},
+{
+type: 'Feature',
+geometry: {
+type: 'Point',
+coordinates: [-122.859108, 45.562592]
+},
+properties: {
+title: 'Mapbox',
+description: 'Concordia College'
+}
+
+  }]
+}; 
+
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+
+// create a HTML element for each feature
+  let el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) 
+  
+  // add popups
+    .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+  .addTo(map);
+});
+
+
+	</script>
+
+</body>
+
+</html>
+
+{% endblock %}
