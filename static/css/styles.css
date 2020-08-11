@@ -3,10 +3,37 @@
   display: flex;
   flex-flow: row-wrap;
   border: 3px solid red;
-  width: 450px;
-  height: 600px;
+  width: 60%;
+  /* height: 600px; */
+  padding: 2px;
+  margin: auto;
+}
+.leftHome {
+  width: 65%;
+}
+.homepagePainting, .introBlurb, carousel {
+  width: 90%;
+  height: 33%;
+  display: flex;
+  flex-flow: row wrap;
+  border: 3px solid green;
+  padding: 5px;
+  margin: auto;
+  background: orange;
+  justify-content: space-around;
 }
 
+.homepagePainting img {
+  width:80%;
+  height: 100%;
+}
+.homepageImage img {
+  width:200%;
+  /* height: 60%; */
+  /* margin-top: 170%;
+  margin-right: 100%; */
+  border: 3px solid brown;
+}
 .main {
   display: flex;
   text-align: center;
@@ -24,9 +51,7 @@ section {
   font-size: 20px;
   /* object-position: 50%; */
   /* makes center */
-  margin: 0 auto;
-
-  
+  margin: 0 auto; 
 }
 
 
@@ -441,7 +466,7 @@ html, body {
 }
 
 .galleryContainer {
-  width: 50%;;
+  width: 100%;;
   height: 250px;
   max-width: 500px;
   user-select: none;
