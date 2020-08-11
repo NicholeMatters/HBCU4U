@@ -2,12 +2,12 @@ from django.db import models
 #imports the states codes to avoid human error typos
 # from localflavor.us.models import USStateField
 
-# from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model
 # from django.db.models.signals import post_save
 # from django.dispatch import receiver
 from django.conf import settings
 
-# User = get_user_model()
+User = get_user_model()
 
 # Create your models here.
 class College(models.Model):

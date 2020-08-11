@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import College, HBCUgrads
 from .forms import gradForm, hbcuForm
 
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+# from django.contrib.auth.decorators import login_required
+# from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
