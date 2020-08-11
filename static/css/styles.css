@@ -2,7 +2,7 @@
 .homepageBody {
   display: flex;
   flex-flow: row-wrap;
-  border: 3px solid red;
+  /* border: 3px solid red; */
   width: 60%;
   /* height: 600px; */
   padding: 2px;
@@ -16,10 +16,10 @@
   height: 33%;
   display: flex;
   flex-flow: row wrap;
-  border: 3px solid green;
+  /* border: 3px solid green; */
   padding: 5px;
   margin: auto;
-  background: orange;
+  /* background: orange; */
   justify-content: space-around;
 }
 
@@ -33,7 +33,7 @@
   /* height: 60%; */
   margin-top: 170%;
   margin-right: 100%;
-  border: 3px solid brown;
+  /* border: 3px solid brown; */
 }
 button {
   font-size: 20px;

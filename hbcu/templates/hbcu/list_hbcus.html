@@ -5,11 +5,14 @@
 
 {% block content %}
     <div class="topnav2">
-      <a href="{% url 'list_hbcus' %}" class="active">All HBCUs </a>
+      <a href="{% url 'index' %}"  class="active ">HBCU4U</a>
+      
+      <!-- class="currentpg" -->
       <div id="myLinks">
-       <a href="{% url 'index' %}"  class="currentpg">HBCU4U</a>
+       <a href="{% url 'list_hbcus' %}" >All HBCUs </a>
        <a href="{% url 'filter' %}">Filter</a>
-       <a href="{% url 'hbcugrads' %}"> Graduates</a>
+       <a href="{% url 'map' %}">Map</a>
+       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
        
       </div>
           <!-- <input id="searchbarAll" onkeyup="search" type="text" name="search" placeholder="--Search--"/> 
