@@ -35,9 +35,9 @@
   margin-right: 100%;
   border: 3px solid brown;
 }
-a .main {
+button {
   font-size: 20px;
-  color: red;
+  padding: 3px;
 }
 .main {
   display: flex;
@@ -795,4 +795,10 @@ p.extraText:hover {
   display: none;
   position: absolute;
   
+}
+
+/* Filter page */
+h3.filterA {
+  color:#1B59C5;
+  font-size: 30px;
 }
