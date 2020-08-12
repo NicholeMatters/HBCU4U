@@ -173,7 +173,7 @@ p{
 
 /* List of Colleges Page */
 .subtitle {
-  font-size:20px;
+  font-size:30px;
   color: #3B2B1B;
 }
 a {
@@ -259,10 +259,12 @@ img.detail_logo {
 h3 {
   line-height: 0.5cm;
   text-align: center;
+  font-size: 28px;
 }
 a.schoolanchor {
   text-align: center;
   color: #99582a;
+  font-size: 20px;
 }
 
 h2.cname {
