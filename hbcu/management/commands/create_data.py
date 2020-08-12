@@ -1,6 +1,6 @@
 import csv, sys
 from django.core.management.base import BaseCommand
-from hbcu.models import College, Major, Degree, State
+from hbcu.models import College, Major, Degree
 
 degrees= [
   'Advance Short-Term Certificate (AC)',
@@ -87,6 +87,7 @@ class CommandTwo(BaseCommand):
             state=row[5],
             virtual_tours=[11],
             )
+        self.stdout.write(self.style.SUCCESS('Data imported successfully'))
 
 print("done!")
 

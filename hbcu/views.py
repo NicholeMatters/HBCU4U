@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 
+
+
 # Create your views here.
 def index(request):
   all_colleges = College.objects.all().order_by('name')
@@ -77,4 +79,11 @@ def signup(request):
 # FILTER PAGE
 
 def BootstrapFilterView(request):
-  return render(request, "hbcu/filterB.html", {})
+  qs = College.objects.all()
+  college_contains_query = request.GET.get('college_contains')
+  college_exact_query = request.GET.get('college_exact')
+  college_or_major_query = request.GET.get('college_or_major')
+  context = {
+    'queryset' : qs
+  }
+  return render(request, "hbcu/filterB.html", context)
