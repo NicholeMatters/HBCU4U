@@ -798,12 +798,12 @@ p.extraText:hover {
 }
 
 /* Filter page */
-h3.filterA {
+filterA {
   color:#1B59C5;
   font-size: 30px;
 }
 
-/* filter */
+filter
 .loader-div {
   text-align: center;
   border-radius: 4px;

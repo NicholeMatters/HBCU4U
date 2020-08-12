@@ -32,10 +32,6 @@ def hbcu_detail(request, pk):
   school = get_object_or_404(College, pk=pk)
   return render(request, "hbcu/hbcu_detail.html", {'colleges':school})
 
-def map(request):
-  colleges = College.objects.all().order_by('state')
-  return render(request, 'hbcu/map.html', context={'colleges':colleges})
-
 def hbcuGrad(request):
   graduate = HBCUgrads.objects.all().order_by('name')
   return render(request, 'hbcu/hbcugrads.html', context={'graduates':graduate})
@@ -143,18 +139,18 @@ def is_valid_queryparam(param):
 # def infinite_filter(request):
 #     limit = request.GET.get('limit')
 #     offset = request.GET.get('offset')
-#     return Journal.objects.all()[int(offset): int(offset) + int(limit)]
+#     return College.objects.all()[int(offset): int(offset) + int(limit)]
 
 
 # def is_there_more_data(request):
 #     offset = request.GET.get('offset')
-#     if int(offset) > Journal.objects.all().count():
+#     if int(offset) > College.objects.all().count():
 #         return False
 #     return True
 
 
 # def BootstrapFilterView(request):
-#     qs = filterB(request)
+#     qs = filter(request)
 #     context = {
 #         'queryset': qs,
 #         'categories': Category.objects.all()
