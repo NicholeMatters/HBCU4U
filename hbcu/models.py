@@ -20,11 +20,11 @@ class Degree(models.Model):
     def __str__(self):
       return self.name
 
-# class State(models.Model):
-#     name = models.CharField(max_length=3000, default=False)
+class State(models.Model):
+    name = models.CharField(max_length=3000, default=False)
 
-#     def __str__(self):
-#       return self.name
+    def __str__(self):
+      return self.name
 
 # Create your models here.
 class College(models.Model):
@@ -33,7 +33,7 @@ class College(models.Model):
     major = models.ManyToManyField(Major)
     degree = models.ManyToManyField(Degree)
     city = models.TextField(max_length=3000, default='')
-    state = models.TextField(max_length=500, default='')
+    state = models.ManyToManyField(State)
     technology = models.TextField(max_length=500, default='')
     financial_aid = models.TextField(max_length=3000, default='')
     logo = models.TextField(null=True, blank=True)

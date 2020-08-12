@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import College, HBCUgrads
+from .models import College, HBCUgrads, Major, Degree, State
 from .forms import gradForm, hbcuForm
 
 from django.contrib.auth.decorators import login_required
@@ -78,12 +78,23 @@ def signup(request):
 
 
 # FILTER PAGE
+def is_valid_queryparam(param):
+    return param != '' and param is not None
 
 def BootstrapFilterView(request):
   qs = College.objects.all()
+  majorType = Major.object.all()
+  degreeType = Degree.object.all()
+  schoolState = State.object.all()
   college_contains_query = request.GET.get('college_contains')
   id_exact_query = request.GET.get('college_exact')
   # college_or_major_query = request.GET.get('college_or_major')
+
+  majorType = request.GET.get('majorType') 
+  degreeType = request.GET.get('degreeType')
+  schoolState = request.GET.get('schoolState')
+
+  virtualTour = request.GET.get('virtualTour')
   
   if college_contains_query != '' and college_contains_query is not None:
       qs = qs.filter(name__icontains=college_contains_query)
@@ -95,7 +106,18 @@ def BootstrapFilterView(request):
   # elif college_or_major_query != '' and college_or_major_query  is not None:
   #     qs = qs.filter(Q(college__icontains=college_or_major_query) | Q(major__icontains=college_or_major_query)).distinct()
   
+  if is_valid_queryparam(majorType):
+      qs = qs.filter(majorType__name=majorType)
+  if is_valid_queryparam(degreeType):
+      qs = qs.filter(degreeType__name=degreeType)
+  if is_valid_queryparam(schoolState):
+      qs = qs.filter(schoolState__name=schoolState)
+
+
   context = {
-    'queryset' : qs
+    'queryset' : qs,
+    'majorType': majorType,
+    'degreeType': degreeType,
+    'schoolState': schoolState,
   }
   return render(request, "hbcu/filterB.html", context)
