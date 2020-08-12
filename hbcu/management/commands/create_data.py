@@ -1,6 +1,6 @@
-import random
+import csv, sys
 from django.core.management.base import BaseCommand
-from hbcu.views import College, Major, Degree, State
+from hbcu.models import College, Major, Degree, State
 
 degrees= [
   'Advance Short-Term Certificate (AC)',
@@ -59,27 +59,36 @@ majors = [
 
 
 
+# class CommandTwo(BaseCommand):
+
+#   def add_arguments(self, parser):
+#       parser.add_argument('hbcu3', type=str, help='This is the json file that contains colleges')
+
+#   def handle(self, *args, **kwargs):
+#     hbcu3 = kwargs ['hbcu']
+#     with open(f'{hbcu3}.json') as file:
+#         for row in file:
+#           name = row
+#           major
+#           degree
+#           state
+#           virtual_tour
+
 class CommandTwo(BaseCommand):
-
-  def add_arguments(self, parser):
-      parser.add_argument('hbcu3', type=str, help='This is the json file that contains colleges')
-
-  def handle(self, *args, **kwargs):
-    hbcu3 = kwargs ['hbcu']
-    with open(f'{hbcu3}.json') as file:
-        for row in file:
-          name = row
-          major
-          degree
-          state
-          virtual_tour
-
-class Command(BaseCommand):
    def handle(self, *args, **kwargs):
     with open('HBCUdata.csv','r') as csvfile:
         reader= csv.reader(csvfile)
         for row in reader:
-          College.objects.create(name=row[0],city=row[4],state=row[5])
+          College.objects.create(
+            name=row[0],
+            major=row[2],
+            degree=row[3],
+            city=row[4],
+            state=row[5],
+            virtual_tours=[11],
+            )
+
+print("done!")
 
 
 
