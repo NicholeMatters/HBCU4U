@@ -1,83 +1,59 @@
+{% extends "base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>HBCU · Filter</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<title> Discover HBCUs </title>
 
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
-    
-    <script src="https://kit.fontawesome.com/012e7f447a.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-  <div class="filterBody">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% block content %}
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+
+<div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}">Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+        <i class="fa fa-bars"></i>
+     </a>
+</div>
+
+<h1> Historically Black </h1>
+<h1> Colleges and Universities  </h1>
+
+
 
 <main role="main" class="container">
 
-<h3> Filter </h3>
-  <form method="GET" action=".">
-    <div class="form-row">
-        <div class="form-group col-12">
-            <div class="input-group">
-                <input class="form-control py-2 border-right-0 border" type="search" name="college_contains" placeholder="College contains..."/>
-                <span class="input-group-append">
-                    <div class="input-group-text bg-transparent">
-                        <i class="fa fa-search"></i>
-                    </div>
-                </span>
+<h3 class="filterA"> Filter </h3>
+      <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="college_contains" placeholder="College contains..."/>
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-row">
-          <div class="form-group col-12">
-              <div class="input-group">
-                  <input class="form-control py-2 border-right-0 border" type="search" name="college_exact" placeholder="College exact..."/>
-                  <span class="input-group-append">
-                      <div class="input-group-text bg-transparent">
-                          <i class="fa fa-search"></i>
-                      </div>
-                  </span>
+        <div class="form-row">
+              <div class="form-group col-12">
+                  <div class="input-group">
+                      <input class="form-control py-2 border-right-0 border" type="search" name="college_exact" placeholder="College exact..."/>
+                      <span class="input-group-append">
+                          <div class="input-group-text bg-transparent">
+                              <i class="fa fa-search"></i>
+                          </div>
+                      </span>
+                  </div>
               </div>
           </div>
-      </div>
       <!-- <div class="form-row">
           <div class="form-group col-12">
               <div class="input-group">
@@ -92,86 +68,82 @@
       </div> -->
 
 
+            <div class="form-row">
+              <!-- <div class="form-group col-md-6">
+                <label for="inputCity">Major</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-6 col-lg-7">
+                <label for="inputCity">Degree</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div> -->
+                <label for="inputState">Major</label>
+                <select id="inputMajor" name="majorType" class="form-control">
+                    <option selected>Choose Major...</option>
+                    <option>...</option>
+                    {% for major in majorType %}
+                    <option value="{{ major }}">{{ major }}</option>
+                    {% endfor %}
+                </select>
+                <label for="inputState">Degree</label>
+                <select id="inputDegree" name="degreeType" class="form-control">
+                    <option selected>Choose Degree...</option>
+                    <option>...</option>
+                    {% for degree in degreeType %}
+                    <option value="{{ degree }}">{{ degree }}</option>
+                    {% endfor %}
+                </select>
+                <label for="inputState">State</label>
+                <select id="inputState" name="schoolState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                    {% for state in schoolState %}
+                    <option value="{{ school }}">{{ school }}</option>
+                    {% endfor %}
+                </select>
+              </div>
 
-
-  
-  <div class="form-row">
-    <!-- <div class="form-group col-md-6">
-      <label for="inputCity">Major</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-6 col-lg-7">
-      <label for="inputCity">Degree</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div> -->
-      <label for="inputState">Major</label>
-      <select id="inputMajor" name="majorType" class="form-control">
-        <option selected>Choose Major...</option>
-        <option>...</option>
-        {% for major in majorType%}
-        <option value="{{ major }}">{{ major }}</option>
-        {% endfor %}
-      </select>
-      <label for="inputState">Degree</label>
-      <select id="inputDegree" name="degreeType" class="form-control">
-        <option selected>Choose Degree...</option>
-        <option>...</option>
-        {% for degree in degreeType%}
-        <option value="{{ degree }}">{{ degree }}</option>
-        {% endfor %}
-      </select>
-      <label for="inputState">State</label>
-      <select id="inputState" name="schoolState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-        {% for state in schoolState %}
-        <option value="{{ school }}">{{ school }}</option>
-        {% endfor %}
-      </select>
-    </div>
-
-    <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="virtual_tour" name="virtual_tour">
-      <label class="form-check-label" for="virtualTour">
-        Virtual Tours
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Search</button>
-    
-
-  </div>
-
-  </form>
-
-  <hr  />
-  <div class="row">
-    <ol>
-        {% for college in queryset %}
-            <li>
-              {{ college.name }}
-              <span> Located: {{ college.city }}, {{ college.state }} </span>
-              <span>
-                {% for major in college.major.all %}
-                    {{ major }}
-                {%  endfor %}
-              </span>
-              <span> Degree Type: {{ college.degree }} </span>
+              <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="virtual_tour" name="virtual_tour">
+                <label class="form-check-label" for="virtualTour">
+                  Virtual Tours
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
               
-            </li>
-          <hr>
-        {% endfor %}
-    </ol>
-  </div>
 
+            </div>
+
+      </form>
+
+      <hr  />
+          <div class="row">
+            <ol>
+                {% for college in queryset %}
+                    <li>
+                      {{ college.name }}
+                      <span> Located: {{ college.city }}, {{ college.state }} </span>
+                      <span>
+                        {% for major in college.major.all %}
+                            {{ major }}
+                        {%  endfor %}
+                      </span>
+                      <span> Degree Type: {{ college.degree }} </span>
+                      
+                    </li>
+                  <hr>
+                {% endfor %}
+            </ol>
+          </div>
 </main>
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="{% static 'js/schools.js' %}"></script>
 
-</div>      
-</body>
-</html>
+
+
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+</div>
+{% endblock %}
