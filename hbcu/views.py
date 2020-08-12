@@ -83,9 +83,9 @@ def is_valid_queryparam(param):
 
 def BootstrapFilterView(request):
   qs = College.objects.all()
-  majorType = Major.object.all()
-  degreeType = Degree.object.all()
-  schoolState = State.object.all()
+  majorType = Major.objects.all()
+  degreeType = Degree.objects.all()
+  schoolState = State.objects.all()
   college_contains_query = request.GET.get('college_contains')
   id_exact_query = request.GET.get('college_exact')
   # college_or_major_query = request.GET.get('college_or_major')
