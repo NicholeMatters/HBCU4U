@@ -113,7 +113,8 @@ def BootstrapFilterView(request):
   if is_valid_queryparam(schoolState):
       qs = qs.filter(schoolState__name=schoolState)
 
-
+  if virtualTour == 'on':
+      qs = qs.filter(virtualTour =True)
   context = {
     'queryset' : qs,
     'majorType': majorType,
