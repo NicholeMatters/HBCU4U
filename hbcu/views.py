@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import College, HBCUgrads, Major, Degree, State
+from .models import College, HBCUgrads, Major, Degree
 from .forms import gradForm, hbcuForm
 
 from django.contrib.auth.decorators import login_required

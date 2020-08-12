@@ -30,10 +30,10 @@ class State(models.Model):
 class College(models.Model):
     name = models.TextField(max_length=3000, default='')
     url = models.URLField(null=True, blank=True, default='')
-    major = models.ManyToManyField(Major)
-    degree = models.ManyToManyField(Degree)
+    majors = models.ManyToManyField(Major)
+    degrees = models.ManyToManyField(Degree)
     city = models.TextField(max_length=3000, default='')
-    state = models.ManyToManyField(State)
+    # states = models.ManyToManyField(State)
     technology = models.TextField(max_length=500, default='')
     financial_aid = models.TextField(max_length=3000, default='')
     logo = models.TextField(null=True, blank=True)

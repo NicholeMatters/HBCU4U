@@ -1,20 +1,7 @@
-{% extends "base.html" %} {% load static %}
-<!-- <title>HBCU 4 U</title> -->
+{% extends "base.html" %} 
+{% load static %}
+
 {% block content %}
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset='utf-8' />
-	<title></title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'>
-
-	</script>
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-
 
 	<style>
 		body {
@@ -47,9 +34,23 @@
 			font-family: 'Open Sans', sans-serif;
 		}
 	</style>
-</head>
 
-<body>
+    <div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}">Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+        <i class="fa fa-bars"></i>
+     </a>
+</div>
+
+<h1> Historically Black </h1>
+<h1> Colleges and Universities  </h1>
+<h3 class="filterA"> US Map </h3>
 
 	<div id='map'></div>
 
@@ -892,8 +893,6 @@ geojson.features.forEach(function(marker) {
 
 	</script>
 
-</body>
 
-</html>
 
 {% endblock %}

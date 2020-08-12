@@ -33,10 +33,10 @@ class hbcuForm(forms.ModelForm):
         fields = [
             'name',
             'url',
-            'major',
-            'degree',
+            'majors',
+            'degrees',
             'city',
-            'state',
+            # 'state',
             'technology',
             'financial_aid',
             'logo',
