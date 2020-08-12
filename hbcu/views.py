@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import College, HBCUgrads, Major, Degree
+from .models import College, HBCUgrads, Major, Degree, State
 from .forms import gradForm, hbcuForm
 
 from django.contrib.auth.decorators import login_required
@@ -86,8 +86,8 @@ def BootstrapFilterView(request):
   majorType = Major.objects.all()
   degreeType = Degree.objects.all()
   schoolState = State.objects.all()
-  college_contains_query = request.GET.get('college_contains')
-  id_exact_query = request.GET.get('college_exact')
+  college_contains_query = request.GET.get('name')
+  id_exact_query = request.GET.get('name')
   # college_or_major_query = request.GET.get('college_or_major')
 
   majorType = request.GET.get('majorType') 

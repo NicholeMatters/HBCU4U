@@ -33,7 +33,7 @@
         <div class="form-row">
             <div class="form-group col-12">
                 <div class="input-group">
-                    <input class="form-control py-2 border-right-0 border" type="search" name="college_contains" placeholder="College contains..."/>
+                    <input class="form-control py-2 border-right-0 border" type="search" name="name" placeholder="College contains..."/>
                     <span class="input-group-append">
                         <div class="input-group-text bg-transparent">
                             <i class="fa fa-search"></i>
@@ -45,7 +45,7 @@
         <div class="form-row">
               <div class="form-group col-12">
                   <div class="input-group">
-                      <input class="form-control py-2 border-right-0 border" type="search" name="college_exact" placeholder="College exact..."/>
+                      <input class="form-control py-2 border-right-0 border" type="search" name="name" placeholder="College exact..."/>
                       <span class="input-group-append">
                           <div class="input-group-text bg-transparent">
                               <i class="fa fa-search"></i>
@@ -78,26 +78,26 @@
                 <input type="text" class="form-control" id="inputCity">
               </div> -->
                 <label for="inputState">Major</label>
-                <select id="inputMajor" name="majorType" class="form-control">
+                <select id="inputMajor" name="major_names" class="form-control">
                     <option selected>Choose Major...</option>
                     <option>...</option>
-                    {% for major in majorType %}
+                    {% for major in majors %}
                     <option value="{{ major }}">{{ major }}</option>
                     {% endfor %}
                 </select>
                 <label for="inputState">Degree</label>
-                <select id="inputDegree" name="degreeType" class="form-control">
+                <select id="inputDegree" name="degree_names" class="form-control">
                     <option selected>Choose Degree...</option>
                     <option>...</option>
-                    {% for degree in degreeType %}
+                    {% for degree in degrees %}
                     <option value="{{ degree }}">{{ degree }}</option>
                     {% endfor %}
                 </select>
                 <label for="inputState">State</label>
-                <select id="inputState" name="schoolState" class="form-control">
+                <select id="inputState" name="state_names" class="form-control">
                     <option selected>Choose...</option>
                     <option>...</option>
-                    {% for state in schoolState %}
+                    {% for state in states %}
                     <option value="{{ school }}">{{ school }}</option>
                     {% endfor %}
                 </select>

@@ -1,8 +1,8 @@
 import csv, sys
 from django.core.management.base import BaseCommand
-from hbcu.models import College, Major, Degree
+from hbcu.models import College, Major, Degree, State
 
-degrees= [
+DEGREES = [
   'Advance Short-Term Certificate (AC)',
   'Associate of Arts (AA)',
   'Associate of Applied Science (AAS)',
@@ -46,7 +46,7 @@ degrees= [
 
 ]
 
-majors = [
+MAJORS = [
   'Accounting',
   'Biology',
   'English',
@@ -74,22 +74,53 @@ majors = [
 #           state
 #           virtual_tour
 
-class CommandTwo(BaseCommand):
+class Command(BaseCommand):
    def handle(self, *args, **kwargs):
-    with open('HBCUdata.csv','r') as csvfile:
+     for major in MAJORS:
+        Major.objects.get_or_create(name=major)
+     for degree in DEGREES:
+        Degree.objects.get_or_create(name=degree)
+     College.objects.all().delete()
+     with open('HBCUdata.csv','r') as csvfile:
         reader= csv.reader(csvfile)
+        # reads one line and throws it away
+        next(reader)
         for row in reader:
-          College.objects.create(
-            name=row[0],
-            major=row[2],
-            degree=row[3],
-            city=row[4],
-            state=row[5],
-            virtual_tours=[11],
+          name = row[0]
+          url = row[1]
+          majors_names = row[2].split('; ')
+          degrees_names = row[3].split('; ')
+          city = row[4]
+          state_name = row[5]
+          state, created=State.objects.get_or_create(name=state_name)
+          # print(name, url, majors)
+          technology = row[6].split('; ')
+          financial_aid = row[7].split('; ')
+          logo = row[8]
+          campus_image = row[9]
+          # virtual_tour = row[11]
+          history = row[15]
+
+          college = College.objects.create(
+            name=name,
+            url=url,
+            city=city,
+            state=state,
+            technology=technology,
+            financial_aid=financial_aid,
+            logo=logo,
+            campus_image=campus_image,
+            # virtual_tour=virtual_tour,
+            history=history,
             )
+          for major in Major.objects.filter(name__in=majors_names):
+            college.majors.add(major)
+          for degree in Degree.objects.filter(name__in=degrees_names):
+            college.degrees.add(degree)
+
         self.stdout.write(self.style.SUCCESS('Data imported successfully'))
 
-print("done!")
+     print("done!")
 
 
 

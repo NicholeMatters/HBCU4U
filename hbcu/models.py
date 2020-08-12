@@ -33,7 +33,7 @@ class College(models.Model):
     majors = models.ManyToManyField(Major)
     degrees = models.ManyToManyField(Degree)
     city = models.TextField(max_length=3000, default='')
-    # states = models.ManyToManyField(State)
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="colleges", null=True)
     technology = models.TextField(max_length=500, default='')
     financial_aid = models.TextField(max_length=3000, default='')
     logo = models.TextField(null=True, blank=True)
