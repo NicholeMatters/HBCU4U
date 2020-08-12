@@ -3,24 +3,22 @@
 <title>HBCU 4 U</title>
 {% block content %}
 
-<!-- Simulate a smartphone / tablet look -->
-<!-- <div class="mobile-container"> -->
-
 <!-- Top Navigation Menu -->
     <div class="topnav2">
       <a href="{% url 'index' %}" class="active">HBCU4U</a>
       <div id="myLinks">
-       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
-       <a href="{% url 'filter' %}">Filter</a>
-       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
-       <a href="{% url 'map' %}">Map</a>
-       <a href="{% url 'signup' %}">Sign up</a>
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}">Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
+        <!-- <a href="{% url 'signup' %}">Sign up</a> -->
+        <a href="{% url 'filterB' %}">New Filter</a>
       </div>
-     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
-     <i class="fa fa-bars"></i>
-     </a>
+      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+      <i class="fa fa-bars"></i>
+      </a>
     </div>
-<!-- </div>  -->
+
 <div class="homepageBody">
     <div class="leftHome">
         <div class="homepagePainting">

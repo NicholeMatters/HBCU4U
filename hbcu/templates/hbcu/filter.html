@@ -8,48 +8,39 @@
 <div class="topnav2">
       <a href="{% url 'index' %}" class="active">HBCU4U</a>
       <div id="myLinks">
-       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
-       <a href="{% url 'filter' %}">Filter</a>
-       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
-       <a href="{% url 'map' %}">Map</a>
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}">Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
       </div>
      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
-     <i class="fa fa-bars"></i>
+        <i class="fa fa-bars"></i>
      </a>
-    </div>
+</div>
 
 <h1> Historically Black </h1>
 <h1> Colleges and Universities  </h1>
 <h3 class="filterA"> Filter </h3>
 
 <header>
-
-<div class="topnav">
- 
-    <div class="search-container">
-
-        <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
-
-        <input id="searchbar2" onkeyup="search_financial_aid()" type="text" name="search" placeholder="--Find A Financial Aid--"/> 
-
-
-        <button type="submit"><i class="fa fa-search"></i></button>
-      
-  </div>
-</div>
+  <!-- <div class="topnav">
+      <div class="search-container">
+          <input id="searchbar" onkeyup="search_major()" type="text" name="search" placeholder="--Find A Major--"/> 
+          <input id="searchbar2" onkeyup="search_financial_aid()" type="text" name="search" placeholder="--Find A Financial Aid--"/> 
+          <button type="submit"><i class="fa fa-search"></i></button>
+        
+      </div>
+  </div> -->
 </header>
 
 <div class="everything">
   <br>
           {% for college in colleges %}
  
-    
           <div class="flex location majors financial_aid virtual_tour">
           
           <div style="display:none" class="location majors financial_aid virtual_tour" > <img class="list" src="{{ college.logo }}" height='150' width='150'></div>
           <div style="display:none"  class="subtitle location cname"> {{ college.name }} </div>
-
-
           <div style="display:none"  class="subtitle location">{{ college.city }} , {{ college.state }}</div>
           <div style="display:none" class="majors" > {{ college.major }} </div>
           <div style="display:none" class="financial_aid" > {{ college.financial_aid }} </div>
@@ -78,7 +69,7 @@
         </div>
     </nav> -->
 
-    <main role="main" class="container">
+    <main role="main" class="searchContainer">
 
       <h3>Filter Colleges</h3>
       <form method="GET" action=".">

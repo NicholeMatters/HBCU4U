@@ -12,6 +12,8 @@ django-debug-toolbar = "^2.2"
 django-extensions = "^3.0.3"
 django-filter = "^2.3.0"
 react = "^4.3.0"
+django-localflavor-us = "^1.1"
+django-localflavor = "^3.0.1"
 
 [tool.poetry.dev-dependencies]
 

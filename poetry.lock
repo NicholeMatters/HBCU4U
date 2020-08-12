@@ -78,6 +78,29 @@ Django = ">=2.2"
 
 [[package]]
 category = "main"
+description = "Country-specific Django helpers"
+name = "django-localflavor"
+optional = false
+python-versions = "*"
+version = "3.0.1"
+
+[package.dependencies]
+django = ">=2.2"
+python-stdnum = ">=1.6"
+
+[[package]]
+category = "main"
+description = "Country-specific Django helpers for U.S.A."
+name = "django-localflavor-us"
+optional = false
+python-versions = "*"
+version = "1.1"
+
+[package.dependencies]
+Django = ">=1.4"
+
+[[package]]
+category = "main"
 description = "An extensible user-registration application for Django"
 name = "django-registration-redux"
 optional = false
@@ -99,6 +122,19 @@ name = "optional-django"
 optional = false
 python-versions = "*"
 version = "0.3.0"
+
+[[package]]
+category = "main"
+description = "Python module to handle standardized numbers and codes"
+name = "python-stdnum"
+optional = false
+python-versions = "*"
+version = "1.14"
+
+[package.extras]
+soap = ["zeep"]
+soap-alt = ["suds"]
+soap-fallback = ["pysimplesoap"]
 
 [[package]]
 category = "main"
@@ -168,7 +204,7 @@ secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "pyOpenSSL (>=0
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [metadata]
-content-hash = "2568fea7bcb98c7de01702869f1fd423acbb3366c17704902f4df9fa7728bb6c"
+content-hash = "9bb2cba591128241a0290335baf4187cb81cc6109780963b7ad245506c7544c0"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -200,6 +236,13 @@ django-filter = [
     {file = "django-filter-2.3.0.tar.gz", hash = "sha256:11e63dd759835d9ba7a763926ffb2662cf8a6dcb4c7971a95064de34dbc7e5af"},
     {file = "django_filter-2.3.0-py3-none-any.whl", hash = "sha256:616848eab6fc50193a1b3730140c49b60c57a3eda1f7fc57fa8505ac156c6c75"},
 ]
+django-localflavor = [
+    {file = "django-localflavor-3.0.1.tar.gz", hash = "sha256:24e9a03bc11ced92365821d3cfdd96eb4e2f3e44a6f40e86c645d3e0ec65ec53"},
+    {file = "django_localflavor-3.0.1-py2.py3-none-any.whl", hash = "sha256:3c3034dc64a1f7e5efd9eb53d653af905c20482d438c0e8b825d02e3121b86fa"},
+]
+django-localflavor-us = [
+    {file = "django-localflavor-us-1.1.tar.gz", hash = "sha256:f975c367e72449cd072371c1f91fa5c410940382e319832e80521d3bd46282c5"},
+]
 django-registration-redux = [
     {file = "django-registration-redux-2.8.tar.gz", hash = "sha256:ed525f393c452d3f5044148131cafbf50da7bdec9f78b594450bf01ad67085d4"},
     {file = "django_registration_redux-2.8-py2.py3-none-any.whl", hash = "sha256:ed1ead5398e48bdc37064ab1e269b49301765701984e8d956a641aad2ff3a3ca"},
@@ -210,6 +253,10 @@ idna = [
 ]
 optional-django = [
     {file = "optional-django-0.3.0.tar.gz", hash = "sha256:2cd56b864ecf88e420aa882209ca7849114f38bc7089344cc9e476ea91aeb010"},
+]
+python-stdnum = [
+    {file = "python-stdnum-1.14.tar.gz", hash = "sha256:fd3a92b8ec82a159c41dbaa3c5397934d090090c92b04e346412e0fd7e6a1b1c"},
+    {file = "python_stdnum-1.14-py2.py3-none-any.whl", hash = "sha256:6389a1e7658e39c37e4f10b42d7a51ce620e031bdeae05158519c218e14ff3b5"},
 ]
 pytz = [
     {file = "pytz-2020.1-py2.py3-none-any.whl", hash = "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"},

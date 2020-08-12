@@ -812,6 +812,8 @@ filter
   margin: 20px 0;
 }
 
+.filterBody {
+  margin-top: 5rem;
+}
 
 
-/* MAP CSS */
