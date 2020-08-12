@@ -78,7 +78,7 @@
               </div>
           </div>
       </div>
-      <div class="form-row">
+      <!-- <div class="form-row">
           <div class="form-group col-12">
               <div class="input-group">
                   <input class="form-control py-2 border-right-0 border" type="search" name="college_or_major" placeholder="College or Major..."/>
@@ -89,7 +89,7 @@
                   </span>
               </div>
           </div>
-      </div>
+      </div> -->
 
 
 
@@ -138,21 +138,22 @@
 
   <hr  />
   <div class="row">
-    <ul>
+    <ol>
         {% for college in queryset %}
             <li>
               {{ college.name }}
               <span> Located: {{ college.city }}, {{ college.state }} </span>
               <span>
-                {% for major in college.major %}
+                {% for major in college.major.all %}
                     {{ major }}
                 {%  endfor %}
               </span>
               <span> Degree Type: {{ college.degree }} </span>
-              <span> Located in: {{ college.state }} </span>
+              
             </li>
+          <hr>
         {% endfor %}
-    </ul>
+    </ol>
   </div>
 
 </main>

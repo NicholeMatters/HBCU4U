@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import College, HBCUgrads
 from .forms import gradForm, hbcuForm
@@ -81,8 +82,19 @@ def signup(request):
 def BootstrapFilterView(request):
   qs = College.objects.all()
   college_contains_query = request.GET.get('college_contains')
-  college_exact_query = request.GET.get('college_exact')
-  college_or_major_query = request.GET.get('college_or_major')
+  id_exact_query = request.GET.get('college_exact')
+  # college_or_major_query = request.GET.get('college_or_major')
+  
+  if college_contains_query != '' and college_contains_query is not None:
+      qs = qs.filter(name__icontains=college_contains_query)
+    #  icontain is NOT case sensitive but contains IS; i stands for insensitive 
+  elif id_exact_query != '' and id_exact_query is not None:
+      qs = qs.filter(id=id_exact_query)
+    # could have also used: name__iexact
+
+  # elif college_or_major_query != '' and college_or_major_query  is not None:
+  #     qs = qs.filter(Q(college__icontains=college_or_major_query) | Q(major__icontains=college_or_major_query)).distinct()
+  
   context = {
     'queryset' : qs
   }
