@@ -7,12 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Starter Template · Bootstrap</title>
+    <title>HBCU · Filter</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
-
+    
+    <script src="https://kit.fontawesome.com/012e7f447a.js" crossorigin="anonymous"></script>
   </head>
   <body>
   <div class="filterBody">
@@ -54,52 +55,88 @@
 <h3> Filter </h3>
   <form method="GET" action=".">
     <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <div class="form-group col-12">
+            <div class="input-group">
+                <input class="form-control py-2 border-right-0 border" type="search" placeholder="College contains..."/>
+                <span class="input-group-append">
+                    <div class="input-group-text bg-transparent">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </span>
+            </div>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
+    <div class="form-row">
+          <div class="form-group col-12">
+              <div class="input-group">
+                  <input class="form-control py-2 border-right-0 border" type="search" placeholder="College exact..."/>
+                  <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                          <i class="fa fa-search"></i>
+                      </div>
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group col-12">
+              <div class="input-group">
+                  <input class="form-control py-2 border-right-0 border" type="search" placeholder="College or Major..."/>
+                  <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                          <i class="fa fa-search"></i>
+                      </div>
+                  </span>
+              </div>
+          </div>
+      </div>
+
+
+
+
+  
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
+    <!-- <div class="form-group col-md-6">
+      <label for="inputCity">Major</label>
       <input type="text" class="form-control" id="inputCity">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6 col-lg-7">
+      <label for="inputCity">Degree</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div> -->
+      <label for="inputState">Major</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose Major...</option>
+        <option>...</option>
+      </select>
+      <label for="inputState">Degree</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose Degree...</option>
+        <option>...</option>
+      </select>
       <label for="inputState">State</label>
       <select id="inputState" class="form-control">
         <option selected>Choose...</option>
         <option>...</option>
       </select>
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
+
+    <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
+      <input class="form-check-input" type="checkbox" id="virtual_tour">
+      <label class="form-check-label" for="virtual_tour">
+        Virtual Tours
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-primary">Search</button>
+    
+
+  </div>
+
   </form>
 
-</main>/.container
+</main>
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

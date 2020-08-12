@@ -1,6 +1,4 @@
 from django.db import models
-#imports the states codes to avoid human error typos
-# from localflavor.us.models import USStateField
 
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save
@@ -23,8 +21,7 @@ class Degree(models.Model):
       return self.name
 
 class State(models.Model):
-    name = models.CharField(max_length=3000, default='')
-    # name = USStateField(null=True, blank=True)
+    name = models.CharField(max_length=3000, default=False)
 
     def __str__(self):
       return self.name
@@ -36,7 +33,7 @@ class College(models.Model):
     major = models.ManyToManyField(Major)
     degree = models.ManyToManyField(Degree)
     city = models.TextField(max_length=3000, default='')
-    state = ManyToManyField(State)
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
     technology = models.TextField(max_length=500, default='')
     financial_aid = models.TextField(max_length=3000, default='')
     logo = models.TextField(null=True, blank=True)
