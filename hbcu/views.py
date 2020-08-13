@@ -122,3 +122,6 @@ def BootstrapFilterView(request):
     'schoolState': schoolState,
   }
   return render(request, "hbcu/filterB.html", context)
+
+  def about_page_view(request):
+    return render(request, 'about_us.html')

@@ -20,6 +20,7 @@ from hbcu import views as hbcu_views
 # filter url
 from hbcu.views import BootstrapFilterView
 from django.conf.urls import url
+from hbcu.views import about_page_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,10 +33,16 @@ urlpatterns = [
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
     path('hbcu/addGraduate/', hbcu_views.add_grad, name='add_grad'),
     path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),
+    path('hbcu/aboutus/', hbcu_views.add_hbcu, name='about_us'),
+
 
     # user urls
     url(r'^$', hbcu_views.home, name='home'),
     url(r'^signup/$', hbcu_views.signup, name='signup'),
+    urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^about/',
+        about_page_view, name='about_us'),
 ]
 
 if settings.DEBUG:
