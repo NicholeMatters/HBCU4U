@@ -13,16 +13,18 @@
 /* .leftHome {
   width: 65%;
 } */
-.homepagePainting, .introBlurb, .carousel {
-  width: 90%;
+ .introBlurb {
+  width: 80%;
   height: 45%;
-  display: flex;
-  flex-flow: row wrap;
+  /* display: flex;
+  flex-flow: row wrap; */
   /* border: 3px solid green; */
   padding: 5px;
   margin: auto;
   /* background: orange; */
   justify-content: space-around;
+  margin-bottom: -10%;
+  margin-top: 5%;
 }
 
 /* .homepagePainting img {
@@ -49,7 +51,6 @@ button {
 }
 h1 {
   text-align: center;
-  margin-top: 5%;
   color: 432818;
   text-shadow: 3px 3px 5px white;
   font-family: lato;
@@ -65,7 +66,7 @@ section {
 
 
 section .intro p {
- height: 25%;
+ height: 35%;
 }
 .intro {
   background:#EEEEEE;
@@ -325,7 +326,7 @@ body {
 }
 
 .topnav a {
-  float: left;
+  float: right;
   display: block;
   color: black;
   text-align: center;
@@ -432,10 +433,12 @@ body {
   position: relative;
   width: 100%;
   height: 10%;
+  
 }
 
 .topnav2 #myLinks {
   display: none;
+  float: right;
 }
 
 .topnav2 a {
@@ -476,24 +479,25 @@ body {
 
 
 /* Homepage Carousel */
+
 html, body {
   padding: 10px 2px 0px 2px;
   margin: 0;
 }
 
-.homepageBody .galleryContainer {
-  width: 200%;;
-  height: 40%;
+.galleryContainer {
+  width: 130%;;
+  height: 300px;
   max-width: 1000px;
   user-select: none;
-  box-shadow: 0px 0px 3px 1px #00000078;
+  box-shadow: 0px 0px 7px 1px #00000078;
   padding: 10px;
   box-sizing: border-box;
   margin: 0 auto;
 }
 
 .galleryContainer .slideShowContainer {
-  width: 120%;
+  width: 10topnav0%;
   height: 150%;
   overflow: hidden;
   background-color: rgb(197, 169, 136);
