@@ -18,29 +18,25 @@
 
 <h1> HBCU Details </h1>
 
-<!-- <div class="detailanchor">
-  <a class="add" href="{% url 'home' %}">Home</a>
-  <a class="add" href="{% url 'list_hbcus' %}">List Colleges</a>
-  <a class="add" href="{% url 'map' %}">US Map</a>
-  
-</div> -->
 
   <div class="detail">
-      <img class="image" src="{{ colleges.campus_image }}" height='80%' >
+      <img class="image" src="{{ colleges.campus_image }}" height='80%' width:='90%'>
 
       <!-- <div class="detail_page"> "{{ colleges.name }}" </div> -->
-      <h1> {{ colleges.name }} </h1>
-      {{ colleges.history }}
-      
-      <div class="artist_date"> Located in: {{ colleges.city }},{{ colleges.state }}
+      <br>
+      <p>
+      <h2> {{ colleges.name }} </h2>
+      <h3 class="detail_page">{{ colleges.history }} </h3>
+      </p>
+      <div class="detail_page"> Located in: {{ colleges.city }},{{ colleges.state }}
 
   <!-- MAJORS -->
-        <p> {{ colleges.name }} offers the following majors: {{ colleges.majors }}</p>
+        <p class="detail_page"> {{ colleges.name }} offers the following majors: {{ colleges.majors }}</p>
           <br>
   <!-- FINANCIAL AID  -->
         <h2> Need financial aid?</h2>
         <h3> Check out the scholarships: <h3>
-          {{ colleges.financial_aid }}
+          <div class="detail_page">{{ colleges.financial_aid }}</div>
 
   <!-- VIRTUAL TOUR -->
         <h2>If you can't get to the campus, vist the campus virtual 

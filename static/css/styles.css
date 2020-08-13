@@ -260,6 +260,15 @@ img.detail_logo {
   bottom: 10px; 
   right: 15px;
 }
+.detail_page {
+  color: #DA9021;
+  font-family: lato;
+  font-size: 20px;
+}
+.image {
+  width:80%;
+  margin: auto;
+}
 h3 {
   line-height: 0.5cm;
   text-align: center;
