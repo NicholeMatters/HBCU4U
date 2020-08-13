@@ -6,7 +6,7 @@
 {% block content %}
     <div class="topnav2">
       <a href="{% url 'index' %}"  class="active ">HBCU4U</a>
-      
+      {% csrf_token %}
       <!-- class="currentpg" -->
       <div id="myLinks">
        <a href="{% url 'list_hbcus' %}" >All HBCUs </a>

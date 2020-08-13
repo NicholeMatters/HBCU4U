@@ -297,6 +297,11 @@ h2.cname {
   letter-spacing: 0.0625em;
 }
 
+h1.subtitleB {
+  text-align: left;
+  color: #1BC46A;
+  margin-left: 0px;
+}
 Search Bar
 /* Add a black background color to the top navigation bar */
   #searchbar { 

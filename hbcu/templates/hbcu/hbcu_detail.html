@@ -25,27 +25,32 @@
       <div>
       <h3 class="detail_page">{{ colleges.history }} </h3>
       </p>
-      <h3 class="detail_page"> Located in: {{ colleges.city }},{{ colleges.state }}</h3>
+      <h3 class="detail_page"> Located in: {{ colleges.city }}, {{ colleges.state }}</h3>
       </div>
 <br>
+  </div>
   <!-- MAJORS -->
-        <div>
-        <h1 class="subtitle"> Majors</h1>
-        </div>
-        <div>
-        <p class="detail_page"> {{ colleges.name }} offers the following majors: {{ colleges.majors }}</p>
-        </div>
+      
+        <!-- <center><h1 class="subtitleB">  </h1></center> -->
+        MAJORS
+        <!-- <h3 class="detail_page"> </h3> -->
+          {{ colleges.name }} offers the following majors: {{ colleges.majors }}
+        
           
   <!-- FINANCIAL AID  -->
-        <h1 class="subtitle"> Need financial aid?</h1>
-        <h3 class="detail_page"> Check out the scholarships: <h3>
-          <div class="detail_page">{{ colleges.financial_aid }}</div>
+        <!-- <h1 class="subtitleB"> </h1> -->
+          FINANCIAL AID
+        <!-- <h3 class="detail_page"> <h3> -->
+          Check out the scholarships: 
+        <!-- <div class="detail_page"> </div> -->
+          {{ colleges.financial_aid }}
 
   <!-- VIRTUAL TOUR -->
-        <h1 class="subtitle">Check out the Virtual Tour:</h1>
+        <h1 class="subtitleB"> </h1>
+          Check out the Virtual Tour:
         <br>
         <center><button><a class="homeFilter" href="{{ colleges.virtual_tour }}">Here</a></button></center>
-  </div>
+  
 
   <!-- <footer> <img class="detail_logo" src="{{ colleges.logo }}" width:'50px'height='50px'>
   </footer> -->
