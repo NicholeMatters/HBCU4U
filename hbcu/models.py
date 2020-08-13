@@ -38,7 +38,7 @@ class College(models.Model):
     financial_aid = models.TextField(max_length=3000, default='')
     logo = models.TextField(null=True, blank=True)
     campus_image = models.TextField(null=True, blank=True)
-    virtual_tour = models.BooleanField(default=False)
+    virtual_tour = models.URLField(null=True, blank=True, default='')
     history = models.TextField( max_length=3000, default='')
     
     class Meta:
