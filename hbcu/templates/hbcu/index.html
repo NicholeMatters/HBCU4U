@@ -9,10 +9,11 @@ body { background-image: url('http://attakwami.com/wp-content/gallery/slides/kwa
 
 <!-- Top Navigation Menu -->
     <div class="topnav2">
+      <!-- <img src="https://files.slack.com/files-pri/TA8C04VUN-F019G02D72L/hbcu_into_the_future_logo_v2.png" alt="logo" height='100px' width:='100px'> -->
       <a href="{% url 'index' %}" class="active">HBCU4U</a>
       <div id="myLinks">
         <a href="{% url 'list_hbcus' %}">All HBCUs</a>
-        <a href="{% url 'filter' %}"> Old Filter</a>
+        <!-- <a href="{% url 'filter' %}"> Old Filter</a> -->
         <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
         <a href="{% url 'map' %}">Map</a>
         <!-- <a href="{% url 'signup' %}">Sign up</a> -->
@@ -61,22 +62,27 @@ body { background-image: url('http://attakwami.com/wp-content/gallery/slides/kwa
           <br>
             <div class="introBlurb">
                 <section class="intro">
-                  <p>
-                    The HBCU app was created as a one-stop location to inform youth, parents, and <br>
-                    school counselors about the benefits of attending a Historically Black College or University.</p>
+                  <h2>
+                    The HBCU app was created as a one-stop location to inform youth, parents, and
+                    school counselors about the benefits of attending a Historically Black College or University.
 
-                    Within this app you can find important: <br>
-
-                    <br>• Admission information
+                   <center> Within this app you can find important: </center>
+                      <div class="introCenter">
+                      Admission information
+                      <br> Technologies offered
+                      <br> Financial aid information
+                      <br> much more!    
+                      </div>
+                    <!-- <br>• Admission information
                     <br>• Technologies offered
                     <br>• Financial aid information
-                    <br>• much more!
+                    <br>• much more! -->
 
-                    <center>Explore, Expand, and Experience.</center>
+                    <center>Explore, Expand, and Experience.</center></h2>
 
                 </section>
 
-                <center><button><a class="main" href="{% url 'filterB' %}" >filter</a></button></center>
+                <center><button><a class="homeFilter" href="{% url 'filterB' %}" >FILTER</a></button></center>
            </div>
       
     <!-- </div> -->

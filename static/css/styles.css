@@ -10,6 +10,10 @@
   padding: 2px;
   margin: auto;
 }
+.intro .introCenter {
+  color:#DA9021;;
+}
+
 /* .leftHome {
   width: 65%;
 } */
@@ -25,8 +29,19 @@
   justify-content: space-around;
   margin-bottom: -10%;
   margin-top: 5%;
+  line-height: 1.6;
 }
 
+button  {
+  background: #E3D626;
+  font-size: 30px;
+  font-family: lato;
+  padding: 10px;
+}
+.homeFilter {
+  font-size: 30px;
+  text-decoration: none;
+}
 /* .homepagePainting img {
   width:80%;
   height: 100%;
@@ -38,11 +53,9 @@
   /* margin-top: 170%;
   margin-right: 100%; */
   /* border: 3px solid brown; */
-} */
-button {
-  font-size: 20px;
-  padding: 3px;
-}
+/*} */
+
+
 .main {
   display: flex;
   text-align: center;
@@ -335,7 +348,7 @@ body {
 }
 
 .topnav a {
-  float: right;
+  float: left;
   display: block;
   color: black;
   text-align: center;
@@ -447,7 +460,7 @@ body {
 
 .topnav2 #myLinks {
   display: none;
-  float: right;
+  float: leftt;
 }
 
 .topnav2 a {

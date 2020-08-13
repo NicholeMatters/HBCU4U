@@ -16,38 +16,44 @@
      </a>
 </div>
 
-<h1> HBCU Details </h1>
+<h2 class="cname"> {{ colleges.name }} </h1>
 
 
   <div class="detail">
-      <img class="image" src="{{ colleges.campus_image }}" height='80%' width:='90%'>
+      <img class="image" src="{{ colleges.campus_image }}" height='40%' width:='60%'>
 
-      <!-- <div class="detail_page"> "{{ colleges.name }}" </div> -->
-      <br>
-      <p>
-      <h2> {{ colleges.name }} </h2>
+      <div>
       <h3 class="detail_page">{{ colleges.history }} </h3>
       </p>
-      <div class="detail_page"> Located in: {{ colleges.city }},{{ colleges.state }}
-
+      <h3 class="detail_page"> Located in: {{ colleges.city }},{{ colleges.state }}</h3>
+      </div>
+<br>
   <!-- MAJORS -->
+        <div>
+        <h1 class="subtitle"> Majors</h1>
+        </div>
+        <div>
         <p class="detail_page"> {{ colleges.name }} offers the following majors: {{ colleges.majors }}</p>
-          <br>
+        </div>
+          
   <!-- FINANCIAL AID  -->
-        <h2> Need financial aid?</h2>
-        <h3> Check out the scholarships: <h3>
+        <h1 class="subtitle"> Need financial aid?</h1>
+        <h3 class="detail_page"> Check out the scholarships: <h3>
           <div class="detail_page">{{ colleges.financial_aid }}</div>
 
   <!-- VIRTUAL TOUR -->
-        <h2>If you can't get to the campus, vist the campus virtual 
-        <a href="{{ colleges.virtual_tour }}" > here </a></h2>
+        <h1 class="subtitle">Check out the Virtual Tour:</h1>
+        <br>
+        <center><button><a class="homeFilter" href="{{ colleges.virtual_tour }}">Here</a></button></center>
   </div>
+
   <!-- <footer> <img class="detail_logo" src="{{ colleges.logo }}" width:'50px'height='50px'>
   </footer> -->
 
 
-<!-- <a href="{% url 'map' %}"><img class="mapicon" src="images/map.png" alt="Map of HBCUs"></a> -->
 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 {% endblock %}
 
