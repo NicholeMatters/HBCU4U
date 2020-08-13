@@ -1,54 +1,51 @@
-{% extends "base.html" %} 
-{% load static %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-{% block content %}
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+	}
 
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
+	#map {
+		position: absolute;
+		top: 25%;
+		bottom: 10%;
+		left: 5%;
+		right: 5%;
+		width: 90%;
+		border: 3px solid #DA9021,
+	}
 
-		#map {
-			position: absolute;
-			top: 25%;
-			bottom: 10%;
-      left: 5%;
-      right: 5%;
-			width: 90%;
-      border: 3px solid #DA9021, 
-		}
+	.marker {
+		background-image: url("https://i3.cpcache.com/merchandise/50_550x550_Front_Color-White.jpg?Size=3x5&AttributeValue=NA&c=True&OrientationNo=1&region={%22name%22:%22FrontCenter%22,%22width%22:2.693385,%22height%22:3.5,%22alignment%22:%22MiddleCenter%22,%22orientation%22:1,%22dpi%22:200,%22crop_x%22:0,%22crop_y%22:0,%22crop_h%22:800,%22crop_w%22:600,%22scale%22:0,%22template%22:{%22id%22:100959992,%22params%22:{}}}");
+		background-size: cover;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
 
-		.marker {
-			background-image: url("https://i3.cpcache.com/merchandise/50_550x550_Front_Color-White.jpg?Size=3x5&AttributeValue=NA&c=True&OrientationNo=1&region={%22name%22:%22FrontCenter%22,%22width%22:2.693385,%22height%22:3.5,%22alignment%22:%22MiddleCenter%22,%22orientation%22:1,%22dpi%22:200,%22crop_x%22:0,%22crop_y%22:0,%22crop_h%22:800,%22crop_w%22:600,%22scale%22:0,%22template%22:{%22id%22:100959992,%22params%22:{}}}");
-			background-size: cover;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			cursor: pointer;
-		}
+	.mapboxgl-popup {
+		max-width: 200px;
+	}
 
-		.mapboxgl-popup {
-			max-width: 200px;
-		}
+	.mapboxgl-popup-content {
+		text-align: center;
+		font-family: 'Open Sans', sans-serif;
+	}
+</style>
 
-		.mapboxgl-popup-content {
-			text-align: center;
-			font-family: 'Open Sans', sans-serif;
-		}
-	</style>
-
-    <div class="topnav2">
-      <a href="{% url 'index' %}" class="active">HBCU4U</a>
-      <div id="myLinks">
-        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
-        <a href="{% url 'filter' %}">Filter</a>
-        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
-        <a href="{% url 'map' %}">Map</a>
-        <a href="{% url 'about' %}">About Us</a>
-      </div>
-     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
-        <i class="fa fa-bars"></i>
+<div class="topnav2">
+	<a href="{% url 'index' %}" class="active">HBCU4U</a>
+	<div id="myLinks">
+		<a href="{% url 'list_hbcus' %}">All HBCUs</a>
+		<a href="{% url 'filter' %}">Filter</a>
+		<!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+		<a href="{% url 'map' %}">Map</a>
+		<a href="{% url 'about' %}">About Us</a>
+	</div>
+	<a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+		<i class="fa fa-bars"></i>
      </a>
 </div>
 
@@ -76,7 +73,7 @@
        coordinates: [-86.568539, 34.782913]
     },
       properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: ' Alabama A & M University '
     }
   },
@@ -87,7 +84,7 @@
       coordinates: [-86.294050, 32.363612]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Alabama State University'
     }
     },
@@ -98,7 +95,7 @@
       coordinates: [-84.140389, 31.569147]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Albany State University'
     }
     },
@@ -109,7 +106,7 @@
       coordinates: [-91.137260, 31.874213]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Alcorn State University'
     }
     },
@@ -120,7 +117,7 @@
       coordinates: [-81.020236, 34.011010]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Allen University'
     }
     },
@@ -131,7 +128,7 @@
       coordinates: [-92.290517, 34.735141]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Arkansas Baptist College'
     }
     },
@@ -142,7 +139,7 @@
       coordinates: [-81.020397, 34.012831]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Benedict College'
     }
     },
@@ -153,7 +150,7 @@
       coordinates: [-79.779087, 36.067941]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Bennett College for Women'
     }
     },
@@ -164,7 +161,7 @@
       coordinates: [-81.031746, 29.211022]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Bethune-Cookman University'
     }
     },
@@ -175,7 +172,7 @@
       coordinates: [-88.055727, 30.696231]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Bishop State Community College'
     }
     },
@@ -186,7 +183,7 @@
       coordinates: [-81.237553, 37.267231]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Bluefield State College'
     }
     },
@@ -197,7 +194,7 @@
       coordinates: [-76.759521, 39.0193]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Bowie State University'
     }
     },
@@ -208,7 +205,7 @@
       coordinates: [-83.877293, 39.715245]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Central State University'
     }
     },
@@ -219,7 +216,7 @@
       coordinates: [-75.529349, 39.933336]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Cheyney University of Pennsylvania'
     }
     },
@@ -230,7 +227,7 @@
       coordinates: [-80.854168, 33.499093]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Claflin University'
     }
     },
@@ -241,7 +238,7 @@
       coordinates: [-84.41135, 33.751655]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Clark Atlanta University'
     }
     },
@@ -252,7 +249,7 @@
       coordinates: [-81.043139, 34.913494]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Clinton Junior College'
     }
     },
@@ -263,7 +260,7 @@
       coordinates: [-90.56886, 34.253493]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Coahoma Community College'
     }
     },
@@ -274,7 +271,7 @@
       coordinates: [-87.017772, 32.425726]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Concordia College-Selma'
     }
     },
@@ -285,7 +282,7 @@
       coordinates: [-76.65774, 39.31256]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Coppin State University'
     }
     },
@@ -296,7 +293,7 @@
       coordinates: [-75.542295, 39.186204]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Delaware State University'
     }
     },
@@ -307,7 +304,7 @@
       coordinates: [-81.12574, 33.311863]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Denmark Technical College'
     }
     },
@@ -318,7 +315,7 @@
       coordinates: [-90.066309, 29.996639]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Dillard University'
     }
     },
@@ -329,7 +326,7 @@
       coordinates: [-81.683646, 30.343868]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Edward Waters College'
     }
     },
@@ -340,7 +337,7 @@
       coordinates: [-76.21411, 36.281169]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Elizabeth City State University'
     }
     },
@@ -351,7 +348,7 @@
       coordinates: [-78.892618, 35.074291]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Fayetteville State University'
     }
     },
@@ -362,7 +359,7 @@
       coordinates: [-86.803725, 36.167358]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Fisk University'
     }
     },
@@ -373,7 +370,7 @@
       coordinates: [-84.285056, 30.42682]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Florida Agricultural and Mechanical University'
     }
     },
@@ -384,29 +381,29 @@
       coordinates: [ -80.270796, 25.917822]
     },
     properties: {
-      title: 'Mapbox',
+      title: 'HBCU',
       description: 'Florida Memorial University'
     }
-  },
-{
-type: 'Feature',
-geometry: {
-type: 'Point',
-coordinates: [-83.898039, 32.536373]
+    },
+  {
+    type: 'Feature',
+    geometry: {
+       type: 'Point',
+      coordinates: [-83.898039, 32.536373]
+    },
+    properties: {
+      title: 'HBCU',
+      description: 'Fort Valley State University'
+    }
+    },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+       coordinates: [-85.991377, 33.995681]
 },
 properties: {
-title: 'Mapbox',
-description: 'Fort Valley State University'
-}
-},
-{
-type: 'Feature',
-geometry: {
-type: 'Point',
-coordinates: [-85.991377, 33.995681]
-},
-properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Gadsden State Community College'
 }
 },
@@ -417,7 +414,7 @@ type: 'Point',
 coordinates: [-92.718842, 32.520788]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Grambling State University'
 }
 },
@@ -428,7 +425,7 @@ type: 'Point',
 coordinates: [-86.342826, 32.350255]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'H Councill Trenholm State Technical College'
 }
 },
@@ -439,7 +436,7 @@ type: 'Point',
 coordinates: [-76.334253, 37.022788]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Hampton University'
 }
 },
@@ -450,7 +447,7 @@ type: 'Point',
 coordinates: [-76.334253, 37.022788]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Hampton University'
 }
 },
@@ -461,7 +458,7 @@ type: 'Point',
 coordinates: [-90.224919, 38.631932]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Harris-Stowe State University'
 }
 },
@@ -472,7 +469,7 @@ type: 'Point',
 coordinates: [-77.019556, 38.922676]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Howard University'
 }
 },
@@ -483,7 +480,7 @@ type: 'Point',
 coordinates: [-97.722289, 30.264644]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Huston-Tillotson University'
 }
 },
@@ -494,7 +491,7 @@ type: 'Point',
 coordinates: [-84.409383, 33.754282]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Interdenominational Theological Center'
 }
 },
@@ -505,7 +502,7 @@ type: 'Point',
 coordinates: [-86.573412, 34.771925]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'J F Drake State Technical College'
 }
 },
@@ -516,7 +513,7 @@ type: 'Point',
 coordinates: [-90.206382, 32.296949]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Jackson State University'
 }
 },
@@ -527,7 +524,7 @@ type: 'Point',
 coordinates: [-95.179987, 32.589219]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Jarvis Christian College'
 }
 },
@@ -538,7 +535,7 @@ type: 'Point',
 coordinates: [-80.855708, 35.243560]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Johnson C Smith University'
 }
 },
@@ -549,7 +546,7 @@ type: 'Point',
 coordinates: [-84.855812, 38.200350]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Kentucky State University'
 }
 },
@@ -560,7 +557,7 @@ type: 'Point',
 coordinates: [-88.806081, 35.627714]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Lane College'
 }
 },
@@ -571,7 +568,7 @@ type: 'Point',
 coordinates: [-97.262821, 35.945927]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Langston University'
 }
 },
@@ -582,7 +579,7 @@ type: 'Point',
 coordinates: [-86.889135, 33.450813]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Lawson State Community College-Birmingham Campus'
 }
 },
@@ -593,7 +590,7 @@ type: 'Point',
 coordinates: [-90.034428, 35.118267]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Le Moyne-Owen College'
 }
 },
@@ -604,7 +601,7 @@ type: 'Point',
 coordinates: [-92.144570, 38.893805]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Lincoln University'
 }
 },
@@ -615,7 +612,7 @@ type: 'Point',
 coordinates: [-75.928443, 39.807069]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Lincoln University of Pennsylvania'
 }
 },
@@ -626,7 +623,7 @@ type: 'Point',
 coordinates: [-80.484694, 35.671517]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Livingstone College'
 }
 },
@@ -637,7 +634,7 @@ type: 'Point',
 coordinates: [-86.807628, 36.166823]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Meharry Medical College'
 }
 },
@@ -648,7 +645,7 @@ type: 'Point',
 coordinates: [-86.908823, 33.481018]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Miles College'
 }
 },
@@ -659,7 +656,7 @@ type: 'Point',
 coordinates: [-90.341865, 33.512680]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Mississippi Valley State University'
 }
 },
@@ -670,7 +667,7 @@ type: 'Point',
 coordinates: [-84.415421, 33.747297]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Morehouse College'
 }
 },
@@ -681,7 +678,7 @@ type: 'Point',
 coordinates: [-84.411894, 33.743042]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Morehouse School of Medicine'
 }
 },
@@ -692,7 +689,7 @@ type: 'Point',
 coordinates: [-76.584492, 39.343796]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Morgan State University'
 }
 },
@@ -703,7 +700,7 @@ type: 'Point',
 coordinates: [-80.347046, 33.938147]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Morris College'
 }
 },
@@ -714,7 +711,7 @@ type: 'Point',
 coordinates: [-76.261935, 36.848033]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Norfolk State University'
 }
 },
@@ -725,7 +722,7 @@ type: 'Point',
 coordinates: [-79.771448, 36.077119]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'North Carolina A & T State University'
 }
 },
@@ -736,7 +733,7 @@ type: 'Point',
 coordinates: [-78.899557, 35.975197]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'North Carolina Central University'
 }
 },
@@ -747,7 +744,7 @@ type: 'Point',
 coordinates: [-86.655749, 34.751877]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Oakwood University'
 }
 },
@@ -758,7 +755,7 @@ type: 'Point',
 coordinates: [-81.993447, 33.469546]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Paine College'
 }
 },
@@ -769,7 +766,7 @@ type: 'Point',
 coordinates: [-96.755956, 32.680537]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Paul Quinn College'
 }
 },
@@ -780,7 +777,7 @@ type: 'Point',
 coordinates: [-92.282980, 34.737211]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Philander Smith College'
 }
 },
@@ -791,7 +788,7 @@ type: 'Point',
 coordinates: [-95.990079, 30.093917]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Prairie View A & M University'
 }
 },
@@ -802,7 +799,7 @@ type: 'Point',
 coordinates: [-89.447643, 34.776460]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Rust College'
 }
 },
@@ -813,7 +810,7 @@ type: 'Point',
 coordinates: [-78.618705, 35.787792]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Saint Augustines College'
 }
 },
@@ -824,7 +821,7 @@ type: 'Point',
 coordinates: [-77.847525, 36.759602]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Saint Pauls College'
 }
 },
@@ -835,7 +832,7 @@ type: 'Point',
 coordinates: [-81.062925, 32.023406]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Savannah State University'
 }
 },
@@ -846,7 +843,7 @@ type: 'Point',
 coordinates: [-87.034878, 32.420654]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Selma University'
 }
 },
@@ -857,7 +854,7 @@ type: 'Point',
 coordinates: [-78.638023, 35.771200]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Shaw University'
 }
 },
@@ -868,7 +865,7 @@ type: 'Point',
 coordinates: [-87.561335, 33.120750]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Shelton State Community College'
 }
 },
@@ -879,9 +876,10 @@ type: 'Point',
 coordinates: [-80.850192, 33.498577]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'South Carolina State University'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -889,9 +887,10 @@ type: 'Point',
 coordinates: [-91.192844, 30.526698]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Southern University and A & M College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -899,9 +898,10 @@ type: 'Point',
 coordinates: [-90.044852, 30.025913]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Southern University at New Orleans'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -909,9 +909,10 @@ type: 'Point',
 coordinates: [-93.834575, 32.544411]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Southern University at Shreveport'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -919,9 +920,10 @@ type: 'Point',
 coordinates: [-96.285597, 32.735360]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Southwestern Christian College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -929,9 +931,10 @@ type: 'Point',
 coordinates: [-96.285597, 32.735360]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Southwestern Christian College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -939,9 +942,10 @@ type: 'Point',
 coordinates: [-84.412208, 33.746394]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Spelman College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -949,9 +953,10 @@ type: 'Point',
 coordinates: [-98.454768, 29.414296]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'St Philips College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -959,9 +964,10 @@ type: 'Point',
 coordinates: [-87.586158, 33.198184]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Stillman College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -969,9 +975,10 @@ type: 'Point',
 coordinates: [-86.113690, 33.432680]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Talladega College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -979,9 +986,10 @@ type: 'Point',
 coordinates: [-86.821136, 36.167318]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Tennessee State University'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
@@ -989,28 +997,30 @@ type: 'Point',
 coordinates: [-95.312365, 32.374602]
 },
 properties: {
-title: 'Mapbox',
+title: 'HBCU',
 description: 'Texas College'
-}},
+}
+},
 {
 type: 'Feature',
 geometry: {
 type: 'Point',
-coordinates: [-122.859108, 45.562592]
+coordinates: [-95.359269, 29.721403]
 },
 properties: {
-title: 'Mapbox',
-description: 'Concordia College'
-}},
+title: 'HBCU',
+description: 'Texas Southern University'
+}
+},
 {
 type: 'Feature',
 geometry: {
 type: 'Point',
-coordinates: [-122.859108, 45.562592]
+coordinates: [-90.160738, 32.404768]
 },
 properties: {
-title: 'Mapbox',
-description: 'Concordia College'
+title: 'HBCU',
+description: 'Tougaloo College'
 }
   }]
 }; 
