@@ -279,8 +279,8 @@ img.detail_logo {
   font-size: 20px;
 }
 .image {
-  width:80%;
-  margin: auto;
+  width:90%;
+  margin: 0 3em 0 3em;;
 }
 h3 {
   line-height: 0.5cm;
@@ -297,6 +297,11 @@ h2.cname {
   letter-spacing: 0.0625em;
 }
 
+h1.subtitleB {
+  text-align: left;
+  color: #1BC46A;
+  margin-left: 0px;
+}
 Search Bar
 /* Add a black background color to the top navigation bar */
   #searchbar { 
@@ -604,6 +609,7 @@ html, body {
 }
 .galleryContainer .slideShowContainer > .captionHolder .captionText {
   margin: 0;
+  font-size: 24px;
 }
 .galleryContainer .slideShowContainer #playPauseBtn {
   width: 32px;
