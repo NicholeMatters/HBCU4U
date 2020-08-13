@@ -20,7 +20,6 @@ from hbcu import views as hbcu_views
 # filter url
 from hbcu.views import BootstrapFilterView
 from django.conf.urls import url
-from hbcu.views import about_page_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,21 +27,19 @@ urlpatterns = [
     path('hbcu/filter', hbcu_views.filter, name='filter'),
     path('filter', BootstrapFilterView, name='filterB'),
     path('hbcu/list', hbcu_views.listColleges, name='list_hbcus'),
-    path('hbcu/<int:pk>/hbcu_detail', hbcu_views.hbcu_detail, name='hbcu_detail'),
+    path(
+        'hbcu/<int:pk>/hbcu_detail',
+        hbcu_views.hbcu_detail,
+        name='hbcu_detail'),
     path('hbcu/hbcumap', hbcu_views.map, name='map'),
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
     path('hbcu/addGraduate/', hbcu_views.add_grad, name='add_grad'),
     path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),
-    path('hbcu/aboutus/', hbcu_views.add_hbcu, name='about_us'),
-
+    
 
     # user urls
     url(r'^$', hbcu_views.home, name='home'),
-    url(r'^signup/$', hbcu_views.signup, name='signup'),
-    urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^about/',
-        about_page_view, name='about_us'),
+    url(r'^signup/$', hbcu_views.signup, name='signup'), 
 ]
 
 if settings.DEBUG:
@@ -53,4 +50,3 @@ if settings.DEBUG:
         # For django versions before 2.0:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
-
