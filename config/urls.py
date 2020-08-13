@@ -17,15 +17,18 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from hbcu import views as hbcu_views
-
+# filter url
+from hbcu.views import BootstrapFilterView
 from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hbcu_views.index, name='index'),
-    path('hbcu/filter', hbcu_views.listColleges, name='filter'),
+    path('hbcu/filter', hbcu_views.filter, name='filter'),
+    path('filter', BootstrapFilterView, name='filterB'),
+    path('hbcu/list', hbcu_views.listColleges, name='list_hbcus'),
     path('hbcu/<int:pk>/hbcu_detail', hbcu_views.hbcu_detail, name='hbcu_detail'),
-    path('hbcu/map', hbcu_views.map, name='map'),
+    path('hbcu/hbcumap', hbcu_views.map, name='map'),
     path('hbcu/graduates', hbcu_views.hbcuGrad, name='hbcugrads'),
     path('hbcu/addGraduate/', hbcu_views.add_grad, name='add_grad'),
     path('hbcu/addHBCU/', hbcu_views.add_hbcu, name='add_hbcu'),

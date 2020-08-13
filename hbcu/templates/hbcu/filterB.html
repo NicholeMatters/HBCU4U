@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title> Discover HBCUs </title>
+
+{% block content %}
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+<div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}">Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
+      </div>
+     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+        <i class="fa fa-bars"></i>
+     </a>
+</div>
+
+<h1> Historically Black </h1>
+<h1> Colleges and Universities  </h1>
+
+
+
+<main role="main" class="container">
+
+<h3 class="filterA"> Filter </h3>
+      <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="name" placeholder="College contains..."/>
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+              <div class="form-group col-12">
+                  <div class="input-group">
+                      <input class="form-control py-2 border-right-0 border" type="search" name="name" placeholder="College exact..."/>
+                      <span class="input-group-append">
+                          <div class="input-group-text bg-transparent">
+                              <i class="fa fa-search"></i>
+                          </div>
+                      </span>
+                  </div>
+              </div>
+          </div>
+      <!-- <div class="form-row">
+          <div class="form-group col-12">
+              <div class="input-group">
+                  <input class="form-control py-2 border-right-0 border" type="search" name="college_or_major" placeholder="College or Major..."/>
+                  <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                          <i class="fa fa-search"></i>
+                      </div>
+                  </span>
+              </div>
+          </div>
+      </div> -->
+
+
+            <div class="form-row">
+              <!-- <div class="form-group col-md-6">
+                <label for="inputCity">Major</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-6 col-lg-7">
+                <label for="inputCity">Degree</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div> -->
+                <label for="inputState">Major</label>
+                <select id="inputMajor" name="major_names" class="form-control">
+                    <option selected>Choose Major...</option>
+                    <option>...</option>
+                    {% for major in majors %}
+                    <option value="{{ major }}">{{ major }}</option>
+                    {% endfor %}
+                </select>
+                <label for="inputState">Degree</label>
+                <select id="inputDegree" name="degree_names" class="form-control">
+                    <option selected>Choose Degree...</option>
+                    <option>...</option>
+                    {% for degree in degrees %}
+                    <option value="{{ degree }}">{{ degree }}</option>
+                    {% endfor %}
+                </select>
+                <label for="inputState">State</label>
+                <select id="inputState" name="state_names" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                    {% for state in states %}
+                    <option value="{{ school }}">{{ school }}</option>
+                    {% endfor %}
+                </select>
+              </div>
+
+              <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="virtual_tour" name="virtual_tour">
+                <label class="form-check-label" for="virtualTour">
+                  Virtual Tours
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+              
+
+            </div>
+
+      </form>
+
+      <hr  />
+          <div class="row">
+            <ol>
+                {% for college in queryset %}
+                    <li>
+                      {{ college.name }}
+                      <span> Located: {{ college.city }}, {{ college.state }} </span>
+                      <span>
+                        {% for major in college.major.all %}
+                            {{ major }}
+                        {%  endfor %}
+                      </span>
+                      <span> Degree Type: {{ college.degree }} </span>
+                      
+                    </li>
+                  <hr>
+                {% endfor %}
+            </ol>
+          </div>
+</main>
+
+
+
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+</div>
+{% endblock %}

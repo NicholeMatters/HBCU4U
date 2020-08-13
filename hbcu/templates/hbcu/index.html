@@ -3,101 +3,90 @@
 <title>HBCU 4 U</title>
 {% block content %}
 
-<h1> Discover the HBCU 4 U</h1>
-<button><a class="filter" href="{% url 'filter' %}">List Colleges</a></button>
+<style>
+body { background-image: url('http://attakwami.com/wp-content/gallery/slides/kwami__0002_atta28.jpg');"}
+</style>
 
+<!-- Top Navigation Menu -->
+    <div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}"> Old Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
+        <!-- <a href="{% url 'signup' %}">Sign up</a> -->
+        <a href="{% url 'filterB' %}">Filter</a>
+      </div>
+      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+      <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
-<button><a class="filter" href="{% url 'hbcugrads' %}"> HBCU Graduates</a></button>
+<!-- <div class="homepageBody"  > -->
+    <!-- <div class="leftHome"> -->
+        
+<br>
+          
+    <br>
+    <br>
+          
+        <div class="galleryContainer">
+            <div class="slideShowContainer">
+                <!-- <div id="playPauseBtn" onclick="playPauseSlides()"></div> -->
+                <div class="leftArrow" onclick="plusSlides(-1)"><span class="arrow arrowLeft"></span></div>
+                <div class="rightArrow" onclick="plusSlides(1)"><span class="arrow arrowRight"></span></div>
+                <div class="captionHolder"><p class="captionText">Historically Black Colleges and Universities</p></div>
+            
+          
+                <div class="imageHolder">
+                    <img src="https://cdn.vox-cdn.com/thumbor/WB9eOksEbW77xAqGTPT8fAokQyY=/0x0:2400x1600/1200x800/filters:focal(1008x608:1392x992)/cdn.vox-cdn.com/uploads/chorus_image/image/55253533/Abby_Rock__Spelman_IMG_8850_8x5.0.jpg">
+                <p class="captionText">Spelman College</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="https://www.usnews.com/dims4/USNEWS/95badee/17177859217/resize/800x540%3E/quality/85/?url=https%3A%2F%2Fmedia.beam.usnews.com%2F82%2F7bbabaea5b47be61379d37af47e531%2FHowardUniversity-FoundersLibrary.jpg">
+                <p class="captionText">Howard University</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="https://qcitymetro.com/wp-content/uploads/2018/03/Claflin2-1.jpg">
+                    <p class="captionText">Claflin University</p>
+                </div>
+            </div>
+            <div id="dotsContainer"></div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+            <div class="introBlurb">
+                <section class="intro">
+                  <p>
+                    The HBCU app was created as a one-stop location to inform youth, parents, and <br>
+                    school counselors about the benefits of attending a Historically Black College or University.</p>
 
-<button><a class="filter" href="{% url 'signup' %}">Sign up</a></button>
+                    Within this app you can find important: <br>
 
-<div class="main">
- 
+                    <br>• Admission information
+                    <br>• Technologies offered
+                    <br>• Financial aid information
+                    <br>• much more!
 
-  <section class="intro">
+                    <center>Explore, Expand, and Experience.</center>
 
-    <p> <span class="first-letter"></span> 
-    The HBCU 4 U app was created as a one stop location to inform youth, parents, counselor about the benefits of attending a Historically Black College or University.</p>
+                </section>
 
-    <p><span class="first-letter"></span> 
-    Within this app you can use the <a href="hbcu/filter.html" class="main">filter</a> to find important admission information, technology offered, financial aid information and so much more!</p>
+                <center><button><a class="main" href="{% url 'filterB' %}" >filter</a></button></center>
+           </div>
+      
+    <!-- </div> -->
 
-    <p> Come explore, expand and experience the HBCU experience </p>
-  </section>
-  <br>
-<!-- Carosuel take 11 -->
-<div id="container">
-	<div class="css-slider-mask">
-		<ul class="css-slider">
-			<li class="slide" tabindex="1" id="1">
-				<span class="slide-outer">
-					<span class="slide-inner"><p>Alabama A&M</p>
-						<span class="slide-gfx" id="s1">
-							<img src="https://speakinoutweeklynews.net/wp-content/uploads/2019/11/680x380_AAMUsecuresfunding_Campus_maxresdefault.jpg" />
-						</span>
-					</span>
-				</span>
-			</li>
-			<li class="slide" tabindex="1" id="2">
-				<span class="slide-outer">
-					<span class="slide-inner"><p>Alabama State University</p>
-						<span class="slide-gfx" id="s2">
-							<img src="https://whnt.com/wp-content/uploads/sites/20/2017/09/alabama-state-university.png?w=796" />
-						</span>
-					</span>
-				</span>
-			</li>
-			<li class="slide" tabindex="1" id="3">
-				<span class="slide-outer">
-					<span class="slide-inner"><p>Hampton University</p>
-						<span class="slide-gfx" id="s3">
-							<img src="https://revisionpath.com/wp-content/uploads/hampton-university-hero.jpg" />
-						</span>
-					</span>
-				</span>
-			</li>
-			<li class="slide" tabindex="1" id="4">
-				<span class="slide-outer">
-					<span class="slide-inner"><p>Bethune-Cookman University</p>
-						<span class="slide-gfx" id="s4">
-							<img src="https://i1.wp.com/www.wmfe.org/wp-content/uploads/2016/02/060413-national-hbcu-review-bethune-cookman.jpg?fit=743%2C495&ssl=1" />
-						</span>
-					</span>
-				</span>
-			</li>
-			<li class="slide" tabindex="1" id="5">
-				<span class="slide-outer">
-					<span class="slide-inner"><p>Clark Atlanta University</p>
-						<span class="slide-gfx" id="s5">
-							<img src="https://www.blackpast.org/wp-content/uploads/M-WEB-DuBois-bust-by-Ayokunle-Odeleye-at-Clark-Atlanta-University-Wikipedia.jpg" />
-						</span>
-					</span>
-				</span>
-			</li>
-		</ul>
-	</div>
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-		<defs>
-			<linearGradient gradientUnits="objectBoundingBox" id="gradient" x2="0" y2="1">
-				<stop stop-color="rgba(0,255,255,0.00)" offset="0.0"/>
-				<stop stop-color="rgba(0,255,255,0.30)" offset="0.5"/>
-				<stop stop-color="rgba(0,255,255,1.00)" offset="1.0"/>
-			</linearGradient>
-			<radialGradient id="gradient2">
-				<stop offset="10%" stop-color="rgba(255,255,255,1)"/>
-				<stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-			</radialGradient>
-			<mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
-				<ellipse fill="url(#gradient2)" cx="0" cy="1" rx="1" ry="0.8"/>
-				<ellipse fill="url(#gradient2)" cx="1" cy="1" rx="1" ry="0.8"/>
-			</mask>
-		</defs>
-	</svg>
-</div>
-				
+    <!-- <div class="homepageImage">
+        <img src="https://img1.wsimg.com/isteam/ip/caccc762-f9a4-4e00-8aef-706c03babca8/nich_clear-0001.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true" alt="Nichole">
+    </div> -->
+<!-- </div> -->
 
-</div>
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
 {% endblock %}

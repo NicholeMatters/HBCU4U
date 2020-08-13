@@ -17,8 +17,7 @@ class gradForm(forms.ModelForm):
     class Meta:
         model = HBCUgrads
         fields = [
-            'first_name',
-            'last_name',
+            'name',
             'url',
             'career',
             'date_born',
@@ -34,10 +33,10 @@ class hbcuForm(forms.ModelForm):
         fields = [
             'name',
             'url',
-            'major',
-            'degree',
+            'majors',
+            'degrees',
             'city',
-            'state',
+            # 'state',
             'technology',
             'financial_aid',
             'logo',

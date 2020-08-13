@@ -1,10 +1,13 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import College, HBCUgrads
+from .models import College, HBCUgrads, Major, Degree, State
 from .forms import gradForm, hbcuForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+
+
 
 # Create your views here.
 def index(request):
@@ -13,18 +16,18 @@ def index(request):
 
 def listColleges(request):
   colleges = College.objects.all().order_by('name')
+  return render(request, 'hbcu/list_hbcus.html', context={'colleges':colleges})
+
+def filter(request):
+  colleges = College.objects.all().order_by('name')
   return render(request, 'hbcu/filter.html', context={'colleges':colleges})
 
 def hbcu_detail(request, pk):
   school = get_object_or_404(College, pk=pk)
   return render(request, "hbcu/hbcu_detail.html", {'colleges':school})
 
-def map(request):
-  colleges = College.objects.all().order_by('state')
-  return render(request, 'hbcu/map.html', context={'colleges':colleges})
-
 def hbcuGrad(request):
-  graduate = HBCUgrads.objects.all().order_by('last_name')
+  graduate = HBCUgrads.objects.all().order_by('name')
   return render(request, 'hbcu/hbcugrads.html', context={'graduates':graduate})
 
 def add_grad(request):
@@ -49,6 +52,11 @@ def add_hbcu(request):
 
     return render(request, "hbcu/add_hbcu.html", {"form": form})
 
+# Adding hbcumap.html
+def map(request):
+    return render(request, 'hbcu/hbcumap.html', {})
+
+
 # User login
 @login_required
 def home(request):
@@ -67,3 +75,50 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'hbcu/signup.html', {'form': form})
+
+
+# FILTER PAGE
+def is_valid_queryparam(param):
+    return param != '' and param is not None
+
+def BootstrapFilterView(request):
+  qs = College.objects.all()
+  majorType = Major.objects.all()
+  degreeType = Degree.objects.all()
+  schoolState = State.objects.all()
+  college_contains_query = request.GET.get('name')
+  id_exact_query = request.GET.get('name')
+  # college_or_major_query = request.GET.get('college_or_major')
+
+  majorType = request.GET.get('majorType') 
+  degreeType = request.GET.get('degreeType')
+  schoolState = request.GET.get('schoolState')
+
+  virtualTour = request.GET.get('virtualTour')
+  
+  if college_contains_query != '' and college_contains_query is not None:
+      qs = qs.filter(name__icontains=college_contains_query)
+    #  icontain is NOT case sensitive but contains IS; i stands for insensitive 
+  elif id_exact_query != '' and id_exact_query is not None:
+      qs = qs.filter(id=id_exact_query)
+    # could have also used: name__iexact
+
+  # elif college_or_major_query != '' and college_or_major_query  is not None:
+  #     qs = qs.filter(Q(college__icontains=college_or_major_query) | Q(major__icontains=college_or_major_query)).distinct()
+  
+  if is_valid_queryparam(majorType):
+      qs = qs.filter(majorType__name=majorType)
+  if is_valid_queryparam(degreeType):
+      qs = qs.filter(degreeType__name=degreeType)
+  if is_valid_queryparam(schoolState):
+      qs = qs.filter(schoolState__name=schoolState)
+
+  if virtualTour == 'on':
+      qs = qs.filter(virtualTour =True)
+  context = {
+    'queryset' : qs,
+    'majorType': majorType,
+    'degreeType': degreeType,
+    'schoolState': schoolState,
+  }
+  return render(request, "hbcu/filterB.html", context)
