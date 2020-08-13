@@ -6,7 +6,7 @@ from .forms import gradForm, hbcuForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -122,3 +122,6 @@ def BootstrapFilterView(request):
     'schoolState': schoolState,
   }
   return render(request, "hbcu/filterB.html", context)
+
+  class AboutPageView(TemplateView):
+    template_name = 'hbcu/about.html'
