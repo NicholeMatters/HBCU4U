@@ -3,10 +3,32 @@
 <h1>About page</h1>
 {% block content %}
 
+<!-- Top Navigation Menu -->
+    <div class="topnav2">
+      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+      <div id="myLinks">
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'filter' %}"> Old Filter</a>
+        <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
+        <a href="{% url 'map' %}">Map</a>
+        <!-- <a href="{% url 'signup' %}">Sign up</a> -->
+        <a href="{% url 'filterB' %}">Filter</a>
+        <a href="{% url 'about' %}">About Us</a>
+      </div>
+      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+      <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+
+
 <div class="about-section">
   <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <p>The HBCU into future app was created as a one-stop location to inform youth, parents, and 
+school counselors about the benefits of attending a Historically Black College or University.
+.</p>
+  <p>Explore, Expand, and Experience.</p>
 </div>
 
 <h2 style="text-align:center">Our Team</h2>
@@ -17,7 +39,8 @@
       <div class="container">
         <h2>Nichole Ross</h2>
         <p class="title">Software Developer</p>
-        <p>Software Developer momentum@morehouse</p>
+        <p>Hello, I am Nichole! As an educational consultant, I considered pedagogy and strategies to create curriculum and ensure my sites and projects were user friendly. With a background in mathematics and education, I am excited to use the skills I learned from Momentum@Morehouse to transition to a software developer role. I enjoy building websites, applications, and pulling big data to create data visualization.I am looking forward to using my experience, knowledge, and coding abilities as a software developer!
+        <a href="{% url 'https://morehouse1.momentumlearn.com/graduates/nichole-ross/' %}"></a></p>
         <p>thisnicholematters@gmail.com</p>
         <p><button class="button">Contact</button></p>
       </div>
@@ -26,7 +49,8 @@
 
   <div class="column">
     <div class="card">
-      <img src="/images/Bishara2.jpg" alt="Bishara" style="width:100%">
+      <!-- <img src="images/Bishara2.jpg" alt="Bishara" style="width:100%"> -->
+      <img alt="Bishara image" src="images/robot.png">
       <div class="container">
         <h2>Bishara Abdul-Hamid</h2>
         <p class="title">Software Developer</p>
@@ -35,6 +59,7 @@
         <p><button class="button">Contact</button></p>
       </div>
     </div>
+  </div>
   </div>
 
 
