@@ -1,15 +1,22 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %}
 <title>HBCU 4 U</title>
 {% block content %}
 
 <style>
-body { background-image: url('http://attakwami.com/wp-content/gallery/slides/kwami__0002_atta28.jpg');"}
+	body {
+		background-image: url('http://attakwami.com/wp-content/gallery/slides/kwami__0002_atta28.jpg');
+		"}
 </style>
 
 <!-- Top Navigation Menu -->
-    <div class="topnav2">
-      <a href="{% url 'index' %}" class="active">HBCU4U</a>
+<div class="topnav2">
+	<a href="#" class="active">
+		<!-- Logo Image -->
+		<img src="{% static '/HBCU_into_the_Future.png' %}" width="100" alt="" class="d-inline-block align-middle mr-2">
+    <!-- Logo Text -->
+    <!-- <span class="text-uppercase font-weight-bold">Brand Name</span> -->
+  </a>
+
       <div id="myLinks">
         <a href="{% url 'list_hbcus' %}">All HBCUs</a>
         <a href="{% url 'filter' %}"> Old Filter</a>
