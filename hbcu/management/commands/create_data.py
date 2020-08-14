@@ -98,7 +98,7 @@ class Command(BaseCommand):
           financial_aid = row[7].split('; ')
           logo = row[8]
           campus_image = row[9]
-          # virtual_tour = row[11]
+          virtual_tour = row[11]
           history = row[15]
 
           college = College.objects.create(
@@ -110,7 +110,7 @@ class Command(BaseCommand):
             financial_aid=financial_aid,
             logo=logo,
             campus_image=campus_image,
-            # virtual_tour=virtual_tour,
+            virtual_tour=virtual_tour,
             history=history,
             )
           for major in Major.objects.filter(name__in=majors_names):

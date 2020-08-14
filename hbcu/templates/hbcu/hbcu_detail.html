@@ -3,51 +3,91 @@
 {% load static %}
 
 {% block content %}
-<div class="topnav2">
+  <div class="topnav2">
       <a href="{% url 'index' %}" class="active">HBCU4U</a>
       <div id="myLinks">
-       <a href="{% url 'list_hbcus' %}">All HBCUs</a>
-       <a href="{% url 'filterB' %}">Filter</a>
-       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
-       <a href="{% url 'map' %}">Map</a>
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'signup' %}">About Me</a>
+        <a href="{% url 'filterB' %}">Filter</a>
+        <a href="{% url 'map' %}">Map</a>
       </div>
-     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
-     <i class="fa fa-bars"></i>
-     </a>
-</div>
+      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+      <i class="fa fa-bars"></i>
+      </a>
+  </div>
 
-<h1> HBCU Details </h1>
+<h2 class="cname"> {{ colleges.name }} </h1>
 
 
-  <div class="detail">
-      <img class="image" src="{{ colleges.campus_image }}" height='80%' width:='90%'>
+  <!-- <div class="detail"> -->
+      <img class="image" src="{{ colleges.campus_image }}" height='40%' width:='60%'>
 
-      <!-- <div class="detail_page"> "{{ colleges.name }}" </div> -->
-      <br>
-      <p>
-      <h2> {{ colleges.name }} </h2>
+      <h3 class="detail_page"> HISTORY <h3>
+           
+      <div>
       <h3 class="detail_page">{{ colleges.history }} </h3>
       </p>
-      <div class="detail_page"> Located in: {{ colleges.city }},{{ colleges.state }}
-
-  <!-- MAJORS -->
-        <p class="detail_page"> {{ colleges.name }} offers the following majors: {{ colleges.majors }}</p>
-          <br>
+      <h3 class="detail_page"> Located in: {{ colleges.city }}, {{ colleges.state }}</h3>
+      </div>
+<br>
+<<<<<<< HEAD
+    
   <!-- FINANCIAL AID  -->
-        <h2> Need financial aid?</h2>
-        <h3> Check out the scholarships: <h3>
-          <div class="detail_page">{{ colleges.financial_aid }}</div>
+  <hr>      
+        
+        <h3 class="detail_page" style=> <h3>
+        <div class="subtitleB" style="color:green"> 
+          SCHOLARSHIPS 
+          <br>
+        <h3 class="detail_page"> </h3>
+          {{ colleges.financial_aid }}
+        </div>
+<!-- MAJORS -->
+  <hr>    
+        <center><h1 class="subtitleB"> </h1></center>
+        <div class="subtitleB" style="color:red"> 
+          MAJORS 
+        <h3 class="detail_page"> </h3>
+          {{ colleges.name }} offers the following majors: {{ colleges.majors }} 
+        </div>
+  <hr>
+  <!-- VIRTUAL TOUR -->
+        <div class="subtitleB" style="color:darkyellow"> 
+          <center>Check out the Virtual Tour:</center>
+        </div>
+=======
+  </div>
+  <!-- MAJORS -->
+      
+        <!-- <center><h1 class="subtitleB">  </h1></center> -->
+        MAJORS
+        <!-- <h3 class="detail_page"> </h3> -->
+          {{ colleges.name }} offers the following majors: {{ colleges.majors }}
+        
+          
+  <!-- FINANCIAL AID  -->
+        <!-- <h1 class="subtitleB"> </h1> -->
+          FINANCIAL AID
+        <!-- <h3 class="detail_page"> <h3> -->
+          Check out the scholarships: 
+        <!-- <div class="detail_page"> </div> -->
+          {{ colleges.financial_aid }}
 
   <!-- VIRTUAL TOUR -->
-        <h2>If you can't get to the campus, vist the campus virtual 
-        <a href="{{ colleges.virtual_tour }}" > here </a></h2>
-  </div>
+        <h1 class="subtitleB"> </h1>
+          Check out the Virtual Tour:
+>>>>>>> origin/Finalize-Filter-and-Update-CSS
+        <br>
+        <center><button><a class="homeFilter" href="{{ colleges.virtual_tour }}">Here</a></button></center>
+  
+
   <!-- <footer> <img class="detail_logo" src="{{ colleges.logo }}" width:'50px'height='50px'>
   </footer> -->
 
 
-<!-- <a href="{% url 'map' %}"><img class="mapicon" src="images/map.png" alt="Map of HBCUs"></a> -->
 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 {% endblock %}
 

@@ -6,20 +6,20 @@
 {% block content %}
     <div class="topnav2">
       <a href="{% url 'index' %}"  class="active ">HBCU4U</a>
-      
+      {% csrf_token %}
+<<<<<<< HEAD
+=======
       <!-- class="currentpg" -->
+>>>>>>> origin/Finalize-Filter-and-Update-CSS
       <div id="myLinks">
-       <a href="{% url 'list_hbcus' %}" >All HBCUs </a>
-       <a href="{% url 'filterB' %}">Filter</a>
-       <a href="{% url 'map' %}">Map</a>
-       <!-- <a href="{% url 'hbcugrads' %}"> Graduates</a> -->
-       
+        <a href="{% url 'list_hbcus' %}">All HBCUs</a>
+        <a href="{% url 'signup' %}">About Me</a>
+        <a href="{% url 'filterB' %}">Filter</a>
+        <a href="{% url 'map' %}">Map</a>
       </div>
-          <!-- <input id="searchbarAll" onkeyup="search" type="text" name="search" placeholder="--Search--"/> 
-          <button type="submit"><i class="fa fa-search"></i></button> -->
-     <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
-     <i class="fa fa-bars"></i>
-     </a>
+      <a href="javascript:void(0);" class="icon2" onclick="hiddenMenu()">
+      <i class="fa fa-bars"></i>
+      </a>
     </div> 
 
 <h1> List of Historically Black Colleges and Universities  </h1>
